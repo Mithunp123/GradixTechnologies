@@ -280,6 +280,44 @@ body.light-theme .toggle-switch input:checked + .slider:before {
     background-color: #fff;
 }
 
+/* REMOVE LEGACY BLUE BOXES IN SERVICES SECTION & STYLE NEW CHEVRONS */
+.ext-service-card__list li::before,
+.ext-service-card__list li::after {
+    display: none !important;
+    content: none !important;
+}
+
+.ext-service-card__list li {
+    padding-left: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 8px !important;
+}
+
+.ext-service-card__list li i.icon-chevron-right {
+    color: #f7d307 !important; /* Professional yellow/gold instead of legacy blue */
+    font-size: 0.85rem !important;
+    flex-shrink: 0 !important;
+    opacity: 0.8 !important;
+}
+
+.ext-service-card__list li a {
+    font-size: 1rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.3s ease !important;
+    line-height: 1.4 !important;
+}
+
+.ext-service-card__list li:hover i.icon-chevron-right {
+    opacity: 1 !important;
+    transform: translateX(2px) !important;
+}
+
+.ext-service-card__list li:hover a {
+    color: #f7d307 !important;
+}
+
 /* Fix vertical rectangle/white box by ensuring proper font-family and opacity */
 i[class*='icon-']::before {
     opacity: 1 !important;
