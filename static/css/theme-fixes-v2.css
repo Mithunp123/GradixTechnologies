@@ -27,17 +27,17 @@ section.section-discuss,
 }
 
 .menu__item--has-sublist {
-    position: static !important;
+    position: relative !important; /* Anchor mega menu directly to 'Services' item */
 }
 
 .menu-sublist {
     position: absolute !important;
-    left: 0 !important; /* Anchor left relative to centered container */
-    right: 0 !important; /* Anchor right relative to centered container */
+    left: 50% !important; 
     top: 100% !important;
-    width: 100% !important; /* Fill container width */
-    max-width: 1200px !important; /* Cap at container max */
-    margin: 0 auto !important; /* Horizontally center */
+    transform: translateX(-35%) translateY(15px) !important; /* Perfect left-aligned look directly below text */
+    width: 950px !important; /* Match 3 column inner padding */
+    max-width: 95vw !important;
+    margin: 0 !important;
     background: #0d1016 !important;
     border-radius: 24px !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -45,7 +45,6 @@ section.section-discuss,
     padding: 2.5rem !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    transform: translateY(15px) !important;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     z-index: 1000 !important;
     overflow: hidden !important;
@@ -54,7 +53,7 @@ section.section-discuss,
 .menu__item--has-sublist:hover .menu-sublist {
     opacity: 1 !important;
     visibility: visible !important;
-    transform: translateY(0) !important;
+    transform: translateX(-35%) translateY(0) !important;
 }
 
 .menu__link {
@@ -89,7 +88,7 @@ a[href="#"] + .menu__arrow,
     opacity: 1 !important;
 }
 
-/* BUTTONS & ICONS - FIXING THE WHITE BOX ISSUE */
+/* BUTTONS & ICONS - REPLACING WITH BACKGROUND SVG FOR MAX COMPATIBILITY */
 .btn i,
 .btn .icon-chevron-right {
     display: inline-flex !important;
@@ -103,16 +102,20 @@ a[href="#"] + .menu__arrow,
 .btn .icon-chevron-right::before,
 button .icon-chevron-right::before,
 a.btn .icon-chevron-right::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    content: "" !important;
     display: inline-block !important;
     width: 18px !important;
     height: 18px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
     margin-left: 8px !important;
     vertical-align: middle !important;
     position: relative !important;
-    top: 2px !important;
+    top: 0px !important;
     border: none !important;
-    background: none !important;
+    background-color: transparent !important;
     mask: none !important;
     -webkit-mask: none !important;
     transform: none !important;
@@ -121,7 +124,7 @@ a.btn .icon-chevron-right::before {
 
 /* Ensure yellow buttons have black stroke arrows instead of white */
 .btn--yellow .icon-chevron-right::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
 }
 
 /* Specific cleanup for Select budget dropdown (Choices.js) - HIDDEN LAYERS */
@@ -133,13 +136,15 @@ div.about-project-form__select {
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
+    margin: 0 !important;
     border-radius: 0 !important;
 }
 
 /* Completely eradicate wrapper injected pseudoborders */
 div.select::before, div.select::after,
 div.select--secondary::before, div.select--secondary::after,
-div.about-project-form__select::before, div.about-project-form__select::after {
+div.about-project-form__select::before, div.about-project-form__select::after,
+.choices::before, .choices::after {
     display: none !important;
     content: none !important;
 }
