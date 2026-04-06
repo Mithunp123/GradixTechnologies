@@ -1722,21 +1722,95 @@ body.light-theme .section-discuss .input textarea::placeholder {
   color: #9ca3af !important;
 }
 
-/* Contact section and modal chevron fallback */
-.section-discuss .btn .icon-chevron-right,
-.modal[data-modal-id='modalContactUs'] .btn .icon-chevron-right,
-.modal__container[data-modal-id='modalContactUs'] .btn .icon-chevron-right {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  min-width: 1rem;
+/* =================================================================
+   ICON DISPLAY FIXES - Chevron and all icons
+   ================================================================= */
+
+/* Force chevron icons to display with fallback */
+.icon-chevron-right::before,
+.icon-chevron-left::before,
+.icon-chevron-down::before,
+.icon-chevron-up::before {
+  font-family: inherit !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  display: inline-block !important;
+  line-height: 1 !important;
 }
 
-.section-discuss .btn .icon-chevron-right::before,
-.modal[data-modal-id='modalContactUs'] .btn .icon-chevron-right::before,
-.modal__container[data-modal-id='modalContactUs'] .btn .icon-chevron-right::before {
-  content: '\203A' !important;
+.icon-chevron-right::before { content: '›' !important; font-size: 1.5em; }
+.icon-chevron-left::before { content: '‹' !important; font-size: 1.5em; }
+.icon-chevron-down::before { content: '⌄' !important; }
+.icon-chevron-up::before { content: '⌃' !important; }
+
+/* Services dropdown icon */
+.menu__link .icon-chevron-down::before,
+.menu-item-has-children > a .icon-chevron-down::before {
+  content: '⌄' !important;
   font-family: inherit !important;
-  font-size: 1.25em;
-  line-height: 1;
+  margin-left: 0.25rem;
+}
+
+/* Buttons with chevrons */
+.btn .icon-chevron-right {
+  display: inline-flex !important;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.btn .icon-chevron-right::before {
+  content: '›' !important;
+  font-family: inherit !important;
+  font-size: 1.5em !important;
+  line-height: 1 !important;
+}
+
+/* =================================================================
+   SELECT DROPDOWN FIXES
+   ================================================================= */
+
+/* Hide duplicate/nested select containers */
+.about-project-form__select .choices__inner .choices__list--single,
+.select--secondary .choices__inner .choices__list--single {
+  /* Keep only the outermost container styled */
+}
+
+/* Ensure select dropdown appears correctly */
+.choices__list--dropdown {
+  z-index: 999 !important;
+}
+
+.choices[data-type*="select-one"]::after {
+  content: '⌄' !important;
+  font-family: inherit !important;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1.2em;
+  color: var(--select-text-color);
+}
+
+/* Fix select budget container styling in modal */
+.modal .about-project-form__select,
+.section-discuss .about-project-form__select {
+  position: relative;
+}
+
+.modal .choices__inner,
+.section-discuss .choices__inner {
+  border-radius: var(--select-border-radius) !important;
+  border: var(--select-border-width) solid var(--select-border-color) !important;
+  background-color: var(--select-bg-color) !important;
+}
+
+/* =================================================================
+   LOGO DISPLAY IN LIGHT THEME
+   ================================================================= */
+
+body.light-theme .header__logo img,
+body.light-theme .footer-top__logo img {
+  filter: none !important;
+  opacity: 1 !important;
 }

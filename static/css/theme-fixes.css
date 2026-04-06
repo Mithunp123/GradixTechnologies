@@ -1,0 +1,102 @@
+/* Theme Fixes - Light theme specific adjustments */
+
+/* COMPLETELY REMOVE blue background in contact section for light theme */
+body.light-theme .section-discuss,
+body.light-theme section.section-discuss {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+}
+
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__container {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+body.light-theme .section-discuss__body {
+    background: transparent !important;
+}
+
+/* Ensure promo logo swaps for light theme */
+body.light-theme .promo-logo-img {
+    content: url('../../static/images/gradix_dark.png') !important;
+}
+
+/* Fix Services dropdown positioning - should appear under menu item, not on right */
+.header__nav-dropdown,
+.menu__dropdown,
+nav .header__nav-dropdown,
+.header__nav .header__nav-dropdown {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 100% !important;
+    transform: translateX(-50%) !important;
+    margin-top: 8px !important;
+}
+
+/* FORCE dropdown chevron to display - NUCLEAR option */
+.header__nav-link .icon-chevron-down::before,
+.header__nav-item .icon-chevron-down::before,
+a[href*="services"] .icon-chevron-down::before,
+.menu__link .icon-chevron-down::before {
+    content: '⌄' !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1.4em !important;
+    font-weight: bold !important;
+    margin-left: 6px !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: currentColor !important;
+    vertical-align: middle !important;
+}
+
+/* Show up arrow when dropdown is open */
+.header__nav-item.active .icon-chevron-down::before,
+.header__nav-link[aria-expanded="true"] .icon-chevron-down::before {
+    content: '⌃' !important;
+}
+
+/* Fix button chevron icons - make them HUGE and BOLD */
+.btn .icon-chevron-right::before,
+button .icon-chevron-right::before,
+a.btn .icon-chevron-right::before,
+.btn--yellow .icon-chevron-right::before,
+.btn--gray .icon-chevron-right::before,
+.btn--primary .icon-chevron-right::before {
+    content: '›' !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 2.2em !important;
+    font-weight: 900 !important;
+    line-height: 0.8 !important;
+    margin-left: 10px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: currentColor !important;
+}
+
+/* Ensure Select budget dropdown appears properly */
+.choices__inner {
+    background-color: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+}
+
+.choices__list--dropdown {
+    background-color: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    margin-top: 4px !important;
+}
+
+/* Fix white box issues - force visibility of icon content */
+i[class*='icon-']::before {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+}

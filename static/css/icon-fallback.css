@@ -1,9 +1,24 @@
-/* Icon Fallback CSS - Replace missing iconfont with CSS/SVG alternatives */
-/* This provides fallbacks for common icons when the iconfont is not available */
+﻿/* Icon Fallback CSS - FORCE disable iconfont and use Unicode replacements */
+/* This forcefully overrides the icon font with visible Unicode characters */
 
-[class*='icon-']::before {
-    font-family: sans-serif !important;
-    font-weight: 400;
+/* CRITICAL: Disable iconfont completely and force sans-serif font */
+[class*='icon-']::before,
+.icon-chevron-right::before,
+.icon-chevron-left::before,
+.icon-chevron-up::before,
+.icon-chevron-down::before,
+i[class*='icon-']::before,
+span[class*='icon-']::before {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: 1.2em !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+    speak: none !important;
+    text-transform: none !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
 }
 
 /* Common icon replacements */
@@ -15,10 +30,24 @@
 [class*='icon-arrow-left']::before { content: '←' !important; }
 [class*='icon-arrow-up']::before { content: '↑' !important; }
 [class*='icon-arrow-down']::before { content: '↓' !important; }
-[class*='icon-chevron-right']::before { content: '›' !important; }
-[class*='icon-chevron-left']::before { content: '‹' !important; }
-[class*='icon-chevron-up']::before { content: '⌃' !important; }
-[class*='icon-chevron-down']::before { content: '⌄' !important; }
+/* FORCE chevron icons with maximum specificity */
+[class*='icon-chevron-right']::before,
+i.icon-chevron-right::before,
+.icon-chevron-right::before,
+.btn .icon-chevron-right::before { content: '›' !important; font-size: 1.5em !important; }
+
+[class*='icon-chevron-left']::before,
+i.icon-chevron-left::before,
+.icon-chevron-left::before { content: '‹' !important; font-size: 1.5em !important; }
+
+[class*='icon-chevron-up']::before,
+i.icon-chevron-up::before,
+.icon-chevron-up::before { content: '⌃' !important; font-size: 1.5em !important; }
+
+[class*='icon-chevron-down']::before,
+i.icon-chevron-down::before,
+.icon-chevron-down::before,
+.header__nav-link .icon-chevron-down::before { content: '⌄' !important; font-size: 1.3em !important; }
 [class*='icon-mail']::before { content: '✉' !important; }
 [class*='icon-play']::before { content: '▶' !important; }
 [class*='icon-linkedin']::before { content: 'in' !important; }
