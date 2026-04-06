@@ -827,3 +827,897 @@ body.light-theme #swiperPartners .partner-card img,
 body.light-theme #swiperPartners picture img {
   filter: saturate(1.14) contrast(1.06) brightness(1.02) !important;
 }
+
+/* LIGHT THEME FIX PASS 7 - user corrections */
+
+/* 1) FOOTER: Remove ALL black filter from country/flag icons - show real colors */
+body.light-theme .footer img,
+body.light-theme .footer svg,
+body.light-theme .footer [class*='flag'] img,
+body.light-theme .footer [class*='office'] img,
+body.light-theme .footer [class*='country'] img,
+body.light-theme .footer [class*='timezone'] img,
+body.light-theme .offices-block img,
+body.light-theme .offices-block svg,
+body.light-theme .office-card img,
+body.light-theme .office-card svg {
+  filter: none !important;
+}
+
+/* 2) Section-discuss: MUCH lighter blue - almost white */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__container {
+  background: linear-gradient(180deg, rgba(59,130,246,0.008) 0%, rgba(255,255,255,0.99) 35%, rgba(255,255,255,1) 100%) !important;
+}
+
+/* 3) Flow section: yellow icon container + black button with yellow text */
+body.light-theme .flow-card__icon {
+  background-color: #ffe667 !important;
+  border: 1px solid #e6cf58 !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+}
+body.light-theme .flow-card__icon img {
+  filter: brightness(0) saturate(100%) !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+body.light-theme .section-flow .btn--yellow,
+body.light-theme .flow-card .btn--yellow {
+  background-color: #090909 !important;
+  border-color: #090909 !important;
+}
+body.light-theme .section-flow .btn--yellow .btn__text,
+body.light-theme .section-flow .btn--yellow i,
+body.light-theme .flow-card .btn--yellow .btn__text,
+body.light-theme .flow-card .btn--yellow i {
+  color: #ffe667 !important;
+}
+
+/* 4) Map: spread 8 pins including SOUTH India */
+@media (min-width: 62rem) {
+  body.light-theme .partnerships-map__location--01 { left: 28% !important; top: 26% !important; }  /* North-West */
+  body.light-theme .partnerships-map__location--02 { left: 42% !important; top: 22% !important; }  /* North */
+  body.light-theme .partnerships-map__location--03 { left: 58% !important; top: 32% !important; }  /* North-East */
+  body.light-theme .partnerships-map__location--04 { left: 64% !important; top: 46% !important; }  /* East */
+  body.light-theme .partnerships-map__location--05 { left: 52% !important; top: 72% !important; }  /* Deep South */
+  body.light-theme .partnerships-map__location--06 { left: 38% !important; top: 76% !important; }  /* South tip */
+  body.light-theme .partnerships-map__location--07 { left: 24% !important; top: 52% !important; }  /* West */
+  body.light-theme .partnerships-map__location--08 { left: 45% !important; top: 48% !important; }  /* Central */
+}
+
+/* 5) ui-icon: white transparent container */
+body.light-theme .ui-icon {
+  background: rgba(255,255,255,0.78) !important;
+  border: 1px solid rgba(17,24,39,0.12) !important;
+  backdrop-filter: blur(6px) !important;
+}
+body.light-theme .ui-icon i {
+  color: #111827 !important;
+}
+
+/* 6) Partner slider: remove box structure, keep logos in color */
+body.light-theme #swiperPartners,
+body.light-theme .section-partners .swiper,
+body.light-theme .partners-slider {
+  background: transparent !important;
+}
+body.light-theme #swiperPartners::before,
+body.light-theme #swiperPartners::after,
+body.light-theme .section-partners .swiper::before,
+body.light-theme .section-partners .swiper::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+}
+body.light-theme .partner-card,
+body.light-theme .partner-card__inner,
+body.light-theme .partner-card__img {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+body.light-theme #swiperPartners img,
+body.light-theme .partner-card img,
+body.light-theme .partner-card__img img {
+  filter: none !important;
+}
+
+/* 7) Keep specific SVGs in color (no black filter) */
+body.light-theme img[src*='logo-1.svg'],
+body.light-theme img[src*='award-02.svg'],
+body.light-theme img[src*='award-03.svg'],
+body.light-theme img[src*='award-04.svg'] {
+  filter: none !important;
+}
+
+/* LIGHT THEME FIX PASS 8 - user corrections */
+
+/* 1) Discuss section: MUCH LESS blue - almost white */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss::before,
+body.light-theme .section-discuss::after {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,248,255,0.3) 50%, rgba(255,255,255,1) 100%) !important;
+}
+
+/* 2) Reviews section SVGs: BLACK color */
+body.light-theme .section-reviews img,
+body.light-theme .reviews-card img,
+body.light-theme .reviews-card__logo img,
+body.light-theme [class*='review'] img[src$='.svg'],
+body.light-theme .review-card img,
+body.light-theme .review-card__icon img {
+  filter: brightness(0) saturate(100%) !important;
+}
+
+/* 3) Map pins: Reposition ALL inside India properly - south spread */
+@media (min-width: 62rem) {
+  body.light-theme .partnerships-map__location--01 { left: 32% !important; top: 28% !important; }  /* North-West */
+  body.light-theme .partnerships-map__location--02 { left: 48% !important; top: 24% !important; }  /* North */
+  body.light-theme .partnerships-map__location--03 { left: 62% !important; top: 35% !important; }  /* North-East */
+  body.light-theme .partnerships-map__location--04 { left: 58% !important; top: 50% !important; }  /* East */
+  body.light-theme .partnerships-map__location--05 { left: 48% !important; top: 65% !important; }  /* South-East */
+  body.light-theme .partnerships-map__location--06 { left: 38% !important; top: 70% !important; }  /* South tip */
+  body.light-theme .partnerships-map__location--07 { left: 28% !important; top: 55% !important; }  /* West */
+  body.light-theme .partnerships-map__location--08 { left: 42% !important; top: 45% !important; }  /* Central */
+}
+
+/* 4) Gradix logo: BLACK text, keep blue logo intact */
+body.light-theme img[src*='gradix_light'],
+body.light-theme .header__logo img,
+body.light-theme .footer-top__logo img,
+body.light-theme a[href='index.html'] img[src*='gradix'] {
+  filter: brightness(0.1) saturate(1.2) !important;
+}
+
+/* 5) Partner slider "Trusted by 80+" logos: BLACK visible */
+body.light-theme #swiperPartners img,
+body.light-theme .partner-card img,
+body.light-theme .partner-card__img img,
+body.light-theme .section-partners img {
+  filter: brightness(0) saturate(100%) !important;
+}
+
+/* 6) Footer social icons: BLACK color */
+body.light-theme .footer-top__soc img,
+body.light-theme .footer-top__soc svg,
+body.light-theme .soc img,
+body.light-theme .soc svg,
+body.light-theme .footer-top__row .soc img,
+body.light-theme img[src*='item.svg'],
+body.light-theme img[src*='item-2.svg'],
+body.light-theme img[src*='item-3.svg'],
+body.light-theme img[src*='item-4.svg'],
+body.light-theme img[src*='item-5.svg'],
+body.light-theme img[src*='Social-Icons'] {
+  filter: brightness(0) saturate(100%) !important;
+}
+
+/* 7) Keep country flag icons in footer with REAL colors (override above) */
+body.light-theme .offices-block img:not([src*='item']),
+body.light-theme .office-card img:not([src*='item']),
+body.light-theme .footer [class*='country'] img,
+body.light-theme .footer [class*='flag'] img,
+body.light-theme .footer [class*='timezone'] img {
+  filter: none !important;
+}
+
+/* PASS 9 - Remove blue from discuss section completely */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss::before,
+body.light-theme .section-discuss::after,
+body.light-theme .section-discuss *::before,
+body.light-theme .section-discuss *::after {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+body.light-theme .section-discuss {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%) !important;
+}
+
+/* PASS 10 - Final fixes */
+
+/* 1) Discuss section: REMOVE blue completely - pure white/light gray */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss::before,
+body.light-theme .section-discuss::after {
+  background: #f9fafb !important;
+  background-color: #f9fafb !important;
+  background-image: none !important;
+}
+
+/* 2) Submit button: remove white box/border artifact */
+body.light-theme .section-discuss .btn,
+body.light-theme .section-discuss button,
+body.light-theme .section-discuss [type='submit'],
+body.light-theme .section-discuss .btn--primary,
+body.light-theme .section-discuss .btn--blue {
+  background-color: #2563eb !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+body.light-theme .section-discuss .btn::before,
+body.light-theme .section-discuss .btn::after,
+body.light-theme .section-discuss button::before,
+body.light-theme .section-discuss button::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 3) Modal submit button: same fix */
+body.light-theme .modal .btn,
+body.light-theme .modal button[type='submit'],
+body.light-theme .modal .btn--primary,
+body.light-theme .modal .btn--blue {
+  background-color: #2563eb !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+body.light-theme .modal .btn::before,
+body.light-theme .modal .btn::after,
+body.light-theme .modal button::before,
+body.light-theme .modal button::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+}
+
+/* 4) Partner logos "Trusted by 80+" - DARK visible with good contrast */
+body.light-theme .section-partners,
+body.light-theme #swiperPartners {
+  background: #f3f4f6 !important;
+}
+body.light-theme #swiperPartners img,
+body.light-theme .partner-card img,
+body.light-theme .partner-card__img img,
+body.light-theme .section-partners img {
+  filter: contrast(1.8) brightness(0.4) saturate(1.2) !important;
+  opacity: 1 !important;
+}
+body.light-theme .partner-card,
+body.light-theme .partner-card__inner {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* PASS 11 - Comprehensive fixes */
+
+/* 1) Discuss section: MINIMAL blue - almost white */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__container {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(239,246,255,0.15) 50%, rgba(255,255,255,1) 100%) !important;
+  background-color: #ffffff !important;
+}
+
+/* 2) Modal buttons: remove ALL white boxes/artifacts */
+body.light-theme .modal .btn--yellow,
+body.light-theme .modal .btn--gray,
+body.light-theme .modal .btn,
+body.light-theme .modal button {
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  background-clip: padding-box !important;
+}
+body.light-theme .modal .btn--yellow::before,
+body.light-theme .modal .btn--yellow::after,
+body.light-theme .modal .btn--gray::before,
+body.light-theme .modal .btn--gray::after,
+body.light-theme .modal .btn::before,
+body.light-theme .modal .btn::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 3) Reviews section: REVERT to original styling (not black) */
+body.light-theme .section-reviews img,
+body.light-theme .reviews-card img,
+body.light-theme .reviews-card__logo img,
+body.light-theme [class*='review'] img[src$='.svg'],
+body.light-theme .review-card img,
+body.light-theme .review-card__icon img {
+  filter: none !important;
+}
+
+/* 4) Gradix logo: Black text, preserve blue circle */
+body.light-theme img[src*='gradix_light'],
+body.light-theme .header__logo img,
+body.light-theme .footer-top__logo img {
+  filter: contrast(1.4) brightness(0.3) saturate(1.1) hue-rotate(20deg) !important;
+}
+
+/* 5) Partner logos "Trusted by 80+": VISIBLE with good contrast */
+body.light-theme .section-partners {
+  background: #ffffff !important;
+}
+body.light-theme .section-partners h2,
+body.light-theme .section-partners .section__title {
+  color: #1f2937 !important;
+}
+body.light-theme #swiperPartners img,
+body.light-theme .partner-card img,
+body.light-theme .partner-card__img img,
+body.light-theme .section-partners .partner-card img {
+  filter: contrast(2.2) brightness(0.3) saturate(0.8) !important;
+  opacity: 1 !important;
+}
+body.light-theme .partner-card,
+body.light-theme .partner-card__inner,
+body.light-theme .partner-card__img {
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 6) Section submit/book buttons: clean styling */
+body.light-theme .section-discuss .btn,
+body.light-theme .section-discuss button {
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* PASS 12 - Consolidated light theme corrections (final) */
+
+/* 1) Discuss area: keep clean light background (remove dark blue feel) */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss::before,
+body.light-theme .section-discuss::after {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* 2) Gradix logo: keep native colors (blue round + black text) */
+body.light-theme img[src*='gradix_light'],
+body.light-theme .header__logo img[src*='gradix'],
+body.light-theme .footer-top__logo img[src*='gradix'] {
+  filter: none !important;
+}
+
+/* 3) Trusted partners heading + slider visibility */
+body.light-theme .hero-partners__title,
+body.light-theme .hero-partners__title span {
+  color: #111827 !important;
+}
+body.light-theme #swiperPartners,
+body.light-theme .hero-partners__slider-wrap,
+body.light-theme .hero-partners__body {
+  background: #ffffff !important;
+}
+body.light-theme .partner-card,
+body.light-theme .partner-card__inner,
+body.light-theme .partner-card__img {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+body.light-theme #swiperPartners img,
+body.light-theme .partner-card img,
+body.light-theme .partner-card__img img {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* 4) Popup/model CTA buttons: remove white box artifacts */
+body.light-theme .modal .btn,
+body.light-theme .modal button,
+body.light-theme .section-discuss .btn,
+body.light-theme .section-discuss button,
+body.light-theme .about-project-form .btn,
+body.light-theme .book-call-card .btn {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background-clip: padding-box !important;
+}
+body.light-theme .modal .btn::before,
+body.light-theme .modal .btn::after,
+body.light-theme .section-discuss .btn::before,
+body.light-theme .section-discuss .btn::after,
+body.light-theme .about-project-form .btn::before,
+body.light-theme .about-project-form .btn::after,
+body.light-theme .book-call-card .btn::before,
+body.light-theme .book-call-card .btn::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+body.light-theme .modal .btn i,
+body.light-theme .section-discuss .btn i,
+body.light-theme .about-project-form .btn i,
+body.light-theme .book-call-card .btn i {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep primary light-theme CTA look without white overlays */
+body.light-theme .modal .btn--yellow,
+body.light-theme .section-discuss .btn--yellow,
+body.light-theme .about-project-form .btn--yellow {
+  background-color: #2563eb !important;
+}
+body.light-theme .modal .btn--gray,
+body.light-theme .section-discuss .btn--gray,
+body.light-theme .book-call-card .btn--gray {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* PASS 13 - hard remove blue overlay in discuss section */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__row,
+body.light-theme .section-discuss__col,
+body.light-theme .section-discuss::before,
+body.light-theme .section-discuss::after,
+body.light-theme .section-discuss__wrap::before,
+body.light-theme .section-discuss__wrap::after {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+body.light-theme .section-discuss .wrapper__blur,
+body.light-theme .section-discuss [class*='blur'],
+body.light-theme .section-discuss [class*='glow'] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  filter: none !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* PASS 14 - strict fixes from latest feedback */
+
+/* A) Remove blue cast globally in light mode (real overlay source) */
+body.light-theme .wrapper__blur,
+body.light-theme [class*='wrapper__blur'],
+body.light-theme [class*='glow-blur'],
+body.light-theme [class*='bg-blur'] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: transparent !important;
+  background-image: none !important;
+  filter: none !important;
+}
+
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__row,
+body.light-theme .section-discuss__col,
+body.light-theme .section-discuss::before,
+body.light-theme .section-discuss::after,
+body.light-theme .section-discuss__wrap::before,
+body.light-theme .section-discuss__wrap::after {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* B) Submit/Book button white-box artifact */
+body.light-theme .about-project-form .btn,
+body.light-theme .book-call-card .btn,
+body.light-theme .section-discuss .btn {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background-image: none !important;
+}
+body.light-theme .about-project-form .btn::before,
+body.light-theme .about-project-form .btn::after,
+body.light-theme .book-call-card .btn::before,
+body.light-theme .book-call-card .btn::after,
+body.light-theme .section-discuss .btn::before,
+body.light-theme .section-discuss .btn::after {
+  display: none !important;
+  content: none !important;
+}
+body.light-theme .about-project-form .btn i,
+body.light-theme .book-call-card .btn i,
+body.light-theme .section-discuss .btn i {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* C) Trusted by 80+ section and moving logos visibility */
+body.light-theme .hero-partners__title,
+body.light-theme .hero-partners__title span {
+  color: #111827 !important;
+}
+body.light-theme .hero-partners__slider-wrap,
+body.light-theme #swiperPartners,
+body.light-theme #swiperPartners .swiper-wrapper,
+body.light-theme #swiperPartners .swiper-slide,
+body.light-theme #swiperPartners .partner-card,
+body.light-theme #swiperPartners .partner-card__inner,
+body.light-theme #swiperPartners .partner-card__img {
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+body.light-theme #swiperPartners img,
+body.light-theme #swiperPartners picture img {
+  filter: brightness(0) saturate(100%) contrast(1.05) !important;
+  opacity: 1 !important;
+}
+
+/* D) Review row SVG logos should be black in light */
+body.light-theme .review-badge__logo img,
+body.light-theme .review-badges-block img[src$='.svg'],
+body.light-theme img[src*='theme/logos/'][src$='.svg'] {
+  filter: brightness(0) saturate(100%) !important;
+  opacity: 1 !important;
+}
+
+/* E) Services mega menu: keep centered and prevent hover-drop gap */
+@media (min-width: 62rem) {
+  body.light-theme .menu__list > li {
+    position: relative !important;
+    padding-bottom: 12px !important;
+  }
+  body.light-theme .menu__list > li::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 100% !important;
+    height: 12px !important;
+  }
+  body.light-theme .menu__sublist {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: min(1180px, calc(100vw - 24px)) !important;
+    top: calc(100% + 10px) !important;
+  }
+  body.light-theme .menu__list > li:hover > .menu__sublist,
+  body.light-theme .menu__list > li:focus-within > .menu__sublist,
+  body.light-theme .menu__sublist:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* PASS 15 - User request fixes (April 2026) */
+
+/* 1) "Trusted by 80+" partner logos: Make very dark/black for visibility */
+body.light-theme .hero-partners__slider-wrap::after {
+  background: linear-gradient(90deg, #ffffff 0%, transparent 10%, transparent 90%, #ffffff 100%) !important;
+}
+body.light-theme #swiperPartners img,
+body.light-theme .partner-card img,
+body.light-theme .partner-card__img img,
+body.light-theme .hero-partners img,
+body.light-theme .section-partners img,
+body.light-theme .section-partners .partner-card img {
+  filter: brightness(0.15) contrast(1.6) saturate(1.3) !important;
+  opacity: 1 !important;
+}
+
+/* 2) Section discuss: REMOVE blue completely - use very light neutral gray */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__row,
+body.light-theme .section-discuss__col,
+body.light-theme .section-discuss::before,
+body.light-theme .section-discuss::after,
+body.light-theme .section-discuss__wrap::before,
+body.light-theme .section-discuss__wrap::after,
+body.light-theme .section-discuss .wrapper__blur {
+  background: #fafafa !important;
+  background-color: #fafafa !important;
+  background-image: none !important;
+  opacity: 1 !important;
+}
+
+/* 3) Review badges (Clutch, DesignRush, GoodFirms, Upwork): Darker black text */
+body.light-theme .hs-review-card__label,
+body.light-theme .hs-review-card__text,
+body.light-theme .review-badge__rating,
+body.light-theme .review-badge-rating__value,
+body.light-theme .hs-review-card .hs-review-card__label {
+  color: #111111 !important;
+  font-weight: 600 !important;
+}
+body.light-theme .hs-review-card__img img,
+body.light-theme .review-badge__logo img,
+body.light-theme .hs-review-card img[src$='.svg'] {
+  filter: brightness(0.1) contrast(1.3) saturate(1.2) !important;
+  opacity: 1 !important;
+}
+
+/* 4) Gradix logo: BLACK text only, keep blue logo circle as is */
+body.light-theme .header__logo img[src*='gradix'],
+body.light-theme .footer-top__logo img[src*='gradix'],
+body.light-theme a[href='index.html'] img[src*='gradix'] {
+  filter: none !important;
+}
+/* Fix for missing images - hide broken image placeholders */
+img[src*='Frame-115.png'] {
+  display: none !important;
+}
+/* PASS 16 - Final user request fixes */
+
+/* 1) Section discuss: Remove ALL blue - pure white/light gray background */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__row,
+body.light-theme .section-discuss__col,
+body.light-theme .section-discuss .book-call-card,
+body.light-theme .section-discuss .about-project-form {
+  background: #f8f9fa !important;
+  background-color: #f8f9fa !important;
+  background-image: none !important;
+}
+
+/* 2) Review badge cards (Clutch, DesignRush, GoodFirms, Upwork): DARKER text */
+body.light-theme .hs-review-card,
+body.light-theme .hs-review-card__text,
+body.light-theme .hs-review-card__label {
+  color: #1a1a1a !important;
+}
+body.light-theme .hs-review-card__label {
+  font-weight: 700 !important;
+  color: #0d0d0d !important;
+}
+body.light-theme .hs-review-card__img img {
+  filter: brightness(0.08) contrast(1.4) !important;
+  opacity: 1 !important;
+}
+
+/* 3) Review stars should be visible */
+body.light-theme .hs-review-card__rating,
+body.light-theme .hs-review-card .icon-rating-star {
+  color: #1a73e8 !important;
+}
+
+/* 4) "Your ultimate go-to-market solution" section - make blue lighter */
+body.light-theme .section-intro,
+body.light-theme .section-intro__wrap,
+body.light-theme .section-intro__container,
+body.light-theme [class*='section-intro'] {
+  background: linear-gradient(180deg, rgba(240,245,255,0.5) 0%, #ffffff 100%) !important;
+}
+
+/* The blue spiral logo should stay blue but lighter */
+body.light-theme .section-intro img[src*='logo'],
+body.light-theme .intro-visual img {
+  filter: brightness(1.15) saturate(0.85) !important;
+}
+/* 5) Promo card section (Your ultimate go-to-market) - make blue lighter */
+body.light-theme .promo-card,
+body.light-theme .promo-card__inner {
+  background: linear-gradient(135deg, rgba(240,247,255,0.6) 0%, rgba(255,255,255,0.95) 100%) !important;
+}
+body.light-theme .promo-card__img img,
+body.light-theme img[src*='gradix_light.png'] {
+  filter: brightness(1.2) saturate(0.7) hue-rotate(-5deg) !important;
+  opacity: 0.85 !important;
+}
+/* PASS 17 - Comprehensive fixes for all reported issues */
+
+/* 1) Section discuss: COMPLETELY remove blue - pure white background */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__container,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__row,
+body.light-theme .section-discuss__col,
+body.light-theme .section-discuss__col--aside,
+body.light-theme .section-discuss__col--main,
+body.light-theme .section-discuss .book-call-card,
+body.light-theme .section-discuss .about-project-form,
+body.light-theme .section-discuss::before,
+body.light-theme .section-discuss::after,
+body.light-theme .section-discuss *::before,
+body.light-theme .section-discuss *::after {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Also target the section element itself */
+body.light-theme section.section-discuss {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* 2) Contact us popup modal - dropdown fixes */
+body.light-theme .modal .choices,
+body.light-theme .modal .choices__inner,
+body.light-theme .modal .choices__list,
+body.light-theme .modal .choices__list--dropdown,
+body.light-theme .modal .select,
+body.light-theme .modal .select--secondary {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+}
+
+body.light-theme .modal .choices__item,
+body.light-theme .modal .choices__placeholder,
+body.light-theme .modal .choices__item--selectable {
+  color: #111827 !important;
+  background: #ffffff !important;
+}
+
+body.light-theme .modal .choices__list--dropdown .choices__item {
+  color: #111827 !important;
+  background: #ffffff !important;
+}
+
+body.light-theme .modal .choices__list--dropdown .choices__item:hover,
+body.light-theme .modal .choices__list--dropdown .choices__item.is-highlighted {
+  background: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+/* Dropdown arrow/chevron icon - make it black */
+body.light-theme .modal .choices::after,
+body.light-theme .modal .select::after,
+body.light-theme .modal .choices__inner::after {
+  border-color: #111827 transparent transparent transparent !important;
+}
+
+body.light-theme .modal .choices [class*='icon-'],
+body.light-theme .modal .select [class*='icon-'] {
+  color: #111827 !important;
+}
+
+/* Same for section-discuss dropdown */
+body.light-theme .section-discuss .choices,
+body.light-theme .section-discuss .choices__inner,
+body.light-theme .section-discuss .choices__list,
+body.light-theme .section-discuss .choices__list--dropdown,
+body.light-theme .section-discuss .select,
+body.light-theme .section-discuss .select--secondary {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+}
+
+body.light-theme .section-discuss .choices__item,
+body.light-theme .section-discuss .choices__placeholder {
+  color: #6b7280 !important;
+}
+
+body.light-theme .section-discuss .choices__list--dropdown .choices__item {
+  color: #111827 !important;
+  background: #ffffff !important;
+}
+
+body.light-theme .section-discuss .choices__list--dropdown .choices__item:hover,
+body.light-theme .section-discuss .choices__list--dropdown .choices__item.is-highlighted {
+  background: #f3f4f6 !important;
+}
+
+body.light-theme .section-discuss .choices::after {
+  border-color: #111827 transparent transparent transparent !important;
+}
+
+/* 3) Trusted by 80+ partner logos - make them VERY dark/black */
+body.light-theme .hero-partners img,
+body.light-theme .hero-partners .partner-card img,
+body.light-theme .hero-partners .partner-card__img img,
+body.light-theme #swiperPartners img,
+body.light-theme #swiperPartners .partner-card img,
+body.light-theme .section-partners img,
+body.light-theme .section-partners .partner-card img,
+body.light-theme img[src*='logo_'] {
+  filter: brightness(0) saturate(100%) !important;
+  opacity: 1 !important;
+}
+
+/* Override any existing partner card opacity */
+body.light-theme .partner-card__inner {
+  opacity: 1 !important;
+}
+
+/* 4) Gradix logo - black text, keep blue icon */
+body.light-theme .header__logo img[src*='gradix_light'],
+body.light-theme img[src*='gradix_light.png'],
+body.light-theme .footer-top__logo img[src*='gradix'] {
+  filter: none !important;
+}
+
+/* 5) Clutch SVG and other review SVGs - make them black */
+body.light-theme img[src*='clutch.svg'],
+body.light-theme img[src*='reviews/clutch'],
+body.light-theme .reviews-rating__brand img,
+body.light-theme .section-recognition__title img {
+  filter: brightness(0) saturate(100%) !important;
+}
+
+/* 6) Services mega menu dropdown - ensure it shows */
+@media (min-width: 62rem) {
+  body.light-theme .menu__list > li:hover > .menu__sublist,
+  body.light-theme .menu__list > li:focus-within > .menu__sublist {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    display: block !important;
+  }
+  
+  body.light-theme .menu__sublist {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+  }
+  
+  body.light-theme .menu-sublist,
+  body.light-theme .menu-sublist__inner,
+  body.light-theme .menu-sublist-content {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+  
+  body.light-theme .menu-sublist a,
+  body.light-theme .menu-sublist__link {
+    color: #111827 !important;
+  }
+  
+  body.light-theme .menu-sublist a:hover,
+  body.light-theme .menu-sublist__link:hover {
+    color: #2563eb !important;
+  }
+}
+
+/* 7) Form inputs in light mode */
+body.light-theme .section-discuss .input input,
+body.light-theme .section-discuss .input textarea,
+body.light-theme .section-discuss input,
+body.light-theme .section-discuss textarea {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #111827 !important;
+}
+
+body.light-theme .section-discuss .input input::placeholder,
+body.light-theme .section-discuss .input textarea::placeholder {
+  color: #9ca3af !important;
+}

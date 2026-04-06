@@ -2529,6 +2529,9 @@ var dispatchEvent = function(element, type, customArgs) {
   if (customArgs === void 0) {
     customArgs = null;
   }
+  if (!element || typeof element.dispatchEvent !== "function") {
+    return false;
+  }
   var event = new CustomEvent(type, {
     detail: customArgs,
     bubbles: true,
