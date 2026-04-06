@@ -35357,7 +35357,7 @@ function initVerticalSwiperScroll() {
 }
 function initProjectCardFollowBtn() {
   if (window.matchMedia("(pointer: coarse)").matches) return;
-  const cards = document.querySelectorAll(".project-card");
+  const cards = document.querySelectorAll(".project-card, .case-card");
   if (!cards.length) return;
   const LERP = 0.1;
   const clamp3 = (v2, min2, max2) => v2 < min2 ? min2 : v2 > max2 ? max2 : v2;
@@ -35368,8 +35368,14 @@ function initProjectCardFollowBtn() {
     return [clamp3(x2, 0, r2.width), clamp3(y2, 0, r2.height)];
   };
   cards.forEach((card) => {
-    const btn = card.querySelector(".project-card__btn");
-    if (!btn) return;
+    let btn = card.querySelector(".project-card__btn, .case-card__btn");
+    if (!btn) {
+      const host = card.matches(".case-card") ? card.querySelector(".case-card__inner") || card : card;
+      btn = document.createElement("span");
+      btn.className = "case-card__btn project-card__btn";
+      btn.textContent = "View case";
+      host.appendChild(btn);
+    }
     let rafTick = null;
     let cx = 0, cy = 0;
     let tx = 0, ty = 0;
@@ -40406,3 +40412,4 @@ document.addEventListener("DOMContentLoaded", () => {
   initHonors();
   SELECTORS.BODY.classList.add(CLASSES.LOADED);
 });
+

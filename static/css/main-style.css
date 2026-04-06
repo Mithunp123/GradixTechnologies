@@ -6,3 +6,824 @@ body.light-theme .header,body.light-theme .footer,body.light-theme .menu__body,b
 body.light-theme .header{border-bottom-color:var(--color-basic-white-20)}body.light-theme .footer{border-top-color:var(--color-basic-white-20)}
 body.light-theme .text-gradient-gray{background:linear-gradient(90deg,rgb(9 9 9 / .7) 0%,#090909 23.73%,#090909 47.46%,#090909 73.73%,rgb(9 9 9 / .7) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 body.light-theme .wrapper__blur{opacity:.14}
+
+/* Light theme visibility fixes (phase 2) */
+body.light-theme .header__logo img,
+body.light-theme .footer-top__logo img {
+  filter: brightness(0) saturate(100%);
+}
+
+body.light-theme .header .btn--yellow,
+body.light-theme .menu .btn--yellow {
+  background-color: #ffd93b;
+  border-color: #f5c400;
+  color: #141414;
+}
+
+body.light-theme .header .btn--yellow .btn__text,
+body.light-theme .header .btn--yellow i,
+body.light-theme .menu .btn--yellow .btn__text,
+body.light-theme .menu .btn--yellow i {
+  color: #141414;
+}
+
+body.light-theme .hero-partners__title,
+body.light-theme .hero-partners__title span,
+body.light-theme .hero-partners,
+body.light-theme .hero-partners * {
+  color: #0f172a;
+}
+
+body.light-theme .partner-card,
+body.light-theme .partner-card__inner {
+  background-color: #ffffff;
+  border: 1px solid #d9e1ee;
+}
+
+body.light-theme .partner-card__img img {
+  filter: brightness(0.22) contrast(1.05);
+}
+
+body.light-theme .section-partnerships .partnerships-map,
+body.light-theme .partnerships-map {
+  display: flex;
+  justify-content: center;
+}
+
+body.light-theme .partnerships-map__img,
+body.light-theme .partnerships-map__figure {
+  margin-inline: auto;
+  background-position: center center;
+}
+
+body.light-theme .partnerships-map__location--20,
+body.light-theme .partnerships-map__location--21,
+body.light-theme .partnerships-map__location--22,
+body.light-theme .partnerships-map__location--23,
+body.light-theme .partnerships-map__location--24,
+body.light-theme .partnerships-map__location--25,
+body.light-theme .partnerships-map__location--26,
+body.light-theme .partnerships-map__location--27 {
+  display: none !important;
+}
+
+body.light-theme .partnerships-map-location__inner {
+  background: #ffffff;
+  border: 1px solid #c8d7eb;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.12);
+}
+
+body.light-theme .benefit-card:hover .benefit-card__icon,
+body.light-theme .benefit-card:hover .benefit-card__icon img,
+body.light-theme .benefit-card:hover .benefit-card__icon svg,
+body.light-theme .benefit-card__icon img,
+body.light-theme .benefit-card__icon svg {
+  filter: brightness(0) saturate(100%);
+  opacity: 1;
+}
+
+body.light-theme .cta-hero-card__title {
+  color: #0f172a;
+  line-height: 1.2;
+  padding-top: 0.2rem;
+  overflow: visible;
+}
+
+body.light-theme .cta-hero-card {
+  overflow: visible;
+}
+
+body.light-theme .cta-hero-card__description,
+body.light-theme .cta-hero-card__description p {
+  color: #334155;
+}
+
+body.light-theme .cta-hero-card .btn--primary {
+  background-color: #151200;
+  border-color: #f5c400;
+}
+
+body.light-theme .cta-hero-card .btn--primary .btn__text,
+body.light-theme .cta-hero-card .btn--primary i {
+  color: #ffe667;
+}
+
+body.light-theme .modal {
+  background-color: rgba(15, 23, 42, 0.28);
+}
+
+body.light-theme .modal__container {
+  background-color: #ffffff;
+  border: 1px solid #d8e2ef;
+}
+
+body.light-theme .modal__close {
+  background-color: #ffffff;
+  border: 1px solid #d2ddea;
+  color: #0f172a;
+}
+
+body.light-theme .modal__close i,
+body.light-theme .modal__close::before,
+body.light-theme .modal__close::after {
+  color: #0f172a;
+  border-color: #0f172a;
+}
+
+/* Light theme corrections (user feedback) */
+body.light-theme .header__logo img,
+body.light-theme .footer-top__logo img { filter: none !important; }
+
+/* Remove unwanted white boxes in partner strip */
+body.light-theme .partner-card,
+body.light-theme .partner-card__inner {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body.light-theme .partner-card__img img { filter: none !important; opacity: 1 !important; }
+
+/* Clutch/recognition/review logos must be visible in light mode */
+body.light-theme .section-recognition img[src*='clutch.svg'],
+body.light-theme .review-badge__logo img[src*='logo-white'],
+body.light-theme .review-badge__logo img[src*='logo2.svg'],
+body.light-theme .review-badge__logo img[src*='good-firms.svg'],
+body.light-theme .review-badge__logo img[src*='trustpilot'],
+body.light-theme .rating-strip-chip__logo img,
+body.light-theme .ratings-strip__chip img {
+  filter: brightness(0) saturate(100%) !important;
+}
+
+/* Flow section arcs + center icons visibility */
+body.light-theme .section-flow__wrap,
+body.light-theme .section-flow__header,
+body.light-theme .section-flow__body { color: #0f172a; }
+
+body.light-theme .flow-card__icon,
+body.light-theme .flow-card__icon img {
+  filter: brightness(0) saturate(100%) !important;
+  opacity: 1 !important;
+}
+
+body.light-theme .flow-card._active .flow-card__inner,
+body.light-theme .flow-card._active,
+body.light-theme .flow-card:hover .flow-card__inner {
+  background-color: #f8cf2a !important;
+}
+
+body.light-theme .flow-card .btn--yellow {
+  background-color: #0f172a !important;
+  border-color: #0f172a !important;
+}
+body.light-theme .flow-card .btn--yellow .btn__text,
+body.light-theme .flow-card .btn--yellow i {
+  color: #f8cf2a !important;
+}
+
+/* Why choose hover icon visibility */
+body.light-theme .benefit-card__img img,
+body.light-theme .benefit-card:hover .benefit-card__img img {
+  filter: brightness(0) saturate(100%) !important;
+  opacity: 1 !important;
+}
+
+/* Contact modal submit + close button contrast */
+body.light-theme .about-project-form .btn--yellow,
+body.light-theme .modal .btn--yellow,
+body.light-theme .modal [type='submit'].btn {
+  background-color: #1e3a8a !important;
+  border-color: #1e3a8a !important;
+}
+body.light-theme .about-project-form .btn--yellow .btn__text,
+body.light-theme .about-project-form .btn--yellow i,
+body.light-theme .modal .btn--yellow .btn__text,
+body.light-theme .modal .btn--yellow i,
+body.light-theme .modal [type='submit'].btn .btn__text,
+body.light-theme .modal [type='submit'].btn i {
+  color: #ffffff !important;
+}
+
+body.light-theme .modal { background-color: rgba(15, 23, 42, 0.18) !important; }
+body.light-theme .modal__close {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+body.light-theme .modal__close i,
+body.light-theme .modal__close::before,
+body.light-theme .modal__close::after {
+  color: #0f172a !important;
+  border-color: #0f172a !important;
+}
+
+/* Services dropdown in light theme: readable and stable hover */
+@media (min-width: 62rem) {
+  body.light-theme .menu__sublist,
+  body.light-theme .menu-sublist,
+  body.light-theme .menu-sublist__inner,
+  body.light-theme .menu-sublist__aside,
+  body.light-theme .menu-sublist-content,
+  body.light-theme .menu-sublist-content__grid {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #dbe3ef !important;
+  }
+
+  body.light-theme .menu-sublist__title,
+  body.light-theme .menu-sublist__tab,
+  body.light-theme .menu-sublist__tab span,
+  body.light-theme .menu-sublist-content a,
+  body.light-theme .menu-sublist-content p,
+  body.light-theme .menu-sublist-content li,
+  body.light-theme .menu-sublist-content__title {
+    color: #0f172a !important;
+  }
+
+  .menu__list > li:hover > .menu__sublist,
+  .menu__sublist:hover,
+  .menu-sublist:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+}
+
+/* Partnership map: spread markers around India area in light mode */
+@media (min-width: 62rem) {
+  body.light-theme .partnerships-map__field { background-position: center center !important; }
+  body.light-theme .partnerships-map__location--01 { left: 12% !important; top: 34% !important; }
+  body.light-theme .partnerships-map__location--02 { left: 21% !important; top: 48% !important; }
+  body.light-theme .partnerships-map__location--03 { left: 31% !important; top: 41% !important; }
+  body.light-theme .partnerships-map__location--04 { left: 36% !important; top: 30% !important; }
+  body.light-theme .partnerships-map__location--05 { left: 43% !important; top: 45% !important; }
+  body.light-theme .partnerships-map__location--06 { left: 49% !important; top: 38% !important; }
+  body.light-theme .partnerships-map__location--07 { left: 56% !important; top: 33% !important; }
+  body.light-theme .partnerships-map__location--08 { left: 61% !important; top: 42% !important; }
+  body.light-theme .partnerships-map__location--09 { left: 66% !important; top: 49% !important; }
+  body.light-theme .partnerships-map__location--10 { left: 57% !important; top: 57% !important; }
+  body.light-theme .partnerships-map__location--11 { left: 45% !important; top: 61% !important; }
+  body.light-theme .partnerships-map__location--12 { left: 30% !important; top: 66% !important; }
+  body.light-theme .partnerships-map__location--13 { left: 21% !important; top: 58% !important; }
+  body.light-theme .partnerships-map__location--14 { left: 17% !important; top: 71% !important; }
+  body.light-theme .partnerships-map__location--15 { left: 71% !important; top: 37% !important; }
+  body.light-theme .partnerships-map__location--16 { left: 74% !important; top: 47% !important; }
+  body.light-theme .partnerships-map__location--17 { left: 77% !important; top: 57% !important; }
+  body.light-theme .partnerships-map__location--18 { left: 67% !important; top: 66% !important; }
+  body.light-theme .partnerships-map__location--19 { left: 51% !important; top: 73% !important; }
+}
+
+/* Cases page: force "View case" hover label like homepage */
+.case-card__inner { position: relative; overflow: hidden; }
+.case-card__inner::after {
+  content: 'View case';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  background: #0f172a;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.case-card__inner:hover::after { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+/* Light theme final fine-tune (pass 3) */
+/* Keep logo icon look, but make wordmark legible when SVG logo is used */
+body.light-theme .header__logo img[src$='.svg'],
+body.light-theme .footer-top__logo img[src$='.svg'] {
+  filter: brightness(0.08) contrast(1.1) !important;
+}
+body.light-theme .header__logo img[src$='gradix_light.png'],
+body.light-theme .footer-top__logo img[src$='gradix_light.png'] {
+  filter: none !important;
+}
+
+/* Partner strip: stronger visibility in light mode without white card boxes */
+body.light-theme .hero-partners__title,
+body.light-theme .hero-partners__title span { color: #0f172a !important; }
+body.light-theme .partner-card,
+body.light-theme .partner-card__inner { background: transparent !important; border: 0 !important; box-shadow: none !important; }
+body.light-theme .partner-card__img img { opacity: 0.9 !important; filter: contrast(1.05) brightness(0.55) !important; }
+
+/* External SVG logos visibility in light mode */
+body.light-theme img[src*='clutch.svg'],
+body.light-theme img[src*='designrush'],
+body.light-theme img[src*='goodfirms'],
+body.light-theme img[src*='logo-white'],
+body.light-theme .review-badge__logo img,
+body.light-theme .rating-strip-chip__logo img {
+  filter: brightness(0.1) contrast(1.15) !important;
+}
+
+/* Flow section: darker center icon + darker small arc dot only (not full circle) */
+body.light-theme .flow-card__icon { background: transparent !important; filter: none !important; }
+body.light-theme .flow-card__icon img { filter: brightness(0.12) contrast(1.12) !important; opacity: 1 !important; }
+
+body.light-theme .flow-card::before,
+body.light-theme .flow-card__inner::before {
+  border-color: #2b6de6 !important;
+}
+
+body.light-theme .flow-card::after,
+body.light-theme .flow-card__inner::after {
+  background-color: #1550c5 !important;
+  border-color: #1550c5 !important;
+}
+
+/* Active card yellow kept strong with readable text */
+body.light-theme .flow-card._active,
+body.light-theme .flow-card._active .flow-card__inner { background-color: #f4cd2e !important; }
+body.light-theme .flow-card._active .flow-card__title,
+body.light-theme .flow-card._active .flow-card__num,
+body.light-theme .flow-card._active .btn__text { color: #111827 !important; }
+
+/* Modal overlay and discuss section: reduce dominant blue */
+body.light-theme .modal { background-color: rgba(15, 23, 42, 0.14) !important; }
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__wrap {
+  background: linear-gradient(180deg, rgba(53,123,244,0.10) 0%, rgba(53,123,244,0.05) 45%, rgba(255,255,255,0.96) 100%) !important;
+}
+body.light-theme .section-discuss .wrapper__blur,
+body.light-theme .section-discuss__wrap::before,
+body.light-theme .section-discuss__wrap::after { opacity: 0.2 !important; }
+
+/* Submit button: less harsh than previous blue */
+body.light-theme .about-project-form [type='submit'].btn,
+body.light-theme .about-project-form .btn--yellow {
+  background-color: #2f5fb8 !important;
+  border-color: #2f5fb8 !important;
+}
+
+/* Services dropdown hover stability + readability */
+@media (min-width: 62rem) {
+  .menu__list > li { position: relative; }
+  .menu__sublist,
+  .menu-sublist { margin-top: 0 !important; padding-top: 10px !important; }
+
+  .menu__list > li:hover > .menu__sublist,
+  .menu__sublist:hover,
+  .menu-sublist:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  body.light-theme .menu-sublist,
+  body.light-theme .menu-sublist__inner,
+  body.light-theme .menu-sublist-content,
+  body.light-theme .menu-sublist__aside {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+}
+
+/* Partnership map: keep only 8 pins and spread across India */
+body.light-theme .partnerships-map__location { display: none !important; }
+body.light-theme .partnerships-map__location--01,
+body.light-theme .partnerships-map__location--02,
+body.light-theme .partnerships-map__location--03,
+body.light-theme .partnerships-map__location--04,
+body.light-theme .partnerships-map__location--05,
+body.light-theme .partnerships-map__location--06,
+body.light-theme .partnerships-map__location--07,
+body.light-theme .partnerships-map__location--08 {
+  display: block !important;
+}
+
+@media (min-width: 62rem) {
+  body.light-theme .partnerships-map__location--01 { left: 14% !important; top: 38% !important; }
+  body.light-theme .partnerships-map__location--02 { left: 24% !important; top: 52% !important; }
+  body.light-theme .partnerships-map__location--03 { left: 34% !important; top: 42% !important; }
+  body.light-theme .partnerships-map__location--04 { left: 45% !important; top: 33% !important; }
+  body.light-theme .partnerships-map__location--05 { left: 54% !important; top: 47% !important; }
+  body.light-theme .partnerships-map__location--06 { left: 64% !important; top: 40% !important; }
+  body.light-theme .partnerships-map__location--07 { left: 72% !important; top: 53% !important; }
+  body.light-theme .partnerships-map__location--08 { left: 60% !important; top: 63% !important; }
+}
+
+body.light-theme .partnerships-map-location__inner {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  border: 1px solid #c8d7eb !important;
+  background: #ffffff !important;
+}
+body.light-theme .partnerships-map-location__img,
+body.light-theme .partnerships-map-location__img img {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+}
+
+/* Final user-request overrides (pass 4) */
+/* Flow section in light mode: remove yellow active panel and keep dark readable text */
+body.light-theme .flow-card._active,
+body.light-theme .flow-card._active .flow-card__inner,
+body.light-theme .flow-card:hover .flow-card__inner {
+  background: transparent !important;
+}
+body.light-theme .flow-card._active .flow-card__title,
+body.light-theme .flow-card._active .flow-card__num,
+body.light-theme .flow-card .flow-card__title,
+body.light-theme .flow-card .flow-card__num {
+  color: #111827 !important;
+}
+
+/* Only darken small center icon badge / dot, not whole arc area */
+body.light-theme .flow-card__icon {
+  background-color: #1f2937 !important;
+  border-radius: 999px !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+body.light-theme .flow-card__icon img {
+  width: 16px !important;
+  height: 16px !important;
+  filter: brightness(0) invert(1) !important;
+  opacity: 1 !important;
+}
+body.light-theme .flow-card::after,
+body.light-theme .flow-card__inner::after {
+  background-color: #1f5ed8 !important;
+  border-color: #1f5ed8 !important;
+}
+
+/* Restore contact modal close to previous darker style */
+body.light-theme .modal {
+  background-color: rgba(9, 9, 9, 0.45) !important;
+}
+body.light-theme .modal__container,
+body.light-theme .modal__content {
+  background-color: #0d0f14 !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+body.light-theme .modal__close {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: #ffffff !important;
+}
+body.light-theme .modal__close i,
+body.light-theme .modal__close::before,
+body.light-theme .modal__close::after {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+/* Restore submit button style close to previous */
+body.light-theme .about-project-form [type='submit'].btn,
+body.light-theme .about-project-form .btn--yellow {
+  background-color: #ffe667 !important;
+  border-color: #ffe667 !important;
+}
+body.light-theme .about-project-form [type='submit'].btn .btn__text,
+body.light-theme .about-project-form [type='submit'].btn i,
+body.light-theme .about-project-form .btn--yellow .btn__text,
+body.light-theme .about-project-form .btn--yellow i {
+  color: #111827 !important;
+}
+
+/* Reduce excessive blue in bottom discuss section */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__body,
+body.light-theme .section-discuss__wrap {
+  background: linear-gradient(180deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.02) 40%, rgba(255,255,255,0.96) 100%) !important;
+}
+
+/* Navbar/brand text visibility (keep logo mark) */
+body.light-theme .header__logo img[src$='.svg'] {
+  filter: brightness(0) saturate(100%) !important;
+}
+body.light-theme .header__logo,
+body.light-theme .header__logo + * a,
+body.light-theme .header,
+body.light-theme .header a,
+body.light-theme .header span {
+  color: #111827 !important;
+}
+
+/* Stronger visibility for frequently-used white SVG assets in light mode */
+body.light-theme img[src*='clutch.svg'],
+body.light-theme img[src*='goodfirms'],
+body.light-theme img[src*='designrush'],
+body.light-theme img[src*='logo-white'],
+body.light-theme .review-badge__logo img,
+body.light-theme .ratings-strip__chip img,
+body.light-theme .rating-strip-chip__logo img {
+  filter: brightness(0) saturate(100%) contrast(1.15) !important;
+}
+
+/* Map pins: exactly 8, all inside India and evenly scattered */
+body.light-theme .partnerships-map__location { display: none !important; }
+body.light-theme .partnerships-map__location--01,
+body.light-theme .partnerships-map__location--02,
+body.light-theme .partnerships-map__location--03,
+body.light-theme .partnerships-map__location--04,
+body.light-theme .partnerships-map__location--05,
+body.light-theme .partnerships-map__location--06,
+body.light-theme .partnerships-map__location--07,
+body.light-theme .partnerships-map__location--08 { display: block !important; }
+
+@media (min-width: 62rem) {
+  body.light-theme .partnerships-map__location--01 { left: 20% !important; top: 36% !important; }
+  body.light-theme .partnerships-map__location--02 { left: 31% !important; top: 44% !important; }
+  body.light-theme .partnerships-map__location--03 { left: 41% !important; top: 34% !important; }
+  body.light-theme .partnerships-map__location--04 { left: 51% !important; top: 46% !important; }
+  body.light-theme .partnerships-map__location--05 { left: 59% !important; top: 39% !important; }
+  body.light-theme .partnerships-map__location--06 { left: 47% !important; top: 57% !important; }
+  body.light-theme .partnerships-map__location--07 { left: 35% !important; top: 55% !important; }
+  body.light-theme .partnerships-map__location--08 { left: 63% !important; top: 53% !important; }
+}
+body.light-theme .partnerships-map-location__inner {
+  width: 38px !important;
+  height: 38px !important;
+}
+body.light-theme .partnerships-map-location__img,
+body.light-theme .partnerships-map-location__img img {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+/* FINAL LIGHT THEME TUNING (pass 5) */
+/* Keep flow section clean: remove yellow active fill and keep black text */
+body.light-theme .flow-card._active,
+body.light-theme .flow-card._active .flow-card__inner,
+body.light-theme .flow-card:hover .flow-card__inner {
+  background: transparent !important;
+}
+body.light-theme .flow-card,
+body.light-theme .flow-card .flow-card__title,
+body.light-theme .flow-card .flow-card__num,
+body.light-theme .flow-card .flow-card__desc,
+body.light-theme .flow-card .btn__text {
+  color: #111827 !important;
+}
+
+/* Darken only tiny center dot/icon and soften connector blue */
+body.light-theme .flow-card__icon {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 999px !important;
+  background-color: #1f2937 !important;
+}
+body.light-theme .flow-card__icon img {
+  width: 15px !important;
+  height: 15px !important;
+  filter: brightness(0) invert(1) !important;
+}
+body.light-theme .flow-card::before,
+body.light-theme .flow-card__inner::before {
+  border-color: #7aa0e4 !important;
+}
+body.light-theme .flow-card::after,
+body.light-theme .flow-card__inner::after {
+  background-color: #2a67d6 !important;
+  border-color: #2a67d6 !important;
+}
+
+/* Arc above 299: give visible blue accent in light mode */
+body.light-theme .section-milestone__decor svg [stroke] {
+  stroke: #2f66cc !important;
+}
+body.light-theme .section-milestone__decor svg [fill="#ffe667"],
+body.light-theme .section-milestone__decor svg [fill="#fff"],
+body.light-theme .section-milestone__decor svg [fill="#ffffff"] {
+  fill: #2f66cc !important;
+}
+
+/* Contact modal in light theme: restore pleasant white version */
+body.light-theme .modal {
+  background-color: rgba(15, 23, 42, 0.16) !important;
+}
+body.light-theme .modal__container,
+body.light-theme .modal__content {
+  background-color: #ffffff !important;
+  border: 1px solid #dbe5f3 !important;
+  color: #111827 !important;
+}
+body.light-theme .modal__container .book-call-card,
+body.light-theme .modal__container .section-discuss__wrap,
+body.light-theme .modal__container .section-discuss__body {
+  background: #ffffff !important;
+}
+body.light-theme .modal__close {
+  background: #ffffff !important;
+  border: 1px solid #c9d8ef !important;
+  color: #111827 !important;
+}
+body.light-theme .modal__close i,
+body.light-theme .modal__close::before,
+body.light-theme .modal__close::after {
+  color: #111827 !important;
+  border-color: #111827 !important;
+}
+
+/* Bottom contact section: reduce dominant blue */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body {
+  background: linear-gradient(180deg, rgba(59,130,246,0.03) 0%, rgba(59,130,246,0.015) 45%, rgba(255,255,255,0.98) 100%) !important;
+}
+body.light-theme .section-discuss .btn--yellow,
+body.light-theme .about-project-form .btn--yellow,
+body.light-theme .about-project-form [type='submit'].btn {
+  background-color: #3b6fd2 !important;
+  border-color: #3b6fd2 !important;
+}
+body.light-theme .section-discuss .btn--yellow .btn__text,
+body.light-theme .section-discuss .btn--yellow i,
+body.light-theme .about-project-form .btn--yellow .btn__text,
+body.light-theme .about-project-form .btn--yellow i,
+body.light-theme .about-project-form [type='submit'].btn .btn__text,
+body.light-theme .about-project-form [type='submit'].btn i {
+  color: #ffffff !important;
+}
+
+/* Navbar/brand text should be black in light mode (logo image untouched) */
+body.light-theme .header,
+body.light-theme .header a,
+body.light-theme .header span,
+body.light-theme .menu__link,
+body.light-theme .header-top__promo,
+body.light-theme .header .btn__text {
+  color: #111827 !important;
+}
+body.light-theme .header__logo img[src*='gradix_light.png'] {
+  filter: none !important;
+}
+
+/* SVG/icon visibility in light mode */
+body.light-theme .section-flow img[src$='.svg'],
+body.light-theme .section-recognition img[src$='.svg'],
+body.light-theme .section-discuss img[src$='.svg'],
+body.light-theme .footer img[src$='.svg'],
+body.light-theme .benefit-card img[src$='.svg'] {
+  filter: brightness(0) saturate(100%) contrast(1.08) !important;
+}
+
+/* Social icon brand colors where possible */
+body.light-theme .icon-instagram::before { color: #e1306c !important; }
+body.light-theme .icon-linkedin::before { color: #0a66c2 !important; }
+body.light-theme .icon-youtube::before { color: #ff0000 !important; }
+body.light-theme .icon-tiktok::before,
+body.light-theme .icon-behance::before,
+body.light-theme .icon-dribbble::before { color: #111827 !important; }
+
+/* Map pins: exactly 8, scattered N/E/W/S within India area */
+body.light-theme .partnerships-map__location { display: none !important; }
+body.light-theme .partnerships-map__location--01,
+body.light-theme .partnerships-map__location--02,
+body.light-theme .partnerships-map__location--03,
+body.light-theme .partnerships-map__location--04,
+body.light-theme .partnerships-map__location--05,
+body.light-theme .partnerships-map__location--06,
+body.light-theme .partnerships-map__location--07,
+body.light-theme .partnerships-map__location--08 {
+  display: block !important;
+}
+@media (min-width: 62rem) {
+  body.light-theme .partnerships-map__location--01 { left: 26% !important; top: 28% !important; } /* north-west */
+  body.light-theme .partnerships-map__location--02 { left: 40% !important; top: 24% !important; } /* north */
+  body.light-theme .partnerships-map__location--03 { left: 54% !important; top: 30% !important; } /* north-east */
+  body.light-theme .partnerships-map__location--04 { left: 61% !important; top: 43% !important; } /* east */
+  body.light-theme .partnerships-map__location--05 { left: 50% !important; top: 58% !important; } /* south-east */
+  body.light-theme .partnerships-map__location--06 { left: 37% !important; top: 61% !important; } /* south */
+  body.light-theme .partnerships-map__location--07 { left: 27% !important; top: 47% !important; } /* west */
+  body.light-theme .partnerships-map__location--08 { left: 44% !important; top: 42% !important; } /* central */
+}
+body.light-theme .partnerships-map-location__inner {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  border: 1px solid #c9d8ef !important;
+  background: #ffffff !important;
+}
+body.light-theme .partnerships-map-location__img,
+body.light-theme .partnerships-map-location__img img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain !important;
+}
+
+/* Cases page: keep only moving View case + black pill + hide cursor */
+body.light-theme .case-card,
+body.light-theme .case-card *,
+body.light-theme .case-card__inner,
+body.light-theme .case-card__img-wrap {
+  cursor: none !important;
+}
+body.light-theme .case-card__img-wrap::after,
+body.light-theme .case-card__inner::after {
+  content: none !important;
+  display: none !important;
+}
+body.light-theme .case-card .case-card__btn,
+body.light-theme .case-card .project-card__btn {
+  background: #000000 !important;
+  border: 1px solid #000000 !important;
+  color: #ffffff !important;
+}
+
+
+/* FINAL LIGHT THEME REFINEMENT (pass 6 - user requested) */
+/* 1) Footer country icons: remove forced dark/black look */
+body.light-theme .footer img[src$='.svg'],
+body.light-theme .footer img[src*='flag'],
+body.light-theme .footer [class*='country'] img,
+body.light-theme .footer [class*='office'] img,
+body.light-theme .footer [class*='timezone'] img {
+  filter: none !important;
+}
+
+/* Keep explicit logo/award SVGs colored (no black filter) */
+body.light-theme img[src*='logo-1.svg'],
+body.light-theme img[src*='award-02.svg'],
+body.light-theme img[src*='award-03.svg'],
+body.light-theme img[src*='award-04.svg'] {
+  filter: none !important;
+}
+
+/* 2) Reduce heavy dark-blue cast (do not touch modal) */
+body.light-theme .section-discuss,
+body.light-theme .section-discuss__wrap,
+body.light-theme .section-discuss__body {
+  background: linear-gradient(180deg, rgba(59,130,246,0.02) 0%, rgba(59,130,246,0.01) 40%, rgba(255,255,255,0.985) 100%) !important;
+}
+
+/* 3) Flow section: black button + yellow text; icon container yellow */
+body.light-theme .section-flow .btn--yellow,
+body.light-theme .flow-card .btn--yellow {
+  background-color: #090909 !important;
+  border-color: #090909 !important;
+}
+body.light-theme .section-flow .btn--yellow .btn__text,
+body.light-theme .section-flow .btn--yellow i,
+body.light-theme .flow-card .btn--yellow .btn__text,
+body.light-theme .flow-card .btn--yellow i {
+  color: #ffe667 !important;
+}
+body.light-theme .flow-card__icon {
+  background-color: #ffe667 !important;
+  border: 1px solid #e6cf63 !important;
+}
+body.light-theme .flow-card__icon img {
+  filter: brightness(0) saturate(100%) !important;
+}
+
+/* 4) Add more south-India spread for map pins (still 8 pins) */
+@media (min-width: 62rem) {
+  body.light-theme .partnerships-map__location--01 { left: 25% !important; top: 27% !important; }
+  body.light-theme .partnerships-map__location--02 { left: 40% !important; top: 23% !important; }
+  body.light-theme .partnerships-map__location--03 { left: 55% !important; top: 31% !important; }
+  body.light-theme .partnerships-map__location--04 { left: 63% !important; top: 44% !important; }
+  body.light-theme .partnerships-map__location--05 { left: 50% !important; top: 64% !important; } /* south */
+  body.light-theme .partnerships-map__location--06 { left: 37% !important; top: 67% !important; } /* deep south */
+  body.light-theme .partnerships-map__location--07 { left: 27% !important; top: 49% !important; }
+  body.light-theme .partnerships-map__location--08 { left: 44% !important; top: 44% !important; }
+}
+
+/* 5) ui-icon boxes transparent white in light theme */
+body.light-theme .ui-icon {
+  background: rgba(255,255,255,0.72) !important;
+  border: 1px solid rgba(17,24,39,0.14) !important;
+  backdrop-filter: blur(4px) !important;
+}
+body.light-theme .ui-icon i {
+  color: #111827 !important;
+}
+
+/* 6) Partner slider: remove visible side box overlays + modern color boost */
+body.light-theme #swiperPartners::before,
+body.light-theme #swiperPartners::after,
+body.light-theme .section-partners .swiper::before,
+body.light-theme .section-partners .swiper::after,
+body.light-theme .section-partners__slider::before,
+body.light-theme .section-partners__slider::after,
+body.light-theme .partners-slider::before,
+body.light-theme .partners-slider::after {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
+}
+body.light-theme .partner-card,
+body.light-theme .partner-card__inner,
+body.light-theme .partner-card__img,
+body.light-theme #swiperPartners .swiper-slide {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+body.light-theme #swiperPartners .partner-card__img img,
+body.light-theme #swiperPartners .partner-card img,
+body.light-theme #swiperPartners picture img {
+  filter: saturate(1.14) contrast(1.06) brightness(1.02) !important;
+}
