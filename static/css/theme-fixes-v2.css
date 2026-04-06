@@ -309,6 +309,15 @@ body.light-theme .toggle-switch input:checked + .slider:before {
     line-height: 1.4 !important;
 }
 
+/* Add right-arrow before every service name */
+[data-services] .ext-service-card__list li a::before {
+    content: "\203A";
+    display: inline-block;
+    margin-right: 10px;
+    color: #f7d307;
+    font-weight: 700;
+}
+
 .ext-service-card__list li:hover i.icon-chevron-right {
     opacity: 1 !important;
     transform: translateX(2px) !important;
@@ -316,6 +325,14 @@ body.light-theme .toggle-switch input:checked + .slider:before {
 
 .ext-service-card__list li:hover a {
     color: #f7d307 !important;
+}
+
+/* Ensure Services text stays readable on light theme */
+body.light-theme [data-services] .ext-service-card__title,
+body.light-theme [data-services] .ext-service-card__vertical-title,
+body.light-theme [data-services] .ext-service-card__list li a,
+body.light-theme [data-services] .ext-service-card__list li:hover a {
+    color: #000 !important;
 }
 
 /* Fix vertical rectangle/white box by ensuring proper font-family and opacity */
