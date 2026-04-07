@@ -726,7 +726,7 @@ body:not(.light-theme) { background-color: #0d1016; }
                                     <rect x="1.5" y="1.5" width="5" height="5" stroke="#090909"></rect>
                                     <path opacity="0.3" d="M409 6L409 236" stroke="#FED500"></path>
                                     <rect x="409" y="2" width="2.82845" height="2.82845" transform="rotate(45 409 2)" fill="#FED500"></rect>
-                                    <path d="M4 4C4 4 409 3.99992 409 236" stroke="white" data-curve-path=""></path>
+                                    <path d="M4 4 Q 150 4, 300 120 T 409 236" stroke="white" data-curve-path=""></path>
                                     <rect width="8" height="8" transform="translate(405 232)" fill="white"></rect>
                                     <rect x="406.5" y="233.5" width="5" height="5" stroke="#090909"></rect>
                                 </g>
@@ -2510,78 +2510,50 @@ Working with GradixTechnology was a consistently positive experience. The tea...
 		<div class="modal">
 			<div class="modal__container modal-open modal-fade animate-open" role="dialog" aria-modal="true" data-modal-id="modalContactUs">
 				<button class="modal__close" aria-label="Close Modal">
-					<i class="icon-close" aria-hidden="true"></i>
+					<i class="fas fa-times" aria-hidden="true"></i>
 				</button>
 				<div class="modal__content">
-					<section class="section-discuss section-discuss--no-spaced" aria-labelledby="sectionDiscussTitle">
-						<div class="section-discuss__container">
-							<div class="section-discuss__wrap">
-								<div class="section-discuss__body">
-									<div class="section-discuss__row">
-										<div class="section-discuss__col section-discuss__col--main section-discuss__col--full">
-											<form action="#" class="section-discuss__about-project-form about-project-form Gradix Technologies-project-form gradixtechnology-project-form">
-												<h3 class="about-project-form__title">Tell us more about your project</h3>
-												<div class="about-project-form__description">
-													<p>Share your project details with us, and we'll respond promptly.</p>
-												</div>
-												<div class="about-project-form__fields">
-													<div class="about-project-form__row">
-														<div class="about-project-form__col">
-															<div class="about-project-form__group">
-																<div class="about-project-form__input input">
-																	<input type="text" name="projectName" id="projectNameControl_modal" placeholder="Name*" required="">
-																</div>
-															</div>
-														</div>
-														<div class="about-project-form__col">
-															<div class="about-project-form__group">
-																<div class="about-project-form__input input">
-																	<input type="text" name="projectCompanyName" id="projectCompanyNameControl_modal" placeholder="Company name*" required="">
-																</div>
-															</div>
-														</div>
-														<div class="about-project-form__col">
-															<div class="about-project-form__group">
-																<div class="about-project-form__input input">
-																	<input type="email" name="projectWorkEmail" id="projectWorkEmailControl_modal" placeholder="Work email*" required="">
-																</div>
-															</div>
-														</div>
-														<div class="about-project-form__col">
-															<div class="about-project-form__group about-project-form__group--budget">
-																<div class="about-project-form__select select select--secondary">
-																	<select name="projectBudget" id="projectBudgetControl_modal" data-select="" data-select-placeholder="Select budget">
-																		<option value="" selected="" disabled="" hidden="">Select budget</option>
-																		<option value="0">Small (up to $5k)</option>
-																		<option value="1">Medium ($5k – $20k)</option>
-																		<option value="2">Large ($20k – $50k)</option>
-																		<option value="3">Enterprise ($50k+)</option>
-																	</select>
-																</div>
-															</div>
-														</div>
-														<div class="about-project-form__col about-project-form__col--full">
-															<div class="about-project-form__group">
-																<div class="about-project-form__input input">
-																	<textarea rows="8" name="projectDescription" id="projectDescriptionControl_modal" placeholder="What is your project about?"></textarea>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="about-project-form__btn-box">
-													<button type="submit" class="btn btn--yellow">
-														<span class="btn__text">Submit</span>
-														<i class="icon-chevron-right" aria-hidden="true"></i>
-													</button>
-												</div>
-											</form>
-										</div>
-									</div>
+					<div class="contact-modal-wrapper">
+						<h2 class="contact-modal-title">Tell us more about your project</h2>
+						<p class="contact-modal-subtitle">Share your project details with us, and we'll respond promptly.</p>
+						
+						<form action="#" class="contact-modal-form" id="modalContactForm">
+							<div class="form-row">
+								<div class="form-group">
+									<input type="text" name="projectName" placeholder="Name*" required class="form-input">
+								</div>
+								<div class="form-group">
+									<input type="text" name="projectCompanyName" placeholder="Company name*" required class="form-input">
 								</div>
 							</div>
-						</div>
-					</section>
+							
+							<div class="form-row">
+								<div class="form-group">
+									<input type="email" name="projectWorkEmail" placeholder="Work email*" required class="form-input">
+								</div>
+								<div class="form-group">
+									<select name="projectBudget" class="form-select">
+										<option value="" selected disabled>Select budget</option>
+										<option value="small">Small (up to $5k)</option>
+										<option value="medium">Medium ($5k – $20k)</option>
+										<option value="large">Large ($20k – $50k)</option>
+										<option value="enterprise">Enterprise ($50k+)</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="form-group form-group-full">
+								<textarea name="projectDescription" rows="6" placeholder="What is your project about?" class="form-textarea"></textarea>
+							</div>
+							
+							<div class="form-submit">
+								<button type="submit" class="contact-submit-btn">
+									<span>Submit</span>
+									<i class="fas fa-arrow-right"></i>
+								</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 			<div class="modal__container" role="dialog" aria-modal="true" data-modal-id="modalAppointment">
