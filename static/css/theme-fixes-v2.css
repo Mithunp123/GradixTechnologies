@@ -1974,6 +1974,39 @@ body.light-theme .contact-info-card__value:hover {
     line-height: 1.6 !important;
 }
 
+/* ============================================
+   DARK THEME - CONTACT CARDS
+   ============================================ */
+body:not(.light-theme) .contact-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body:not(.light-theme) .contact-card:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: #0066FF !important;
+}
+
+body:not(.light-theme) .contact-card__icon {
+    background: rgba(0, 102, 255, 0.15) !important;
+}
+
+body:not(.light-theme) .contact-card__title {
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .contact-card__text {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body:not(.light-theme) .contact-card__link {
+    color: #0066FF !important;
+}
+
+body:not(.light-theme) .contact-card__link:hover {
+    color: #3399FF !important;
+}
+
 /* Contact Form */
 .modern-contact__form-wrapper {
     background: #ffffff !important;
@@ -3692,6 +3725,19 @@ div.modal__container[data-modal-id='modalContactUs'] button[type='submit']:hover
     background: #ffffff !important;
 }
 
+/* Dark theme for contact modal */
+body:not(.light-theme) .contact-modal-wrapper {
+    background: #1a1a1a !important;
+}
+
+body:not(.light-theme) .modal__container[data-modal-id="modalContactUs"] {
+    background: #1a1a1a !important;
+}
+
+body:not(.light-theme) .modal__content {
+    background: #1a1a1a !important;
+}
+
 /* Modal Title */
 .contact-modal-title {
     font-size: 2rem !important;
@@ -3879,4 +3925,1865 @@ div.modal__container[data-modal-id='modalContactUs'] button[type='submit']:hover
     .theme-toggle-wrapper {
         transform: scale(0.85) !important;
     }
+}
+
+/* ============================================
+   HERO SECTION - REMOVE SQUARE BOX & ADD GRADIENT
+   ============================================ */
+
+.home-hero {
+    position: relative !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+/* Remove any box/border from hero text container */
+.home-hero__text,
+.home-hero__wrap,
+.home-hero__container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Add subtle radial gradient background effect */
+.home-hero::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -10% !important;
+    left: -5% !important;
+    right: -5% !important;
+    bottom: -10% !important;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 102, 255, 0.08) 0%,
+        rgba(0, 102, 255, 0.04) 40%,
+        transparent 70%
+    ) !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+}
+
+/* Alternative: Subtle box with gradient edges (if gradient doesn't look good) */
+.home-hero::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 5% !important;
+    left: 5% !important;
+    right: 5% !important;
+    bottom: 5% !important;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.02) 0%,
+        rgba(255, 255, 255, 0.01) 50%,
+        transparent 100%
+    ) !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 32px !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+}
+
+/* For dark theme - ensure no visible boxes */
+body:not(.light-theme) .home-hero,
+body:not(.light-theme) .home-hero__text,
+body:not(.light-theme) .home-hero__wrap,
+body:not(.light-theme) .home-hero__header,
+body:not(.light-theme) .home-hero__body,
+body:not(.light-theme) .home-hero__footer {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* Remove gradient effects that create visible box */
+.home-hero::before,
+.home-hero::after {
+    display: none !important;
+}
+
+/* ============================================
+   DARK THEME - CONTACT MODAL
+   ============================================ */
+
+/* Modal Title & Subtitle */
+body:not(.light-theme) .contact-modal-title {
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .contact-modal-subtitle {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Form Inputs Dark Theme */
+body:not(.light-theme) .form-input,
+body:not(.light-theme) .form-select,
+body:not(.light-theme) .form-textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .form-input::placeholder,
+body:not(.light-theme) .form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body:not(.light-theme) .form-input:focus,
+body:not(.light-theme) .form-select:focus,
+body:not(.light-theme) .form-textarea:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: #0066FF !important;
+}
+
+/* Update select dropdown arrow for dark theme */
+body:not(.light-theme) .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffffff' d='M1.41 0L6 4.59 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E") !important;
+}
+
+/* About Project Form Dark Theme */
+body:not(.light-theme) .about-project-form__title {
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .about-project-form__description p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body:not(.light-theme) .about-project-form__input input,
+body:not(.light-theme) .about-project-form__input textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .about-project-form__input input::placeholder,
+body:not(.light-theme) .about-project-form__input textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body:not(.light-theme) .about-project-form__input input:focus,
+body:not(.light-theme) .about-project-form__input textarea:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: #0066FF !important;
+}
+
+/* Choices.js Select Dark Theme */
+body:not(.light-theme) .choices {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body:not(.light-theme) .choices__inner {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body:not(.light-theme) .choices__list--single .choices__item {
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .choices__list--dropdown {
+    background: #2a2a2a !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body:not(.light-theme) .choices__item--choice {
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .choices__item--choice.is-highlighted {
+    background: #0066FF !important;
+}
+
+/* ============================================
+   AGGRESSIVE HERO SECTION FIX - REMOVE ALL BACKGROUNDS
+   ============================================ */
+
+/* Remove ALL backgrounds from hero section and all child elements */
+.home-hero,
+.home-hero *,
+.home-hero::before,
+.home-hero::after,
+.home-hero .container,
+.home-hero .container::before,
+.home-hero .container::after,
+.home-hero__container,
+.home-hero__container::before,
+.home-hero__container::after,
+.home-hero__wrap,
+.home-hero__wrap::before,
+.home-hero__wrap::after,
+.home-hero__text,
+.home-hero__text::before,
+.home-hero__text::after,
+.home-hero__header,
+.home-hero__header::before,
+.home-hero__header::after,
+.home-hero__body,
+.home-hero__body::before,
+.home-hero__body::after,
+.home-hero__footer,
+.home-hero__footer::before,
+.home-hero__footer::after {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Ensure section itself has no background */
+section.home-hero {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Override any dark theme specific backgrounds */
+body:not(.light-theme) .home-hero,
+body:not(.light-theme) .home-hero *,
+body:not(.light-theme) .home-hero__container,
+body:not(.light-theme) .home-hero__wrap,
+body:not(.light-theme) .home-hero__text {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* ============================================
+   CONTACT SECTION - FIX CARD BACKGROUNDS FOR LIGHT MODE
+   ============================================ */
+
+/* The contact section wrapper */
+.modern-contact,
+.section-contact {
+    background: transparent !important;
+}
+
+/* Light theme - keep white cards */
+body.light-theme .contact-card {
+    background: #ffffff !important;
+    border: 1px solid #e6e6e6 !important;
+}
+
+body.light-theme .contact-card__icon {
+    background: #e6f0ff !important;
+}
+
+body.light-theme .contact-card__title {
+    color: #1a1a1a !important;
+}
+
+body.light-theme .contact-card__text {
+    color: #666666 !important;
+}
+
+/* Contact form section light theme */
+body.light-theme .modern-contact {
+    background: #ffffff !important;
+}
+
+body.light-theme .modern-contact__title {
+    color: #1a1a1a !important;
+}
+
+body.light-theme .modern-contact__subtitle {
+    color: #666666 !important;
+}
+
+/* ============================================
+   MODERN CONTACT SECTION - PROPER THEME SUPPORT
+   ============================================ */
+
+/* Light theme - white background for contact section */
+body.light-theme .modern-contact-section {
+    background: #ffffff !important;
+}
+
+body.light-theme .modern-contact-section .modern-contact__title {
+    color: #1a1a1a !important;
+}
+
+body.light-theme .modern-contact-section .modern-contact__subtitle {
+    color: #666666 !important;
+}
+
+/* Dark theme - transparent/dark background */
+body:not(.light-theme) .modern-contact-section {
+    background: transparent !important;
+}
+
+body:not(.light-theme) .modern-contact-section .modern-contact__title {
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .modern-contact-section .modern-contact__subtitle {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Contact form section */
+.modern-contact-form {
+    background: #ffffff !important;
+    border: 1px solid #e6e6e6 !important;
+    border-radius: 16px !important;
+    padding: 32px !important;
+}
+
+body:not(.light-theme) .modern-contact-form {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Form inputs in contact section */
+body.light-theme .modern-contact-form input,
+body.light-theme .modern-contact-form textarea {
+    background: #fafafa !important;
+    border: 2px solid #e6e6e6 !important;
+    color: #1a1a1a !important;
+}
+
+body:not(.light-theme) .modern-contact-form input,
+body:not(.light-theme) .modern-contact-form textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .modern-contact-form input::placeholder,
+body:not(.light-theme) .modern-contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Form labels */
+body.light-theme .modern-contact-form label {
+    color: #1a1a1a !important;
+}
+
+body:not(.light-theme) .modern-contact-form label {
+    color: #ffffff !important;
+}
+
+/* ============================================
+   NUCLEAR HERO FIX - DESTROY ALL BACKGROUNDS
+   This targets every possible element that could show a background
+   ============================================ */
+
+/* Target the specific container class inside hero */
+.home-hero > .container,
+.home-hero > .home-hero__container,
+.home-hero .container,
+section.home-hero > *,
+section.home-hero > * > *,
+section.home-hero > * > * > * {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Override any potential mask or overlay */
+.home-hero__text,
+.home-hero__wrap {
+    position: relative !important;
+    isolation: isolate !important;
+}
+
+/* Remove any gradient overlays */
+.text-gradient-gray,
+.text-gradient-gray::before,
+.text-gradient-gray::after {
+    background: transparent !important;
+    -webkit-text-fill-color: inherit !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+}
+
+/* Ensure no parent containers have backgrounds */
+body:not(.light-theme) section.home-hero {
+    background: transparent !important;
+}
+
+body:not(.light-theme) .home-hero .container {
+    background: transparent !important;
+}
+
+/* ============================================
+   FIX CHOICES.JS DROPDOWN ZIGZAG PATTERN
+   ============================================ */
+
+/* Fix the select dropdown showing pattern instead of text */
+body:not(.light-theme) .choices__list--single,
+body:not(.light-theme) .choices__list--single .choices__item,
+body:not(.light-theme) .choices__inner {
+    background: rgba(255, 255, 255, 0.05) !important;
+    background-image: none !important;
+    background-pattern: none !important;
+    color: #ffffff !important;
+}
+
+/* Ensure dropdown text is visible */
+body:not(.light-theme) .choices__item--selectable,
+body:not(.light-theme) .choices__placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    background: transparent !important;
+}
+
+/* Fix dropdown items */
+body:not(.light-theme) .choices__list--dropdown .choices__item {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .choices__list--dropdown .choices__item.is-highlighted {
+    background: #0066FF !important;
+    color: #ffffff !important;
+}
+
+/* Remove any background patterns */
+.choices,
+.choices__inner,
+.choices__list {
+    background-image: none !important;
+    background-pattern: none !important;
+}
+
+/* ============================================
+   REMOVE DOT PATTERN FROM CONTACT SECTION
+   ============================================ */
+
+/* Remove dot/grid pattern background */
+.modern-contact-section,
+.modern-contact-section::before,
+.modern-contact-section::after,
+.modern-contact__wrap,
+.modern-contact__wrap::before,
+.modern-contact__wrap::after {
+    background-image: none !important;
+    background-pattern: none !important;
+}
+
+/* Remove any SVG or pattern backgrounds */
+body:not(.light-theme) .modern-contact-section {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* ============================================
+   REMOVE PURPLE DOT (RESIZE HANDLE)
+   ============================================ */
+
+/* Hide textarea resize handle */
+textarea {
+    resize: none !important;
+}
+
+/* Or style it to match theme */
+textarea::-webkit-resizer {
+    display: none !important;
+}
+
+/* ============================================
+   FIX CONTACT FORM WHITE BACKGROUND IN DARK THEME
+   ============================================ */
+
+/* Contact form wrapper */
+body:not(.light-theme) .modern-contact-form,
+body:not(.light-theme) .contact-form-wrapper,
+body:not(.light-theme) .contact-form-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Form title */
+body:not(.light-theme) .contact-form-title,
+body:not(.light-theme) .modern-contact-form h3,
+body:not(.light-theme) .modern-contact-form h2 {
+    color: #ffffff !important;
+}
+
+/* Form subtitle/description */
+body:not(.light-theme) .contact-form-subtitle,
+body:not(.light-theme) .modern-contact-form p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Form inputs */
+body:not(.light-theme) .modern-contact-form input[type="text"],
+body:not(.light-theme) .modern-contact-form input[type="email"],
+body:not(.light-theme) .modern-contact-form textarea,
+body:not(.light-theme) .contact-form input,
+body:not(.light-theme) .contact-form textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .modern-contact-form input::placeholder,
+body:not(.light-theme) .modern-contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body:not(.light-theme) .modern-contact-form input:focus,
+body:not(.light-theme) .modern-contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: #0066FF !important;
+}
+
+/* ============================================
+   FIX MODAL SELECT DROPDOWN COMPLETELY
+   ============================================ */
+
+/* Ensure select shows proper text, not pattern */
+.about-project-form__select select,
+.about-project-form__select .choices__input,
+body:not(.light-theme) .about-project-form__select select {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+    background-image: none !important;
+}
+
+/* Fix choices container */
+body:not(.light-theme) .about-project-form__select .choices {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body:not(.light-theme) .about-project-form__select .choices__inner {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    padding: 16px 20px !important;
+}
+
+/* Fix dropdown toggle arrow */
+body:not(.light-theme) .about-project-form__select .choices::after {
+    border-color: #ffffff transparent transparent transparent !important;
+}
+
+/* ============================================
+   CRITICAL FIX: CHOICES.JS ZIGZAG PATTERN
+   This fixes the select showing patterns instead of text
+   ============================================ */
+
+/* Completely reset Choices.js styling */
+.choices,
+.choices *,
+.choices__inner,
+.choices__list,
+.choices__item {
+    font-family: inherit !important;
+    background-image: none !important;
+    background-pattern: none !important;
+    text-indent: 0 !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+}
+
+/* Fix the select text being replaced with pattern */
+.choices__list--single .choices__item,
+.choices__placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    text-decoration: none !important;
+    background: transparent !important;
+}
+
+/* Force proper text rendering */
+body:not(.light-theme) .choices__list--single .choices__item {
+    color: rgba(255, 255, 255, 0.7) !important;
+    background: transparent !important;
+    font-family: inherit !important;
+}
+
+/* ============================================
+   CRITICAL FIX: INVISIBLE TEXT IN CONTACT FORM
+   This fixes the white text on white background issue
+   ============================================ */
+
+/* Force dark text on light backgrounds */
+body.light-theme input[type="text"],
+body.light-theme input[type="email"], 
+body.light-theme textarea,
+body.light-theme .form-input,
+body.light-theme .modern-contact-form input,
+body.light-theme .modern-contact-form textarea {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    border: 2px solid #e6e6e6 !important;
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder,
+body.light-theme .form-input::placeholder {
+    color: #999999 !important;
+    opacity: 1 !important;
+}
+
+/* Force white text on dark backgrounds */
+body:not(.light-theme) input[type="text"],
+body:not(.light-theme) input[type="email"],
+body:not(.light-theme) textarea,
+body:not(.light-theme) .form-input,
+body:not(.light-theme) .modern-contact-form input,
+body:not(.light-theme) .modern-contact-form textarea {
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+body:not(.light-theme) input::placeholder,
+body:not(.light-theme) textarea::placeholder,
+body:not(.light-theme) .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1 !important;
+}
+
+/* ============================================
+   REMOVE DOT PATTERN BACKGROUND COMPLETELY
+   ============================================ */
+
+/* Nuclear removal of all background patterns */
+.modern-contact-section,
+.modern-contact-section *,
+.modern-contact-section::before,
+.modern-contact-section::after,
+section[class*="contact"],
+section[class*="contact"] *,
+section[class*="contact"]::before,
+section[class*="contact"]::after {
+    background-image: none !important;
+    background-pattern: none !important;
+    background-attachment: scroll !important;
+}
+
+/* Force clean background */
+body:not(.light-theme) .modern-contact-section {
+    background: #1a1a1a !important;
+    background-image: none !important;
+}
+
+body.light-theme .modern-contact-section {
+    background: #f8f9fa !important;
+    background-image: none !important;
+}
+
+/* ============================================
+   REMOVE PURPLE DOT (TEXTAREA RESIZE HANDLE)
+   ============================================ */
+
+/* Completely disable textarea resizing */
+textarea,
+.form-textarea,
+.about-project-form__input textarea {
+    resize: none !important;
+}
+
+/* Hide webkit resize handle */
+textarea::-webkit-resizer {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide all resize handles */
+*::-webkit-resizer {
+    background: transparent !important;
+    display: none !important;
+}
+
+/* ============================================
+   FIX CONTACT FORM CARD IN LIGHT THEME
+   ============================================ */
+
+/* Ensure form card is visible in light theme */
+body.light-theme .contact-form-card,
+body.light-theme .modern-contact-form,
+body.light-theme .tell-us-form {
+    background: #ffffff !important;
+    border: 1px solid #e6e6e6 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+body.light-theme .contact-form-title,
+body.light-theme .modern-contact-form h2,
+body.light-theme .modern-contact-form h3 {
+    color: #1a1a1a !important;
+}
+
+body.light-theme .contact-form-subtitle,
+body.light-theme .modern-contact-form p {
+    color: #666666 !important;
+}
+
+/* ============================================
+   CHOICES.JS LIBRARY FIX - STOP ZIGZAG PATTERN
+   The zigzag is likely caused by a font issue or encoding
+   ============================================ */
+
+/* Force standard fonts and reset all text properties */
+.choices,
+.choices *,
+.choices__inner *,
+.choices__list *,
+.choices__item * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+    -webkit-text-stroke: 0 !important;
+    text-stroke: 0 !important;
+}
+
+/* Specifically target the select item that shows zigzag */
+.about-project-form__select .choices__item--selectable,
+.about-project-form__select .choices__placeholder,
+.about-project-form__select .choices__list--single .choices__item {
+    background: transparent !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-indent: 0 !important;
+}
+
+/* Override any custom font loading that might cause zigzag */
+.choices__item,
+.choices__item[data-value] {
+    font-family: inherit !important;
+    -webkit-font-feature-settings: normal !important;
+    font-feature-settings: normal !important;
+    -webkit-font-variant-ligatures: none !important;
+    font-variant-ligatures: none !important;
+}
+
+/* Force text to be readable */
+body:not(.light-theme) .about-project-form__select .choices__item {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+body:not(.light-theme) .about-project-form__select .choices__placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ============================================
+   AGGRESSIVE BACKGROUND PATTERN REMOVAL
+   ============================================ */
+
+/* Remove any CSS that might be creating dot patterns */
+body,
+body *,
+body::before,
+body::after,
+section,
+section *,
+section::before,
+section::after {
+    background-attachment: scroll !important;
+}
+
+/* Target specific elements that might have patterns */
+.modern-contact-section {
+    background: var(--bg-color, transparent) !important;
+    background-image: none !important;
+    background-repeat: no-repeat !important;
+    background-size: auto !important;
+    background-position: center !important;
+}
+
+/* Set proper backgrounds based on theme */
+body.light-theme {
+    --bg-color: #f8f9fa;
+}
+
+body:not(.light-theme) {
+    --bg-color: #1a1a1a;
+}
+
+body.light-theme .modern-contact-section {
+    background: #f8f9fa !important;
+}
+
+body:not(.light-theme) .modern-contact-section {
+    background: #1a1a1a !important;
+}
+
+/* ============================================
+   FIX SPECIFIC CLASSES - FORM-SELECT & MODERN CLASSES
+   ============================================ */
+
+/* Fix the form-select zigzag issue */
+.form-select,
+select.form-select,
+.about-project-form__select select {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 16px 20px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+/* Fix form-select in light theme */
+body.light-theme .form-select,
+body.light-theme select.form-select {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    border-color: #e6e6e6 !important;
+}
+
+/* Fix form-select options */
+.form-select option {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    padding: 12px !important;
+}
+
+body.light-theme .form-select option {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+}
+
+/* ============================================
+   FIX MODERN CONTACT FORM CLASSES
+   ============================================ */
+
+/* Modern form container */
+.modern-contact-form {
+    background: #ffffff !important;
+    padding: 40px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+body:not(.light-theme) .modern-contact-form {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Modern form titles */
+.modern-form__title {
+    color: #1a1a1a !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+}
+
+body:not(.light-theme) .modern-form__title {
+    color: #ffffff !important;
+}
+
+/* Modern form descriptions */
+.modern-form__description {
+    color: #666666 !important;
+    margin-bottom: 32px !important;
+}
+
+body:not(.light-theme) .modern-form__description {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Modern inputs */
+.modern-input,
+.modern-textarea {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    border: 2px solid #e6e6e6 !important;
+    border-radius: 12px !important;
+    background: #fafafa !important;
+    color: #1a1a1a !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    transition: all 0.3s ease !important;
+}
+
+.modern-input::placeholder,
+.modern-textarea::placeholder {
+    color: #999999 !important;
+    opacity: 1 !important;
+}
+
+.modern-input:focus,
+.modern-textarea:focus {
+    border-color: #0066FF !important;
+    background: #ffffff !important;
+    outline: none !important;
+}
+
+/* Dark theme modern inputs */
+body:not(.light-theme) .modern-input,
+body:not(.light-theme) .modern-textarea {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .modern-input::placeholder,
+body:not(.light-theme) .modern-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body:not(.light-theme) .modern-input:focus,
+body:not(.light-theme) .modern-textarea:focus {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-color: #0066FF !important;
+}
+
+/* Modern select */
+.modern-select {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    border: 2px solid #e6e6e6 !important;
+    border-radius: 12px !important;
+    background: #fafafa !important;
+    color: #1a1a1a !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    appearance: none !important;
+    cursor: pointer !important;
+}
+
+body:not(.light-theme) .modern-select {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+/* Modern select options */
+.modern-select option {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    padding: 12px !important;
+}
+
+body:not(.light-theme) .modern-select option {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+}
+
+/* Modern submit button */
+.modern-submit-btn {
+    background: #0066FF !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 16px 32px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.modern-submit-btn:hover {
+    background: #0052CC !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ============================================
+   REMOVE DOT PATTERN - TARGET ALL POSSIBLE SOURCES
+   ============================================ */
+
+/* Remove patterns from CSS background-image properties */
+*,
+*::before,
+*::after {
+    background-image: none !important;
+}
+
+/* Specifically target sections that might have patterns */
+section,
+.section,
+.modern-contact-section,
+.contact-section {
+    background-image: none !important;
+    background: transparent !important;
+}
+
+/* Override any CSS variables that might contain patterns */
+:root {
+    --dot-pattern: none !important;
+    --bg-pattern: none !important;
+    --pattern: none !important;
+}
+
+/* Force clean backgrounds */
+body.light-theme .modern-contact-section {
+    background: #f8f9fa !important;
+    background-image: none !important;
+}
+
+body:not(.light-theme) .modern-contact-section {
+    background: #1a1a1a !important;
+    background-image: none !important;
+}
+
+/* Remove any masks or overlays */
+.modern-contact-section::before,
+.modern-contact-section::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* ============================================
+   ENSURE FORM TEXT VISIBILITY - NUCLEAR OPTION
+   ============================================ */
+
+/* Force text visibility with high contrast */
+.modern-contact__form-wrapper,
+.modern-contact__form-wrapper * {
+    text-shadow: none !important;
+    -webkit-text-stroke: 0 !important;
+}
+
+/* Light theme - force dark text */
+body.light-theme .modern-contact__form-wrapper input,
+body.light-theme .modern-contact__form-wrapper textarea,
+body.light-theme .modern-contact__form-wrapper select,
+body.light-theme .modern-input,
+body.light-theme .modern-textarea,
+body.light-theme .modern-select {
+    color: #000000 !important;
+    background: #ffffff !important;
+    border: 2px solid #cccccc !important;
+}
+
+body.light-theme .modern-contact__form-wrapper input::placeholder,
+body.light-theme .modern-contact__form-wrapper textarea::placeholder {
+    color: #666666 !important;
+    opacity: 1 !important;
+}
+
+/* Dark theme - force white text */
+body:not(.light-theme) .modern-contact__form-wrapper input,
+body:not(.light-theme) .modern-contact__form-wrapper textarea,
+body:not(.light-theme) .modern-contact__form-wrapper select,
+body:not(.light-theme) .modern-input,
+body:not(.light-theme) .modern-textarea,
+body:not(.light-theme) .modern-select {
+    color: #ffffff !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+body:not(.light-theme) .modern-contact__form-wrapper input::placeholder,
+body:not(.light-theme) .modern-contact__form-wrapper textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    opacity: 1 !important;
+}
+
+/* ============================================
+   MODAL SPECIFIC - FIX CHOICES.JS ZIGZAG PATTERN
+   Target the exact modal context where zigzag appears
+   ============================================ */
+
+/* Target modal select specifically */
+.modal__container[data-modal-id="modalContactUs"] .choices,
+.modal__container[data-modal-id="modalContactUs"] .choices *,
+.modal__container[data-modal-id="modalContactUs"] .about-project-form__select .choices,
+.modal__container[data-modal-id="modalContactUs"] .about-project-form__select .choices * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    text-transform: none !important;
+    -webkit-font-feature-settings: "kern" 1, "liga" 0 !important;
+    font-feature-settings: "kern" 1, "liga" 0 !important;
+    -webkit-font-variant-ligatures: none !important;
+    font-variant-ligatures: none !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+/* Fix the specific element showing zigzag */
+.modal__container[data-modal-id="modalContactUs"] .choices__list--single .choices__item,
+.modal__container[data-modal-id="modalContactUs"] .choices__placeholder {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    text-indent: 0 !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+}
+
+/* Ensure text is rendered properly */
+.modal__container[data-modal-id="modalContactUs"] .choices__item[data-value=""] {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-family: inherit !important;
+}
+
+/* Fix the dropdown container itself */
+.modal__container[data-modal-id="modalContactUs"] .choices__inner {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    min-height: auto !important;
+    font-family: inherit !important;
+}
+
+/* Fix dropdown list */
+.modal__container[data-modal-id="modalContactUs"] .choices__list--dropdown {
+    background: #2a2a2a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Fix dropdown options */
+.modal__container[data-modal-id="modalContactUs"] .choices__item--choice {
+    background: transparent !important;
+    color: #ffffff !important;
+    padding: 12px 16px !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.modal__container[data-modal-id="modalContactUs"] .choices__item--choice:last-child {
+    border-bottom: none !important;
+}
+
+.modal__container[data-modal-id="modalContactUs"] .choices__item--choice.is-highlighted,
+.modal__container[data-modal-id="modalContactUs"] .choices__item--choice:hover {
+    background: #0066FF !important;
+    color: #ffffff !important;
+}
+
+/* Nuclear option - override any font loading issues */
+.modal__container[data-modal-id="modalContactUs"] .choices__list--single .choices__item::before,
+.modal__container[data-modal-id="modalContactUs"] .choices__list--single .choices__item::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Force proper text content */
+.modal__container[data-modal-id="modalContactUs"] .choices__list--single .choices__item {
+    display: flex !important;
+    align-items: center !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+}
+
+/* ============================================
+   ALTERNATIVE FIX - REPLACE WITH NATIVE SELECT
+   If Choices.js keeps causing issues, style native select
+   ============================================ */
+
+/* Hide Choices.js and show native select as fallback */
+.modal__container[data-modal-id="modalContactUs"] .about-project-form__select select {
+    display: block !important;
+    width: 100% !important;
+    padding: 16px 20px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    appearance: none !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.modal__container[data-modal-id="modalContactUs"] .about-project-form__select select option {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    padding: 12px !important;
+}
+
+/* Add custom arrow for native select */
+.modal__container[data-modal-id="modalContactUs"] .about-project-form__select::after {
+    content: '▼' !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    pointer-events: none !important;
+    font-size: 12px !important;
+}
+
+.modal__container[data-modal-id="modalContactUs"] .about-project-form__select {
+    position: relative !important;
+}
+
+/* ============================================
+   JAVASCRIPT BACKUP FIX FOR ZIGZAG ISSUE
+   If CSS doesn't work, we can use JS to fix it
+   ============================================ */
+
+/* Add this script tag to force proper text rendering */
+/*
+<script>
+// Fix Choices.js zigzag pattern issue
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for modal to load
+    setTimeout(function() {
+        const choicesElements = document.querySelectorAll('.modal__container[data-modal-id="modalContactUs"] .choices__item');
+        choicesElements.forEach(function(element) {
+            // Force text content to render properly
+            const text = element.textContent || element.innerText;
+            if (text && text.includes('Select budget')) {
+                element.style.fontFamily = 'Arial, sans-serif';
+                element.style.fontSize = '16px';
+                element.style.color = 'rgba(255, 255, 255, 0.7)';
+                element.style.textDecoration = 'none';
+                element.style.fontWeight = 'normal';
+            }
+        });
+    }, 500);
+});
+</script>
+*/
+
+/* ============================================
+   ADDITIONAL CSS OVERRIDES FOR STUBBORN CASES
+   ============================================ */
+
+/* Force override any inherited font properties */
+.modal__container[data-modal-id="modalContactUs"] .choices *,
+.modal__container[data-modal-id="modalContactUs"] .about-project-form__select * {
+    font-synthesis: none !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+/* Ensure no font icons are interfering */
+.modal__container[data-modal-id="modalContactUs"] .choices__item {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    background-image: none !important;
+    content: none !important;
+    text-indent: 0 !important;
+    overflow: visible !important;
+}
+
+/* Override any CSS that might be causing font substitution */
+.modal__container[data-modal-id="modalContactUs"] .choices__list--single .choices__item[data-value=""] {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    text-transform: none !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+}
+
+/* Force proper display of "Select budget" text */
+.modal__container[data-modal-id="modalContactUs"] .choices__placeholder.choices__item,
+.modal__container[data-modal-id="modalContactUs"] .choices__item[data-value=""] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* ============================================
+   FIX NATIVE SELECT ZIGZAG PATTERN - FORM-SELECT CLASS
+   Target the exact select element causing zigzag
+   ============================================ */
+
+/* Target the specific select in modal */
+.modal__container[data-modal-id="modalContactUs"] select.form-select,
+.contact-modal-wrapper select.form-select,
+select[name="projectBudget"].form-select {
+    /* Reset all font properties */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    
+    /* Background and appearance */
+    background: rgba(255, 255, 255, 0.05) !important;
+    background-image: none !important;
+    background-pattern: none !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 16px 20px !important;
+    width: 100% !important;
+    
+    /* Remove webkit styling */
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    
+    /* Text rendering */
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    
+    /* Disable font features that might cause zigzag */
+    font-feature-settings: "kern" 1, "liga" 0, "calt" 0 !important;
+    -webkit-font-feature-settings: "kern" 1, "liga" 0, "calt" 0 !important;
+    font-variant-ligatures: none !important;
+    -webkit-font-variant-ligatures: none !important;
+}
+
+/* Fix select options */
+.modal__container[data-modal-id="modalContactUs"] select.form-select option,
+.contact-modal-wrapper select.form-select option,
+select[name="projectBudget"].form-select option {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    padding: 12px !important;
+    border: none !important;
+}
+
+/* Add custom dropdown arrow */
+.contact-modal-wrapper .form-group:has(select.form-select)::after,
+.modal__container[data-modal-id="modalContactUs"] .form-group:has(select.form-select)::after {
+    content: '▼' !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    pointer-events: none !important;
+    font-size: 12px !important;
+    font-family: inherit !important;
+}
+
+.contact-modal-wrapper .form-group:has(select.form-select),
+.modal__container[data-modal-id="modalContactUs"] .form-group:has(select.form-select) {
+    position: relative !important;
+}
+
+/* Alternative fallback - hide select and replace with div */
+.form-select-wrapper {
+    position: relative !important;
+}
+
+.form-select-replacement {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-family: system-ui, sans-serif !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.form-select-replacement::after {
+    content: '▼' !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 12px !important;
+}
+
+/* ============================================
+   NUCLEAR OPTION - OVERRIDE ALL FONT INHERITANCE
+   ============================================ */
+
+/* Force override any inherited styles that might cause zigzag */
+* select.form-select,
+*[class*="select"] select,
+*[class*="form"] select {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    background-image: none !important;
+    text-indent: 0 !important;
+    font-synthesis: none !important;
+}
+
+/* Remove any pseudo-elements that might interfere */
+select.form-select::before,
+select.form-select::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* ============================================
+   CONTACT FORM SECTION - COMPLETE VISIBILITY FIX
+   Fix all text and form elements in contact section above footer
+   ============================================ */
+
+/* Contact form wrapper */
+.modern-contact__form-wrapper {
+    background: #ffffff !important;
+    padding: 40px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    margin: 20px 0 !important;
+}
+
+body:not(.light-theme) .modern-contact__form-wrapper {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Form container */
+.modern-contact-form {
+    width: 100% !important;
+}
+
+/* Form header */
+.modern-form__header {
+    margin-bottom: 32px !important;
+    text-align: center !important;
+}
+
+/* Form title - FORCE VISIBILITY */
+.modern-form__title,
+h3.modern-form__title {
+    color: #1a1a1a !important;
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    margin: 0 0 12px 0 !important;
+    line-height: 1.3 !important;
+    text-shadow: none !important;
+}
+
+body:not(.light-theme) .modern-form__title,
+body:not(.light-theme) h3.modern-form__title {
+    color: #ffffff !important;
+}
+
+/* Form description - FORCE VISIBILITY */
+.modern-form__description,
+p.modern-form__description {
+    color: #666666 !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+    text-shadow: none !important;
+}
+
+body:not(.light-theme) .modern-form__description,
+body:not(.light-theme) p.modern-form__description {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Form fields layout */
+.modern-form__fields {
+    width: 100% !important;
+}
+
+.modern-form__row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.modern-form__field {
+    width: 100% !important;
+}
+
+.modern-form__field--full {
+    grid-column: 1 / -1 !important;
+}
+
+/* Input fields - FORCE HIGH CONTRAST */
+.modern-input,
+input.modern-input,
+input[name="name"],
+input[name="email"],
+input[name="company"] {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    border: 2px solid #d1d5db !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    transition: all 0.3s ease !important;
+    box-sizing: border-box !important;
+}
+
+.modern-input::placeholder,
+input.modern-input::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+}
+
+.modern-input:focus,
+input.modern-input:focus {
+    border-color: #0066FF !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1) !important;
+}
+
+/* Dark theme inputs */
+body:not(.light-theme) .modern-input,
+body:not(.light-theme) input.modern-input,
+body:not(.light-theme) input[name="name"],
+body:not(.light-theme) input[name="email"],
+body:not(.light-theme) input[name="company"] {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .modern-input::placeholder,
+body:not(.light-theme) input.modern-input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body:not(.light-theme) .modern-input:focus,
+body:not(.light-theme) input.modern-input:focus {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-color: #0066FF !important;
+    color: #ffffff !important;
+}
+
+/* Textarea - FORCE HIGH CONTRAST */
+.modern-textarea,
+textarea.modern-textarea,
+textarea[name="message"] {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    border: 2px solid #d1d5db !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    resize: vertical !important;
+    min-height: 120px !important;
+    transition: all 0.3s ease !important;
+    box-sizing: border-box !important;
+}
+
+.modern-textarea::placeholder,
+textarea.modern-textarea::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+}
+
+.modern-textarea:focus,
+textarea.modern-textarea:focus {
+    border-color: #0066FF !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1) !important;
+}
+
+/* Dark theme textarea */
+body:not(.light-theme) .modern-textarea,
+body:not(.light-theme) textarea.modern-textarea,
+body:not(.light-theme) textarea[name="message"] {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .modern-textarea::placeholder,
+body:not(.light-theme) textarea.modern-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body:not(.light-theme) .modern-textarea:focus,
+body:not(.light-theme) textarea.modern-textarea:focus {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-color: #0066FF !important;
+    color: #ffffff !important;
+}
+
+/* Select dropdown - FORCE HIGH CONTRAST */
+.modern-select,
+select.modern-select,
+select[name="budget"] {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    border: 2px solid #d1d5db !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    font-weight: 400 !important;
+    appearance: none !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-sizing: border-box !important;
+}
+
+.modern-select:focus,
+select.modern-select:focus {
+    border-color: #0066FF !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    outline: none !important;
+}
+
+.modern-select option,
+select.modern-select option {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 12px !important;
+}
+
+/* Dark theme select */
+body:not(.light-theme) .modern-select,
+body:not(.light-theme) select.modern-select,
+body:not(.light-theme) select[name="budget"] {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .modern-select:focus,
+body:not(.light-theme) select.modern-select:focus {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-color: #0066FF !important;
+}
+
+body:not(.light-theme) .modern-select option,
+body:not(.light-theme) select.modern-select option {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+}
+
+/* Submit button */
+.modern-submit-btn {
+    background: #0066FF !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 16px 32px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+
+.modern-submit-btn:hover {
+    background: #0052CC !important;
+    transform: translateY(-2px) !important;
+}
+
+.modern-submit-btn .btn-text,
+.modern-submit-btn span {
+    color: #ffffff !important;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .modern-form__row {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    
+    .modern-contact__form-wrapper {
+        padding: 24px !important;
+        margin: 16px 0 !important;
+    }
+    
+    .modern-form__title {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ============================================
+   LIGHT THEME - MODAL SELECT BUDGET FIELD FIX
+   Specifically fix visibility in contact popup modal
+   ============================================ */
+
+/* Target modal select in light theme */
+body.light-theme .modal__container[data-modal-id="modalContactUs"] select.form-select,
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .form-select,
+body.light-theme .contact-modal-wrapper select.form-select,
+body.light-theme .contact-modal-wrapper .form-select {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #d1d5db !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    font-size: 16px !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+}
+
+/* Light theme select options */
+body.light-theme .modal__container[data-modal-id="modalContactUs"] select.form-select option,
+body.light-theme .contact-modal-wrapper select.form-select option {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 12px !important;
+}
+
+/* Light theme select focus state */
+body.light-theme .modal__container[data-modal-id="modalContactUs"] select.form-select:focus,
+body.light-theme .contact-modal-wrapper select.form-select:focus {
+    border-color: #0066FF !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1) !important;
+}
+
+/* Light theme - Choices.js library fix (if still using it) */
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .choices,
+body.light-theme .contact-modal-wrapper .choices {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .choices__inner,
+body.light-theme .contact-modal-wrapper .choices__inner {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #000000 !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .choices__list--single .choices__item,
+body.light-theme .contact-modal-wrapper .choices__list--single .choices__item {
+    color: #000000 !important;
+    background: transparent !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .choices__placeholder,
+body.light-theme .contact-modal-wrapper .choices__placeholder {
+    color: #6b7280 !important;
+}
+
+/* Light theme dropdown list */
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .choices__list--dropdown,
+body.light-theme .contact-modal-wrapper .choices__list--dropdown {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .choices__item--choice,
+body.light-theme .contact-modal-wrapper .choices__item--choice {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .choices__item--choice.is-highlighted,
+body.light-theme .contact-modal-wrapper .choices__item--choice.is-highlighted {
+    background: #0066FF !important;
+    color: #ffffff !important;
+}
+
+/* Light theme - All modal form inputs for consistency */
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .form-input,
+body.light-theme .modal__container[data-modal-id="modalContactUs"] input,
+body.light-theme .contact-modal-wrapper .form-input,
+body.light-theme .contact-modal-wrapper input {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #d1d5db !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .form-input::placeholder,
+body.light-theme .modal__container[data-modal-id="modalContactUs"] input::placeholder,
+body.light-theme .contact-modal-wrapper .form-input::placeholder,
+body.light-theme .contact-modal-wrapper input::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .form-textarea,
+body.light-theme .modal__container[data-modal-id="modalContactUs"] textarea,
+body.light-theme .contact-modal-wrapper .form-textarea,
+body.light-theme .contact-modal-wrapper textarea {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #d1d5db !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .form-textarea::placeholder,
+body.light-theme .modal__container[data-modal-id="modalContactUs"] textarea::placeholder,
+body.light-theme .contact-modal-wrapper .form-textarea::placeholder,
+body.light-theme .contact-modal-wrapper textarea::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+}
+
+/* Light theme modal background */
+body.light-theme .modal__container[data-modal-id="modalContactUs"],
+body.light-theme .contact-modal-wrapper {
+    background: #ffffff !important;
+}
+
+/* Light theme modal text */
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .contact-modal-title,
+body.light-theme .contact-modal-wrapper .contact-modal-title {
+    color: #1a1a1a !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .contact-modal-subtitle,
+body.light-theme .contact-modal-wrapper .contact-modal-subtitle {
+    color: #666666 !important;
+}
+
+/* Add custom dropdown arrow for light theme */
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .form-group:has(select)::after,
+body.light-theme .contact-modal-wrapper .form-group:has(select)::after {
+    content: '▼' !important;
+    position: absolute !important;
+    right: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #6b7280 !important;
+    pointer-events: none !important;
+    font-size: 12px !important;
+}
+
+body.light-theme .modal__container[data-modal-id="modalContactUs"] .form-group:has(select),
+body.light-theme .contact-modal-wrapper .form-group:has(select) {
+    position: relative !important;
 }
