@@ -70,3 +70,12 @@ i.icon-chevron-down::before,
 [class*='icon-quote']::before { content: '"' !important; }
 [class*='icon-slider-arrow-right']::before { content: '→' !important; }
 [class*='icon-slider-arrow-prev']::before { content: '←' !important; }
+[class*='icon-warning']::before, [class*='icon-alert']::before { content: '⚠' !important; }
+[class*='icon-code']::before { content: '⟨/⟩' !important; }
+[class*='icon-cpu']::before, [class*='icon-chip']::before { content: '⚙' !important; }
+[class*='icon-bolt']::before, [class*='icon-lightning']::before { content: '⚡' !important; }
+[class*='icon-cog']::before, [class*='icon-gear']::before { content: '⚙' !important; }
+[class*='icon-tiktok']::before { content: '♪' !important; }
+[class*='icon-pencil-meter']::before { content: '✎' !important; }
+[class*='icon-shield-outline']::before, [class*='icon-shield']::before { content: '🛡' !important; }
+[class*='icon-file-text']::before { content: '📄' !important; }

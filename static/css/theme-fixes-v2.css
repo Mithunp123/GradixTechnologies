@@ -46,7 +46,7 @@ section.section-discuss,
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0.75rem 0 !important;
+    padding: 1.25rem 0 !important;
 }
 
 .header__btn-box {
@@ -56,7 +56,7 @@ section.section-discuss,
 }
 
 .header__logo img {
-    height: 24px !important;
+    height: 36px !important;
     width: auto !important;
 }
 
@@ -99,6 +99,9 @@ section.section-discuss,
     align-items: center !important;
     gap: 8px !important;
     white-space: nowrap !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 0 !important;
 }
 
 /* Hide legacy icons/arrows */
@@ -1152,9 +1155,10 @@ body.light-theme .modal .author-badge--online .author-badge__img::after {
    ============================================ */
 /* Remove boxy appearance and excess spacing */
 .home-hero {
-    min-height: 60vh !important; /* Reduce from default */
-    max-height: 70vh !important; /* Prevent too much height */
-    padding: 2rem 0 !important; /* Reduce padding */
+    min-height: 60vh !important;
+    max-height: 70vh !important;
+    padding: 2rem 0 !important;
+    margin-bottom: 5rem !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1232,6 +1236,38 @@ section {
    PROPER SECTION CONTAINERS WITH MARGINS
    ============================================ */
 /* ============================================
+   HERO SECTION SECONDARY BUTTON - PROFESSIONAL DESIGN
+   ============================================ */
+.btn--secondary {
+    background: transparent !important;
+    border: 1.5px solid #3b82f6 !important;
+    color: #3b82f6 !important;
+    padding: 1rem 2rem !important;
+    border-radius: 50px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.btn--secondary:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: #3b82f6 !important;
+}
+
+.btn--secondary .btn__text {
+    color: inherit !important;
+}
+
+.btn--secondary .icon-chevron-right {
+    display: none !important;
+}
+
+/* ============================================
    FIX GSAP SCROLLTRIGGER PIN-SPACER GAP
    ============================================ */
 /* GSAP ScrollTrigger creates pin-spacer with huge padding - override it */
@@ -1243,9 +1279,26 @@ section {
 }
 
 /* ============================================
+   PROPER SECTION GAPS - ALL SECTIONS
+   ============================================ */
+section {
+    margin-bottom: 80px !important;
+    padding: 40px 0 !important;
+}
+
+.home-hero {
+    margin-bottom: 100px !important;
+}
+
+.section-results {
+    margin-top: 80px !important;
+    padding-top: 60px !important;
+}
+
+/* ============================================
    AGGRESSIVE GAP REMOVAL - TARGET ALL SECTIONS
    ============================================ */
-/* Target every single section with aggressive spacing */
+/* Target every single section with proper spacing */
 .section-results,
 .section-industries, 
 .section-milestone,
@@ -1257,8 +1310,8 @@ section {
 .section-hs,
 .section-flow,
 .section-discuss {
-    margin: 0 !important;
-    padding: 1rem 0 !important;
+    margin: 60px 0 !important;
+    padding: 40px 0 !important;
     min-height: auto !important;
 }
 
@@ -1906,3 +1959,269 @@ a.btn[target="_blank"] {
     }
 }
 
+
+/* ============================================
+   PROBLEM VS SOLUTION SECTION STYLING
+   Clean Professional Design
+   ============================================ */
+.section-results__title {
+    text-align: center !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+}
+
+.section-results__title span {
+    display: inline !important;
+}
+
+.section-results__title br + span {
+    display: block !important;
+    margin-top: 0.5em !important;
+}
+
+/* Icon styling - simple inline */
+.section-results__title .ui-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    margin: 0 0.1em !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    font-size: 1em !important;
+    box-shadow: none !important;
+}
+
+.section-results__title .ui-icon i {
+    font-size: 1em !important;
+    line-height: 1 !important;
+    color: #3b82f6 !important;
+}
+
+/* Underline emphasis */
+.section-results__title .text-underline {
+    text-decoration: none !important;
+    border-bottom: 2px solid #3b82f6 !important;
+    padding-bottom: 2px !important;
+    background: none !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .section-results__title {
+        font-size: 1.5rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .section-results__title .ui-icon {
+        font-size: 0.9em !important;
+    }
+}
+
+/* Font Awesome icons in section-results title */
+.section-results__title .ui-icon i[class*="fa-"] {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-size: 1em !important;
+    color: #3b82f6 !important;
+    -webkit-text-fill-color: #3b82f6 !important;
+}
+
+/* ============================================
+   HOW GRADIX WORKS - PROCESS SECTION
+   ============================================ */
+.section-process {
+    padding: 80px 0 !important;
+    margin: 40px 0 !important;
+}
+
+.section-process__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-process__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section-process__header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-process__label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+
+.section-process__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem !important;
+}
+
+.section-process__subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.section-process__body {
+    margin-top: 2rem;
+}
+
+.section-process__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Process Card */
+.process-card {
+    height: 100%;
+}
+
+.process-card__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    background: #1a1f2e;
+    border-radius: 16px;
+    height: 100%;
+}
+
+.process-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.process-card__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3b82f6;
+    border-radius: 12px;
+    margin: 0;
+}
+
+.process-card__icon i {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.process-card__number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.08);
+    line-height: 1;
+}
+
+.process-card__content {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.process-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.75rem 0;
+}
+
+.process-card__description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.process-card__footer {
+    margin-top: auto;
+}
+
+.process-card__tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #3b82f6;
+    background: transparent;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+    .section-process__steps {
+        gap: 1.25rem;
+    }
+    
+    .process-card__inner {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-process {
+        padding: 60px 0 !important;
+    }
+    
+    .section-process__title {
+        font-size: 2rem;
+    }
+    
+    .section-process__steps {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .process-card__number {
+        font-size: 2.5rem;
+    }
+}
+
+/* Light theme */
+body.light-theme .process-card__inner {
+    background: #f1f5f9;
+}
+
+body.light-theme .process-card__number {
+    color: rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .process-card__title {
+    color: #0f172a;
+}
+
+body.light-theme .process-card__description {
+    color: #475569;
+}
+
+body.light-theme .section-process__title {
+    color: #0f172a;
+}
+
+body.light-theme .section-process__subtitle {
+    color: #64748b;
+}
