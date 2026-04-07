@@ -1,0 +1,73 @@
+/* WhatsApp Floating Button Styles */
+.whatsapp-float {
+  position: fixed !important;
+  bottom: 80px !important; /* Above scroll-to-top button */
+  right: 30px !important; /* Right side positioning - increased value */
+  left: auto !important; /* Ensure it's not positioned from left */
+  z-index: 9999 !important; /* Higher z-index */
+  background-color: #25D366 !important; /* Official WhatsApp green */
+  color: white !important;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+.whatsapp-float:hover {
+  background-color: #22c55e !important; /* Darker green on hover */
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.whatsapp-float i {
+  font-size: 28px !important;
+  color: white !important;
+}
+
+.whatsapp-float:hover i {
+  color: white !important;
+}
+
+/* Animation for attention */
+@keyframes whatsapp-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.whatsapp-float {
+  animation: whatsapp-pulse 2s infinite !important;
+}
+
+.whatsapp-float:hover {
+  animation: none !important; /* Stop pulsing on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 70px !important;
+    right: 15px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .whatsapp-float i {
+    font-size: 24px !important;
+  }
+}
+
+/* REMOVE ALL TOOLTIP/BLACK BOX EFFECTS */
+.whatsapp-float::after,
+.whatsapp-float::before {
+  display: none !important;
+  content: none !important;
+}
