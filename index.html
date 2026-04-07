@@ -1,5 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
 		<meta charset="UTF-8">
+<script>
+  /* Prevent light theme flash by setting dark theme immediately */
+  document.documentElement.classList.add('theme-dark');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -75,6 +79,21 @@ gtag("config", "GT-MR8SQ9Z9");
 <meta name="generator" content="Site Kit by Google 1.175.0">
     <link rel="icon" href="static/images/2025/12/cropped-icon-512-32x32.png" sizes="32x32">
     <link rel="icon" href="static/images/2025/12/cropped-icon-512-32x32.png" sizes="32x32">
+<!-- Prevent flash of light theme - apply dark theme immediately -->
+<script>
+(function(){
+  var savedTheme = localStorage.getItem('theme');
+  if (savedTheme !== 'light') {
+    document.documentElement.style.backgroundColor = '#0d1016';
+    document.documentElement.style.colorScheme = 'dark';
+  }
+})();
+</script>
+<style>
+/* Prevent FOUC - default to dark theme */
+html { background-color: #0d1016; }
+body:not(.light-theme) { background-color: #0d1016; }
+</style>
 <link rel="icon" href="static/images/2025/12/cropped-icon-512-192x192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="static/images/2025/12/cropped-icon-512-180x180.png">
 <meta name="msapplication-TileImage" content="static/images/2025/12/cropped-icon-512-270x270.png">
@@ -130,7 +149,7 @@ gtag("config", "GT-MR8SQ9Z9");
 					<div class="header__container container">
 						<div class="header__wrap">
 							<a href="index.html" class="header__logo">
-								<img src="static/images/gradix_light.png" alt="GradixTechnology Logo" width="120" height="24" fetchpriority="high">
+								<img src="static/images/gradix_light.png" alt="GradixTechnology Logo" width="150" height="30" fetchpriority="high">
 							</a>
 							<div class="header__menu menu" data-menu="">
 								<span id="nav-label" class="sr-only">Navigation</span>
@@ -141,8 +160,7 @@ gtag("config", "GT-MR8SQ9Z9");
 									<ul class="menu__list">
 
 
-<li id="menu-item-701" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-701"><a href="blog.html">Blog</a></li>
-<li id="menu-item-702" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-702"><a href="about-us.html">About Us</a></li>
+
 									</ul>
 									<div class="menu__btn-box">
 										<a href="/contact-us" class="btn btn--primary">
@@ -223,333 +241,6 @@ gtag("config", "GT-MR8SQ9Z9");
                                 <span class="btn__text">Book a free call</span>
                                 <i class="icon-chevron-right" aria-hidden="true"></i>
                             </button>
-                        </div>
-                    </div>
-                    <div class="home-hero__partners hero-partners">
-                        <div class="hero-partners__header">
-                            <h3 class="hero-partners__title">
-                                <span>Trusted by 80+ top-tier companies</span>
-                            </h3>
-                        </div>
-                        <div class="hero-partners__body">
-                            <div class="hero-partners__slider-wrap">
-                                <div id="swiperPartners" class="swiper">
-                                    <div class="swiper-wrapper">
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_23-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_23.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_23.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_24-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_24.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_24.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_21-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_21.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_21.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_22-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_22.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_22.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_20-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_20.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_20.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_19-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_19.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_19.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_18-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_18.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_18.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_17.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_17.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_17.png" alt="" width="714" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_15-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_15.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_15.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_16-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_16.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_16.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_14-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_14.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_14.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_13-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_13.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_13.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_12-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_12.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_12.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_11-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_11.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_11.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_10-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_10.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_10.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_08-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_08.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_08.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_09-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_09.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_09.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_07-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_07.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_07.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_06-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_06.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_06.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_05-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_05.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_05.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_04-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_04.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_04.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_02-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_02.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_02.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_03-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_03.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_03.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                                <div class="swiper-slide">
-                                            <article class="partner-card">
-                                                <a href="" target="_blank" rel="noopener noreferrer" class="partner-card__inner">
-                                                    <figure class="partner-card__img">
-                                                        <picture>
-                                                            <source media="(max-width: 768px)" srcset="static/images/2025/12/logo_01-768x319.png" type="image/webp">
-                                                            <source media="(max-width: 1280px)" srcset="static/images/2025/12/logo_01.png" type="image/webp">
-                                                            <img src="static/images/2025/12/logo_01.png" alt="" width="924" height="384" loading="eager" decoding="sync">
-                                                        </picture>
-                                                    </figure>
-                                                </a>
-                                            </article>
-                                        </div>
-                                                                            </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1608,322 +1299,10 @@ Working with GradixTechnology was a consistently positive experience. The tea...
             </div>
         </div>
     </section>
-	    <!-- Section 10: Recognition (done) -->
-        <section class="section-recognition" aria-labelledby="sectionRecognitionTitle">
-        <div class="section-recognition__container container">
-            <div class="section-recognition__wrap">
-                <div class="section-recognition__row">
-                    <div class="section-recognition__col section-recognition__col--text">
-                        <div class="section-recognition__text">
-                            <h2 class="section-recognition__title title-h3" id="sectionRecognitionTitle">
-                                <img src="static/images/theme/home/recognition/clutch.svg" alt="" width="116" height="32" loading="lazy" decoding="async">
-                                - Recognized Excellence
-                            </h2>
-                            <div class="section-recognition__description">
-                                <p>
-                                    Proud to be recognized by Clutch for our outstanding service and
-                                    client satisfaction.
-                                </p>
-                            </div>
-                            <div class="section-recognition__btn-box">
-                                <a href="https://clutch.co/profile/gradixtechnology" target="_blank" rel="noopener" class="btn btn--primary">
-                                    <span class="btn__text">View all reviews</span>
-                                    <i class="icon-chevron-right" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-recognition__col section-recognition__col--media">
-                        <figure class="section-recognition__media" aria-labelledby="recognition-title">
-                            <picture>
-                                <img alt="Clutch awards" width="399" height="120" loading="lazy" decoding="async" src="static/images/2025/12/Frame-115.png">
-                            </picture>
-                            <figcaption class="section-recognition__rating recognition-rating" aria-label="Clutch rating">
-                                <span class="recognition-rating__value">5.0</span>
-                                <i class="recognition-rating__icon icon-rating-star" aria-hidden="true"></i>
-                                <span class="recognition-rating__label">50+ Reviews on Clutch</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-	    <!-- Section 11: Our Partnerships (done) -->
-    <section class="section-partnerships" aria-labelledby="sectionOurPartnershipsTitle">
-        <div class="section-partnerships__container container">
-            <div class="section-partnerships__wrap">
-                <h2 class="section-partnerships__title" id="sectionOurPartnershipsTitle">Our Partnerships</h2>
-                <div class="section-partnerships__description">
-                    <p>
-                        We are honored to have partnered with leading technology companies across India,
-                        from Mumbai to Bangalore, helping them drive digital transformation and
-                        innovation in the Indian market.
-                    </p>
-                </div>
-                <div class="section-partnerships__map partnerships-map" data-partnerships-map="">
-                    <div class="partnerships-map__field" data-partnerships-map-field="">
-                        <figure class="partnerships-map__img">
-                            <!-- India Map using dots pattern -->
-                            <img src="static/images/India-dots.png" alt="India partnerships map" width="500" height="600" loading="lazy" decoding="async" style="max-width: 500px; height: auto; object-fit: contain;">
-                        </figure>
-                        <div class="partnerships-map__location partnerships-map__location--01 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="0" data-partnerships-map-pin="" data-pin-title="Mumbai Tech Hub" data-pin-country="Mumbai, India" data-pin-img="static/images/theme/home/partnerships/04.svg">
-                            <div class="partnerships-map-location__inner">
-                                    <img src="static/images/theme/home/partnerships/04.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--02 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="50" data-partnerships-map-pin="" data-pin-title="Bangalore Silicon Valley" data-pin-country="Bangalore, India" data-pin-img="static/images/theme/home/partnerships/05.svg">
-                            <div class="partnerships-map-location__inner">
-                                    <img src="static/images/theme/home/partnerships/05.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--03 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="100" data-partnerships-map-pin="" data-pin-title="Delhi NCR Hub" data-pin-country="Delhi, India" data-pin-img="static/images/theme/home/partnerships/06.svg">
-                            <div class="partnerships-map-location__inner">
-                                    <img src="static/images/theme/home/partnerships/06.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--04 partnerships-map-location partnerships-map-location--lt" data-aos="zoom-in" data-aos-delay="150" data-partnerships-map-pin="" data-pin-title="Kolkata Enterprise" data-pin-country="Kolkata, India" data-pin-img="static/images/theme/home/partnerships/15.svg">
-                            <div class="partnerships-map-location__inner">
-                                    <img src="static/images/theme/home/partnerships/15.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--05 partnerships-map-location partnerships-map-location--rt" data-aos="zoom-in" data-aos-delay="200" data-partnerships-map-pin="" data-pin-title="Tech Mahindra" data-pin-country="Assam, India" data-pin-img="static/images/theme/home/partnerships/17.svg">
-                            <div class="partnerships-map-location__inner">
-                                    <img src="static/images/theme/home/partnerships/17.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--06 partnerships-map-location partnerships-map-location--rb" data-aos="zoom-in" data-aos-delay="250" data-partnerships-map-pin="" data-pin-title="Accenture India" data-pin-country="Chennai, India" data-pin-img="static/images/theme/home/partnerships/20.svg">
-                            <div class="partnerships-map-location__inner">
-                                    <img src="static/images/theme/home/partnerships/20.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--07 partnerships-map-location partnerships-map-location--rt" data-aos="zoom-in" data-aos-delay="300" data-partnerships-map-pin="" data-pin-title="WatchTower" data-pin-country="United States" data-pin-img="static/images/theme/home/partnerships/07.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/07-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/07-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/07.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--08 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="350" data-partnerships-map-pin="" data-pin-title="XLABS" data-pin-country="Argentina" data-pin-img="static/images/theme/home/partnerships/08.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/08-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/08-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/08.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--09 partnerships-map-location partnerships-map-location--rb" data-aos="zoom-in" data-aos-delay="400" data-partnerships-map-pin="" data-pin-title="Infoquest" data-pin-country="United Kingdom" data-pin-img="static/images/theme/home/partnerships/09.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/09-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/09-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/09.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--10 partnerships-map-location partnerships-map-location--rt" data-aos="zoom-in" data-aos-delay="450" data-partnerships-map-pin="" data-pin-title="Islamic Help" data-pin-country="United Kingdom" data-pin-img="static/images/theme/home/partnerships/10.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/10-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/10-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/10.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--11 partnerships-map-location partnerships-map-location--rb" data-aos="zoom-in" data-aos-delay="500" data-partnerships-map-pin="" data-pin-title="Intergiro" data-pin-country="Sweden" data-pin-img="static/images/theme/home/partnerships/11.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/11-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/11-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/11.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--12 partnerships-map-location partnerships-map-location--rb" data-aos="zoom-in" data-aos-delay="550" data-partnerships-map-pin="" data-pin-title="Intergiro" data-pin-country="Sweden" data-pin-img="static/images/theme/home/partnerships/12.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/12-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/12-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/12.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--13 partnerships-map-location partnerships-map-location--rt" data-aos="zoom-in" data-aos-delay="600" data-partnerships-map-pin="" data-pin-title="Lifedata" data-pin-country="Italy" data-pin-img="static/images/theme/home/partnerships/13.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/13-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/13-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/13.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--14 partnerships-map-location partnerships-map-location--rb" data-aos="zoom-in" data-aos-delay="650" data-partnerships-map-pin="" data-pin-title="Cloudcops" data-pin-country="Germany" data-pin-img="static/images/theme/home/partnerships/14.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/14-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/14-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/14.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--15 partnerships-map-location partnerships-map-location--rt" data-aos="zoom-in" data-aos-delay="700" data-partnerships-map-pin="" data-pin-title="RankTracker" data-pin-country="Poland" data-pin-img="static/images/theme/home/partnerships/15.svg">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <img src="static/images/theme/home/partnerships/15.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--16 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="750" data-partnerships-map-pin="" data-pin-title="Chain Insights" data-pin-country="Poland" data-pin-img="static/images/theme/home/partnerships/16.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/16-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/16-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/16.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--17 partnerships-map-location partnerships-map-location--lt" data-aos="zoom-in" data-aos-delay="800" data-partnerships-map-pin="" data-pin-title="My Perfect Stay" data-pin-country="UAE" data-pin-img="static/images/theme/home/partnerships/17.svg">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <img src="static/images/theme/home/partnerships/17.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--18 partnerships-map-location partnerships-map-location--lt" data-aos="zoom-in" data-aos-delay="900" data-partnerships-map-pin="" data-pin-title="Victus Global" data-pin-country="UAE" data-pin-img="static/images/theme/home/partnerships/18.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/18-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/18-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/18.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--19 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="950" data-partnerships-map-pin="" data-pin-title="Kredobank" data-pin-country="Ukraine" data-pin-img="static/images/theme/home/partnerships/19.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/19-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/19-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/19.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--20 partnerships-map-location partnerships-map-location--rt" data-aos="zoom-in" data-aos-delay="1000" data-partnerships-map-pin="" data-pin-title="Expedemy" data-pin-country="Pakistan" data-pin-img="static/images/theme/home/partnerships/20.svg">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <img src="static/images/theme/home/partnerships/20.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--21 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="1050" data-partnerships-map-pin="" data-pin-title="Tabadulat" data-pin-country="UAE" data-pin-img="static/images/theme/home/partnerships/21.svg">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <img src="static/images/theme/home/partnerships/21.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--22 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="1100" data-partnerships-map-pin="" data-pin-title="XBD Group" data-pin-country="Singapore" data-pin-img="static/images/theme/home/partnerships/22.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/22-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/22-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/22.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--23 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="1150" data-partnerships-map-pin="" data-pin-title="Finance Differently" data-pin-country="Australia" data-pin-img="static/images/theme/home/partnerships/23.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/23-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/23-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/23.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--24 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="1200" data-partnerships-map-pin="" data-pin-title="Toki Finance" data-pin-country="Japan" data-pin-img="static/images/theme/home/partnerships/24.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/24-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/24-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/24.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--25 partnerships-map-location partnerships-map-location--rb" data-aos="zoom-in" data-aos-delay="1250" data-partnerships-map-pin="" data-pin-title="ESGCX" data-pin-country="New Zealand" data-pin-img="static/images/theme/home/partnerships/25.svg">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <img src="static/images/theme/home/partnerships/25.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--26 partnerships-map-location partnerships-map-location--rb" data-aos="zoom-in" data-aos-delay="1300" data-partnerships-map-pin="" data-pin-title="Strategy App" data-pin-country="Switzerland" data-pin-img="static/images/theme/home/partnerships/26.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/26-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/26-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/26.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="partnerships-map__location partnerships-map__location--27 partnerships-map-location partnerships-map-location--lb" data-aos="zoom-in" data-aos-delay="850" data-partnerships-map-pin="" data-pin-title="NEXON" data-pin-country="UAE" data-pin-img="static/images/theme/home/partnerships/27.webp">
-                            <div class="partnerships-map-location__inner">
-                                <figure class="partnerships-map-location__img">
-                                    <picture>
-                                        <source media="(max-width: 768px)" srcset="static/images/theme/home/partnerships/27-768.webp" type="image/webp">
-                                        <source media="(max-width: 1280px)" srcset="static/images/theme/home/partnerships/27-1280.webp" type="image/webp">
-                                        <img alt="" width="40" height="40" loading="lazy" decoding="async" src="static/images/theme/home/partnerships/27.webp">
-                                    </picture>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="partnerships-map__card partnerships-map-card" data-partnerships-map-card="">
-                        <div class="partnerships-map-card__row">
-                            <figure class="partnerships-map-card__img" data-partnerships-map-card-img="">
-                                <img src="static/images/theme/home/partnerships/05.svg" alt="" width="54" height="54" loading="lazy" decoding="async">
-                            </figure>
-                            <div class="partnerships-map-card__text">
-                                <h3 class="partnerships-map-card__title" data-partnerships-map-card-title="">Sellify AI</h3>
-                                <h4 class="partnerships-map-card__label" data-partnerships-map-card-label="">United States</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	    <!-- Section 10: Recognition (HIDDEN) -->
+        
+	    <!-- Section 11: Our Partnerships (HIDDEN) -->
+    
     <!-- Section 12: Why choose ... (done) -->
     <section class="section-benefits" aria-labelledby="sectionBenefitsTitle">
         <div class="section-benefits__container container">
@@ -2075,9 +1454,9 @@ Working with GradixTechnology was a consistently positive experience. The tea...
         </div>
     </section>
     <!-- Section 13: Services (done) -->
-    <section class="section-hs" aria-labelledby="sectionServicesTitle" data-services="">
-        <div class="section-hs__container container">
-            <div class="section-hs__wrap">
+    <section class="section-hs" aria-labelledby="sectionServicesTitle" data-services="" style="min-height: auto !important; height: auto !important; margin-bottom: 0 !important; padding-bottom: 1rem !important;">
+        <div class="section-hs__container container" style="min-height: auto !important;">
+            <div class="section-hs__wrap" style="min-height: auto !important; height: auto !important;">
                 <div class="section-hs__header">
                     <h2 class="section-hs__title title-h3" id="sectionServicesTitle">Services</h2>
                 </div>
@@ -2461,247 +1840,9 @@ Working with GradixTechnology was a consistently positive experience. The tea...
             </div>
         </div>
     </section>
-    <!-- Section 14-1: Facts that speak through results (done) -->
-    <section class="section-result-facts" aria-labelledby="sectionResutFactsTitle" data-facts-slider="">
-            <div class="section-result-facts__container container">
-                <div class="section-result-facts__wrap">
-                    <div class="section-result-facts__row">
-                        <div class="section-result-facts__col section-result-facts__col--text">
-                            <div class="section-result-facts__text">
-                                <h2 class="section-result-facts__title title-h3" id="sectionResutFactsTitle">Facts that speak through results</h2>
-                                <div class="section-result-facts__slider-navigation slider-navigation">
-                                    <button id="swiperResultFactsPrev" class="slider-navigation__btn btn btn--icon btn--gray" aria-label="Go to prev slide">
-                                        <i class="icon-chevron-left" aria-hidden="true"></i>
-                                    </button>
-                                    <div id="swiperResultFactsPagination" class="slider-navigation__pagination"></div>
-                                    <button id="swiperResultFactsNext" class="slider-navigation__btn btn btn--icon btn--gray" aria-label="Go to next slide">
-                                        <i class="icon-chevron-right" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-result-facts__col section-result-facts__col--slider">
-                            <div class="section-result-facts__slider-wrap">
-                                <div id="swiperResultFacts" class="swiper" data-slider="">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="result-fact-slide">
-                                                <div class="result-fact-slide__info result-fact-info">
-                                                    <div class="result-fact-info__grid">
-                                                        <h4 class="result-fact-info__title">
-                                                            Products built on research
-                                                            <strong>30%</strong>
-                                                            faster.
-                                                        </h4>
-                                                        <div class="result-fact-info__description desc-text">
-                                                            <p>Data-driven design leads to higher satisfaction and stronger loyalty.</p>
-                                                        </div>
-                                                        <ul class="result-fact-info__chart-legend">
-                                                            <li style="--color: #fed500">Projects with user research</li>
-                                                            <li style="--color: #bcbcbc">Projects based on assumptions</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="result-graph" aria-label="Bar chart comparing growth" data-chart="" data-chart-max="100">
-                                                    <div class="result-graph__row">
-                                                        <h3 class="result-graph__label">Product revenue</h3>
-                                                        <div class="result-graph__grid" aria-hidden="true">
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                        </div>
-                                                        <div class="result-graph__field">
-                                                            <div class="result-graph__bars">
-                                                                <div class="result-graph__bar result-graph-bar result-graph-bar--primary" data-chart-bar="" data-chart-value="66">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>%</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="result-graph__bar result-graph-bar" data-chart-bar="" data-chart-value="34">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="result-fact-slide">
-                                                <div class="result-fact-slide__info result-fact-info">
-                                                    <div class="result-fact-info__grid">
-                                                        <h4 class="result-fact-info__title">
-                                                            Cut development time by up to 50%
-                                                        </h4>
-                                                        <div class="result-fact-info__description desc-text">
-                                                            <p>Our product designers use UX to cut developers’ rework time and save your money</p>
-                                                        </div>
-                                                        <ul class="result-fact-info__chart-legend">
-                                                            <li style="--color: #fed500">Projects with AI and proper UX</li>
-                                                            <li style="--color: #bcbcbc">Projects without AI and proper UX</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="result-graph" aria-label="Bar chart comparing growth" data-chart="">
-                                                    <div class="result-graph__row">
-                                                        <h3 class="result-graph__label">Developers time</h3>
-                                                        <div class="result-graph__grid" aria-hidden="true">
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                        </div>
-                                                        <div class="result-graph__field">
-                                                            <div class="result-graph__bars">
-                                                                <div class="result-graph__bar result-graph-bar result-graph-bar--primary" data-chart-bar="" data-chart-value="4">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>weeks</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="result-graph__bar result-graph-bar" data-chart-bar="" data-chart-value="8">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>weeks</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="result-fact-slide">
-                                                <div class="result-fact-slide__info result-fact-info">
-                                                    <div class="result-fact-info__grid">
-                                                        <h4 class="result-fact-info__title">
-                                                            Boost project outcomes
-                                                        </h4>
-                                                        <div class="result-fact-info__description desc-text">
-                                                            <p>Discovery before building leadsto higher success rates</p>
-                                                        </div>
-                                                        <ul class="result-fact-info__chart-legend">
-                                                            <li style="--color: #fed500">With discovery phase</li>
-                                                            <li style="--color: #bcbcbc">Without discovery phase</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="result-graph" aria-label="Bar chart comparing growth" data-chart="" data-chart-max="100">
-                                                    <div class="result-graph__row">
-                                                        <h3 class="result-graph__label">Product success</h3>
-                                                        <div class="result-graph__grid" aria-hidden="true">
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                            <span></span>
-                                                        </div>
-                                                        <div class="result-graph__field">
-                                                            <div class="result-graph__bars">
-                                                                <div class="result-graph__bar result-graph-bar result-graph-bar--primary" data-chart-bar="" data-chart-value="83">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>%</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="result-graph__bar result-graph-bar" data-chart-bar="" data-chart-value="51">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>%</span>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="result-graph__bar result-graph-bar" data-chart-bar="" data-chart-value="13">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>%</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="result-graph__bar result-graph-bar result-graph-bar--primary" data-chart-bar="" data-chart-value="32">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>%</span>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                <div class="result-graph__bar result-graph-bar" data-chart-bar="" data-chart-value="4">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>%</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="result-graph__bar result-graph-bar result-graph-bar--primary" data-chart-bar="" data-chart-value="16">
-                                                                    <div class="result-graph-bar__value">
-                                                                        <span data-chart-value-label=""></span>
-                                                                        <span>%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    
     <!-- Section 14-2: Begin your journey towards product success right here (done) -->
-    <section class="section-flow" aria-labelledby="sectionFlowTitle">
+    <section class="section-flow" aria-labelledby="sectionFlowTitle" style="margin-top: 0 !important; padding-top: 1rem !important;">
         <div class="section-flow__container container">
             <div class="section-flow__wrap">
                 <div class="section-flow__header">
@@ -3236,8 +2377,7 @@ Working with GradixTechnology was a consistently positive experience. The tea...
 											<h3 class="footer-group__title">General</h3>
 											<nav class="footer-group__nav">
 												<ul id="menu-footer-menu" class="footer-group__menu"><li id="menu-item-1364" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1364"><a href="cases.html">Cases</a></li>
-<li id="menu-item-1365" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1365"><a href="blog.html">Blog</a></li>
-<li id="menu-item-1366" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1366"><a href="about-us.html">About Us</a></li>
+
 </ul>											</nav>
 										</div>
 										<div class="footer-middle__group footer-group">
@@ -4209,6 +3349,20 @@ var gradixAjax = {"ajaxurl":"wp-admin/admin-ajax.php","nonce":"78f29b7419","feb_
 			setTimeout(loadThirdPartyScripts, 8000);
 		})();
 		</script>
+
+<!-- Performance Optimization Script -->
+<script>
+(function() {
+    // Remove AOS animation delays for instant display
+    window.addEventListener('load', function() {
+        var aosElements = document.querySelectorAll('[data-aos]');
+        aosElements.forEach(function(el) {
+            el.classList.add('aos-animate');
+            el.style.opacity = '1';
+        });
+    });
+})();
+</script>
 
 
 	

@@ -160,9 +160,9 @@ a.btn .icon-chevron-right::before {
     opacity: 1 !important;
 }
 
-/* Ensure yellow buttons have black stroke arrows instead of white */
+/* Blue buttons have white stroke arrows */
 .btn--yellow .icon-chevron-right::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
 }
 
 /* Specific cleanup for Select budget dropdown (Choices.js) - HIDDEN LAYERS */
@@ -894,7 +894,7 @@ body.light-theme .section-discuss .about-project-form__group--budget .choices.is
 }
 
 .menu-sublist-group__link:hover {
-    color: #f7d307 !important;
+    color: #3b82f6 !important;
     transform: translateX(4px);
 }
 
@@ -915,7 +915,7 @@ body.light-theme .section-discuss .about-project-form__group--budget .choices.is
 }
 
 .toggle-switch input:checked + .slider {
-    background-color: #f7d307 !important;
+    background-color: #3b82f6 !important;
 }
 
 /* FINAL CONTACT SECTION POLISH */
@@ -959,7 +959,7 @@ body.light-theme .toggle-switch input:checked + .slider:before {
 }
 
 .ext-service-card__list li i.icon-chevron-right {
-    color: #f7d307 !important; /* Professional yellow/gold instead of legacy blue */
+    color: #3b82f6 !important; /* Blue accent color */
     font-size: 0.85rem !important;
     flex-shrink: 0 !important;
     opacity: 0.8 !important;
@@ -977,7 +977,7 @@ body.light-theme .toggle-switch input:checked + .slider:before {
     content: "\203A";
     display: inline-block;
     margin-right: 10px;
-    color: #f7d307;
+    color: #3b82f6;
     font-weight: 700;
 }
 
@@ -987,7 +987,7 @@ body.light-theme .toggle-switch input:checked + .slider:before {
 }
 
 .ext-service-card__list li:hover a {
-    color: #f7d307 !important;
+    color: #3b82f6 !important;
 }
 
 /* Ensure Services text stays readable on light theme */
@@ -1095,3 +1095,814 @@ body.light-theme .modal .author-badge--online .author-badge__img::after {
     border: 2px solid #ffffff !important;
     border-radius: 50% !important;
 }
+
+/* ============================================
+   YELLOW TO BLUE BUTTON CONVERSION
+   ============================================ */
+/* Convert all yellow buttons to blue */
+.btn--yellow {
+    background: #3b82f6 !important;
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+}
+
+.btn--yellow .btn__text {
+    color: #ffffff !important;
+}
+
+.btn--yellow:hover {
+    background: #2563eb !important;
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+
+.btn--yellow:focus,
+.btn--yellow:active {
+    background: #1d4ed8 !important;
+    background-color: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
+}
+
+/* Update chevron icon inside blue buttons to white */
+.btn--yellow .icon-chevron-right::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
+}
+
+/* Section discuss button overrides */
+.section-discuss .btn--yellow {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+.section-discuss .btn--yellow .btn__text {
+    color: #ffffff !important;
+}
+
+.section-discuss .btn--yellow:hover {
+    background: #2563eb !important;
+}
+
+.section-discuss .btn--yellow .icon-chevron-right::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
+}
+
+/* ============================================
+   PROFESSIONAL HERO SECTION FIXES
+   ============================================ */
+/* Remove boxy appearance and excess spacing */
+.home-hero {
+    min-height: 60vh !important; /* Reduce from default */
+    max-height: 70vh !important; /* Prevent too much height */
+    padding: 2rem 0 !important; /* Reduce padding */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.home-hero__container {
+    height: auto !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+}
+
+.home-hero__wrap {
+    min-height: auto !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.home-hero__text {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+.home-hero__title {
+    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.home-hero__description {
+    font-size: 1.1rem !important;
+    margin-bottom: 2rem !important;
+    opacity: 0.9 !important;
+}
+
+.home-hero__btn-box {
+    margin-top: 1rem !important;
+}
+
+/* ============================================
+   CENTERING ALIGNMENT FIX
+   ============================================ */
+/* Ensure all sections and containers are properly centered */
+* {
+    box-sizing: border-box !important;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+main {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Force center alignment for all content */
+section {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+
+.container {
+    display: block !important;
+    text-align: left !important;
+}
+
+/* ============================================
+   PROPER SECTION CONTAINERS WITH MARGINS
+   ============================================ */
+/* ============================================
+   FIX GSAP SCROLLTRIGGER PIN-SPACER GAP
+   ============================================ */
+/* GSAP ScrollTrigger creates pin-spacer with huge padding - override it */
+.pin-spacer {
+    height: auto !important;
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: auto !important;
+}
+
+/* ============================================
+   AGGRESSIVE GAP REMOVAL - TARGET ALL SECTIONS
+   ============================================ */
+/* Target every single section with aggressive spacing */
+.section-results,
+.section-industries, 
+.section-milestone,
+.section-hp,
+.section-honors,
+.section,
+.section-reviews,
+.section-benefits,
+.section-hs,
+.section-flow,
+.section-discuss {
+    margin: 0 !important;
+    padding: 1rem 0 !important;
+    min-height: auto !important;
+}
+
+/* CRITICAL: Override min-height that creates massive gaps */
+.section-hs__wrap,
+.section-flow__wrap,
+.section-results__wrap,
+.section-industries__wrap,
+.section-milestone__wrap,
+.section-hp__wrap,
+.section-honors__wrap,
+.section-reviews__wrap,
+.section-benefits__wrap,
+.section-discuss__wrap,
+[class*="__wrap"] {
+    min-height: auto !important;
+    height: auto !important;
+}
+
+/* Force containers to have minimal spacing */
+.section-results__container,
+.section-industries__container,
+.section-milestone__container,
+.section-hp__container,
+.section-honors__container,
+.section__container,
+.section-reviews__container,
+.section-benefits__container,
+.section-hs__container,
+.section-flow__container,
+.section-discuss__container {
+    margin: 0 !important;
+    padding: 1rem 2rem !important;
+    min-height: auto !important;
+}
+
+/* Remove any wrapper padding/margins that could create gaps */
+.section-results__wrap,
+.section-industries__wrap,
+.section-milestone__wrap,
+.section-hp__wrap,
+.section-honors__wrap,
+.section__wrap,
+.section-reviews__wrap,
+.section-benefits__wrap,
+.section-hs__wrap,
+.section-flow__wrap,
+.section-discuss__wrap {
+    margin: 0 !important;
+    padding: 1rem 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+/* Restore proper containers for all sections EXCEPT hero */
+section:not(.home-hero) {
+    width: 100% !important;
+    margin: 0 !important; /* Completely remove margins */
+    padding: 1rem 0 !important; /* Minimal padding only */
+}
+
+section:not(.home-hero) .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Specific container fixes for main content areas */
+.section-results__container,
+.section-team__container,
+.section-services__container,
+.section-discuss__container,
+.section-work__container,
+.section-about__container,
+.section-contact__container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Fix any remaining spacing issues */
+.section-results {
+    margin-top: 0 !important;
+    padding-top: 1rem !important; /* Minimal padding */
+}
+
+/* Remove AOS delays that might create visual gaps */
+[data-aos] {
+    transition-delay: 0s !important;
+    animation-delay: 0s !important;
+}
+
+/* Force immediate visibility to prevent gaps */
+.aos-animate {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN FOR PROPER SPACING
+   ============================================ */
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    section:not(.home-hero) .container,
+    .section-results__container,
+    .section-team__container,
+    .section-services__container,
+    .section-discuss__container,
+    .section-work__container,
+    .section-about__container,
+    .section-contact__container {
+        padding: 0 1rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    section:not(.home-hero) {
+        margin: 1rem 0 !important; /* Reduced from 2rem */
+        padding: 1rem 0 !important; /* Reduced from 2rem */
+    }
+    
+    .section-services,
+    .section-discuss,
+    .section-work {
+        margin: 0.5rem 0 !important; /* Even smaller on mobile */
+        padding: 0.5rem 0 !important;
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1400px) {
+    section:not(.home-hero) .container,
+    .section-results__container,
+    .section-team__container,
+    .section-services__container,
+    .section-discuss__container,
+    .section-work__container,
+    .section-about__container,
+    .section-contact__container {
+        max-width: 1400px !important;
+        padding: 0 3rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    section:not(.home-hero) {
+        margin: 2rem 0 !important; /* Slightly larger on desktop but still reasonable */
+        padding: 2rem 0 !important;
+    }
+}
+
+/* ============================================
+   NAVBAR LOGO SIZE INCREASE
+   ============================================ */
+.header__logo img {
+    height: 30px !important;
+    width: auto !important;
+    max-width: 150px !important;
+}
+
+/* ============================================
+   HIDE SPECIFIED SECTIONS (no gaps)
+   ============================================ */
+/* Hero-partners section completely removed from HTML - no CSS needed */
+
+/* Hide: Recognized Excellence section */
+.section-recognition {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    visibility: hidden !important;
+}
+
+/* Hide: Our Partnerships section */
+.section-partnerships {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    visibility: hidden !important;
+}
+
+/* Hide: Facts that speak through results section */
+.section-result-facts {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    visibility: hidden !important;
+}
+
+/* ============================================
+   YELLOW TEXT TO BLUE - GLOBAL CONVERSION
+   ============================================ */
+/* Convert all yellow/gold text colors to blue */
+[style*="#fed500"],
+[style*="#FED500"],
+[style*="#f7d307"],
+[style*="#F7D307"],
+[style*="gold"],
+[style*="yellow"] {
+    color: #3b82f6 !important;
+}
+
+/* Yellow text classes */
+.text-yellow,
+.text-gold,
+.color-yellow,
+.color-gold {
+    color: #3b82f6 !important;
+}
+
+/* Yellow highlight/accent text */
+strong[style*="color"],
+span[style*="yellow"],
+span[style*="gold"],
+span[style*="#fed500"],
+span[style*="#f7d307"] {
+    color: #3b82f6 !important;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATION - ZERO LAG SCROLL
+   ============================================ */
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Disable heavy blur effects that cause lag */
+.wrapper__blurs {
+    display: none !important;
+}
+
+/* Optimize AOS animations - make them instant */
+[data-aos] {
+    opacity: 1 !important;
+    transform: translate(0) !important;
+    transition-duration: 0s !important;
+}
+
+[data-aos].aos-animate {
+    opacity: 1 !important;
+    transform: translate(0) !important;
+}
+
+/* ============================================
+   HIDE TOP BANNER ABOVE NAVBAR
+   ============================================ */
+.header__top,
+.header-top {
+    display: none !important;
+}
+
+/* ============================================
+   FIX HIDDEN SECTIONS GAP (remove white space)
+   ============================================ */
+.hero-partners,
+.section-recognition,
+.section-partnerships,
+.section-result-facts {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+/* Also hide all children to ensure no gap */
+.hero-partners *,
+.section-recognition *,
+.section-partnerships *,
+.section-result-facts * {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Remove margin from sections adjacent to hidden ones */
+.section-hs {
+    margin-bottom: 0 !important;
+}
+
+.section-flow {
+    margin-top: 40px !important;
+}
+
+/* Fix hero section bottom spacing when partners section is hidden */
+.home-hero {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important; /* Remove all bottom padding */
+    min-height: auto !important;
+}
+
+.home-hero__wrap {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.home-hero__text {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.home-hero__footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.home-hero__btn-box {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Ensure section-results comes right after hero with no gap */
+.section-results {
+    margin-top: -50px !important; /* Negative margin to close gap */
+    padding-top: 50px !important;
+}
+
+.section-results__container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Remove any potential spacers or containers that might cause gaps */
+.home-hero *:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Override any section spacing that might exist */
+section.home-hero {
+    margin: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+section.section-results {
+    margin-top: -50px !important;
+}
+
+/* Remove container gaps */
+.home-hero .container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.section-results .container {
+    margin-top: 0 !important;
+    padding-top: 50px !important;
+}
+
+/* ============================================
+   FIX COLLAPSED SECTIONS (Why choose & Services)
+   ============================================ */
+.section-benefits,
+.section-hs {
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+.section-benefits__wrap,
+.section-benefits__body,
+.section-benefits__list,
+.section-hs__wrap,
+.section-hs__body {
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+.section-benefits__list li,
+.benefit-card {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
+/* ============================================
+   BUTTON STYLING - WHITE TEXT WITH MATCHING ARROWS
+   ============================================ */
+/* Primary buttons - blue background, white text */
+.btn--primary {
+    background: #3b82f6 !important;
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+}
+
+.btn--primary:hover {
+    background: #2563eb !important;
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+
+.btn--primary .btn__text {
+    color: #ffffff !important;
+}
+
+.btn--primary .icon-chevron-right::before,
+.btn--primary i[class*="icon-"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
+}
+
+/* Gray buttons - same white text style */
+.btn--gray {
+    background: #374151 !important;
+    background-color: #374151 !important;
+    color: #ffffff !important;
+    border-color: #374151 !important;
+}
+
+.btn--gray:hover {
+    background: #4b5563 !important;
+    background-color: #4b5563 !important;
+}
+
+.btn--gray .btn__text {
+    color: #ffffff !important;
+}
+
+.btn--gray .icon-chevron-right::before,
+.btn--gray i[class*="icon-"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E") !important;
+}
+
+/* Header button styling */
+.btn--header {
+    color: #ffffff !important;
+}
+
+.btn--header .btn__text {
+    color: #ffffff !important;
+}
+
+/* ============================================
+   HIDE ALL EXTERNAL LINK BUTTONS
+   ============================================ */
+/* Hide buttons linking to external sites */
+a.btn[href*="clutch.co"],
+a.btn[href*="calendly.com"],
+a.btn[href*="behance.net"],
+a.btn[href*="dribbble.com"],
+a.btn[href*="linkedin.com"],
+a.btn[href*="trustpilot.com"],
+a.btn[target="_blank"] {
+    display: none !important;
+}
+
+/* Hide book call cards that contain external links */
+.book-call-card {
+    display: none !important;
+}
+
+/* ============================================
+   MOBILE MODAL FIX - CONTACT POPUP
+   ============================================ */
+@media screen and (max-width: 768px) {
+    /* Modal container fixes */
+    .modal {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 9999 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .modal__container {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 60px 16px 24px !important;
+        border-radius: 0 !important;
+        overflow-y: auto !important;
+    }
+
+    .modal__content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Close button positioning */
+    .modal__close {
+        position: fixed !important;
+        top: 12px !important;
+        right: 12px !important;
+        z-index: 10001 !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Section discuss mobile layout */
+    .section-discuss__row {
+        flex-direction: column !important;
+        gap: 24px !important;
+    }
+
+    .section-discuss__col {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+    }
+
+    .section-discuss__col--aside {
+        order: 2 !important;
+    }
+
+    .section-discuss__col--main {
+        order: 1 !important;
+    }
+
+    /* Book call card mobile */
+    .book-call-card {
+        padding: 16px !important;
+    }
+
+    .book-call-card__header {
+        margin-bottom: 12px !important;
+    }
+
+    .book-call-card__title {
+        font-size: 18px !important;
+    }
+
+    /* Form fields mobile */
+    .about-project-form {
+        padding: 0 !important;
+    }
+
+    .about-project-form__title {
+        font-size: 20px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .about-project-form__description {
+        font-size: 14px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .about-project-form__row {
+        gap: 12px !important;
+    }
+
+    .about-project-form__col {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    .about-project-form__input input,
+    .about-project-form__input textarea,
+    .about-project-form__select select {
+        width: 100% !important;
+        font-size: 16px !important; /* Prevents iOS zoom */
+        padding: 14px 16px !important;
+    }
+
+    .about-project-form__input textarea {
+        min-height: 120px !important;
+    }
+
+    .about-project-form__btn-box {
+        margin-top: 20px !important;
+    }
+
+    .about-project-form__btn-box .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 16px 24px !important;
+    }
+
+    /* Author badge mobile */
+    .author-badge__row {
+        flex-wrap: wrap !important;
+    }
+
+    .author-badge__img {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .author-badge__name {
+        font-size: 14px !important;
+    }
+
+    .author-badge__role {
+        font-size: 12px !important;
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    .modal__container {
+        padding: 56px 12px 20px !important;
+    }
+
+    .about-project-form__title {
+        font-size: 18px !important;
+    }
+
+    .book-call-card__title {
+        font-size: 16px !important;
+    }
+}
+
