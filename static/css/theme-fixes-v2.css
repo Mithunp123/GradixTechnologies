@@ -5787,3 +5787,381 @@ body.light-theme .modal__container[data-modal-id="modalContactUs"] .form-group:h
 body.light-theme .contact-modal-wrapper .form-group:has(select) {
     position: relative !important;
 }
+
+
+/* ============================================
+   REVERT CONTACT SECTION LAYOUT
+   Fix broken grid and restore original appearance
+   ============================================ */
+
+/* Reset contact section to original layout */
+.modern-contact__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 60px !important;
+    align-items: center !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .modern-contact__grid {
+        flex-direction: row !important;
+        gap: 80px !important;
+        align-items: flex-start !important;
+    }
+}
+
+/* Contact cards - restore original styling */
+.contact-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 400px !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .contact-cards {
+        flex: 0 0 350px !important;
+    }
+}
+
+/* Form wrapper - restore to full width */
+.modern-contact__form-wrapper {
+    background: #ffffff !important;
+    padding: 48px !important;
+    border-radius: 24px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    width: 100% !important;
+    max-width: 600px !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .modern-contact__form-wrapper {
+        flex: 1 !important;
+        max-width: none !important;
+    }
+}
+
+body:not(.light-theme) .modern-contact__form-wrapper {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Form title and description */
+.modern-form__title {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 12px !important;
+    line-height: 1.2 !important;
+}
+
+body:not(.light-theme) .modern-form__title {
+    color: #ffffff !important;
+}
+
+.modern-form__description {
+    font-size: 1.125rem !important;
+    color: #666666 !important;
+    margin: 0 0 40px 0 !important;
+    line-height: 1.6 !important;
+}
+
+body:not(.light-theme) .modern-form__description {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Form fields with better spacing */
+.modern-form__fields {
+    margin-bottom: 40px !important;
+}
+
+.modern-form__row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+    margin-bottom: 24px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .modern-form__row {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+.modern-form__field--full {
+    grid-column: 1 / -1 !important;
+    margin-top: 8px !important;
+}
+
+/* Larger, more professional inputs */
+.modern-input,
+.modern-textarea,
+.modern-select {
+    width: 100% !important;
+    padding: 20px 24px !important;
+    border: 2px solid #e8ecef !important;
+    border-radius: 16px !important;
+    background: #fafbfc !important;
+    color: #1a1a1a !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-sizing: border-box !important;
+}
+
+.modern-textarea {
+    min-height: 120px !important;
+    resize: vertical !important;
+}
+
+/* Focus states */
+.modern-input:focus,
+.modern-textarea:focus,
+.modern-select:focus {
+    border-color: #0066FF !important;
+    background: #ffffff !important;
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Dark theme inputs */
+body:not(.light-theme) .modern-input,
+body:not(.light-theme) .modern-textarea,
+body:not(.light-theme) .modern-select {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+body:not(.light-theme) .modern-input:focus,
+body:not(.light-theme) .modern-textarea:focus,
+body:not(.light-theme) .modern-select:focus {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-color: #0066FF !important;
+}
+
+/* Professional submit button */
+.modern-submit-btn {
+    width: 100% !important;
+    background: linear-gradient(135deg, #0066FF, #0052CC) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 20px 32px !important;
+    border-radius: 16px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3) !important;
+    min-height: 64px !important;
+}
+
+.modern-submit-btn:hover {
+    background: linear-gradient(135deg, #0052CC, #003d99) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 32px rgba(0, 102, 255, 0.4) !important;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .modern-contact__grid {
+        gap: 40px !important;
+        padding: 0 16px !important;
+    }
+    
+    .modern-contact__form-wrapper {
+        padding: 32px 24px !important;
+    }
+    
+    .modern-form__title {
+        font-size: 1.75rem !important;
+    }
+    
+    .modern-form__description {
+        font-size: 1rem !important;
+    }
+    
+    .modern-input,
+    .modern-textarea,
+    .modern-select {
+        padding: 16px 20px !important;
+    }
+    
+    .modern-submit-btn {
+        padding: 18px 24px !important;
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modern-contact-section {
+        padding: 60px 0 !important;
+    }
+}
+
+
+/* ============================================
+   CONTACT SECTION LAYOUT FIX
+   Restore proper spacing and appearance
+   ============================================ */
+
+/* Override problematic grid styles */
+.modern-contact__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 60px !important;
+    align-items: center !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .modern-contact__grid {
+        flex-direction: row !important;
+        gap: 80px !important;
+        align-items: flex-start !important;
+    }
+}
+
+/* Contact cards - restore original styling */
+.contact-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 400px !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .contact-cards {
+        flex: 0 0 350px !important;
+    }
+}
+
+/* Form wrapper - restore to full width */
+.modern-contact__form-wrapper {
+    background: #ffffff !important;
+    padding: 48px !important;
+    border-radius: 24px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    width: 100% !important;
+    max-width: 600px !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .modern-contact__form-wrapper {
+        flex: 1 !important;
+        max-width: none !important;
+    }
+}
+
+body:not(.light-theme) .modern-contact__form-wrapper {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   FIX FORM DOUBLE BORDERS AND BUTTON COLOR
+   Remove extra borders and ensure button has proper color
+   ============================================ */
+
+/* Remove double border issue */
+.modern-contact__form-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.modern-contact-form {
+    background: #ffffff !important;
+    padding: 48px !important;
+    border-radius: 24px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    width: 100% !important;
+}
+
+body:not(.light-theme) .modern-contact-form {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Fix Send Message button - ensure it has blue color by default */
+.modern-submit-btn {
+    background: #0066FF !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 20px 32px !important;
+    border-radius: 16px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3) !important;
+    min-height: 64px !important;
+    width: 100% !important;
+}
+
+.modern-submit-btn:hover {
+    background: #0052CC !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 32px rgba(0, 102, 255, 0.4) !important;
+}
+
+.modern-submit-btn:active {
+    transform: translateY(0) !important;
+    background: #003d99 !important;
+}
+
+/* Ensure button text is visible */
+.modern-submit-btn .btn-text {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.modern-submit-btn .btn-icon {
+    color: #ffffff !important;
+}
+
+/* Remove any conflicting button styles */
+button.modern-submit-btn[type="submit"] {
+    background-color: #0066FF !important;
+    background-image: none !important;
+    color: #ffffff !important;
+}
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+    .modern-contact-form {
+        padding: 32px 24px !important;
+    }
+    
+    .modern-submit-btn {
+        padding: 18px 24px !important;
+        font-size: 16px !important;
+        min-height: 56px !important;
+    }
+}

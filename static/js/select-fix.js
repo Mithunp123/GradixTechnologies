@@ -1,43 +1,94 @@
-// Fix for zigzag pattern in select elements
-document.addEventListener('DOMContentLoaded', function() {
-    function fixSelectElement() {
-        const selectElements = document.querySelectorAll('select.form-select[name="projectBudget"]');
+// Professional Form Enhancement Script
+(function() {
+    'use strict';
+    
+    function fixSelectElements() {
+        // Target all select elements that might have issues
+        const selectors = [
+            'select.form-select',
+            'select.modern-select',
+            '.choices__inner',
+            '.choices__input',
+            '.choices__item'
+        ];
         
-        selectElements.forEach(function(select) {
-            // Apply direct styles to fix zigzag
-            select.style.fontFamily = 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-            select.style.fontSize = '16px';
-            select.style.fontWeight = '400';
-            select.style.letterSpacing = '0';
-            select.style.wordSpacing = '0';
-            select.style.textDecoration = 'none';
-            select.style.textTransform = 'none';
-            select.style.fontFeatureSettings = '"kern" 1, "liga" 0';
-            select.style.fontVariantLigatures = 'none';
-            select.style.webkitFontFeatureSettings = '"kern" 1, "liga" 0';
-            select.style.webkitFontVariantLigatures = 'none';
-            select.style.textRendering = 'optimizeLegibility';
-            select.style.webkitFontSmoothing = 'antialiased';
-            select.style.mozOsxFontSmoothing = 'grayscale';
-            
-            // Force background and color
-            select.style.background = 'rgba(255, 255, 255, 0.05)';
-            select.style.backgroundImage = 'none';
-            select.style.color = 'rgba(255, 255, 255, 0.8)';
-            select.style.border = '2px solid rgba(255, 255, 255, 0.1)';
-            select.style.borderRadius = '12px';
-            select.style.padding = '16px 20px';
+        selectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                // Remove problematic font features
+                element.style.fontFeatureSettings = 'normal';
+                element.style.fontVariantLigatures = 'none';
+                element.style.textRendering = 'optimizeSpeed';
+                element.style.webkitFontSmoothing = 'antialiased';
+                element.style.mozOsxFontSmoothing = 'grayscale';
+                
+                // Ensure proper font family
+                if (element.tagName === 'SELECT') {
+                    element.style.fontFamily = 'inherit';
+                    element.style.fontWeight = '400';
+                }
+            });
         });
     }
     
-    // Run immediately
-    fixSelectElement();
+    function ensureSingleContactForm() {
+        // Remove any duplicate contact forms
+        const forms = document.querySelectorAll('.modern-contact-form');
+        if (forms.length > 1) {
+            for (let i = 1; i < forms.length; i++) {
+                const parentWrapper = forms[i].closest('.modern-contact__form-wrapper');
+                if (parentWrapper) {
+                    parentWrapper.remove();
+                } else {
+                    forms[i].remove();
+                }
+            }
+        }
+    }
     
-    // Run when modal opens
+    function enhanceFormAccessibility() {
+        // Add proper labels and ARIA attributes
+        const inputs = document.querySelectorAll('.modern-input, .modern-textarea, .modern-select');
+        inputs.forEach(input => {
+            if (input.placeholder && !input.getAttribute('aria-label')) {
+                input.setAttribute('aria-label', input.placeholder);
+            }
+        });
+        
+        // Enhance submit button
+        const submitBtn = document.querySelector('.modern-submit-btn');
+        if (submitBtn && !submitBtn.getAttribute('aria-describedby')) {
+            submitBtn.setAttribute('aria-describedby', 'form-submit-description');
+            
+            // Add hidden description
+            if (!document.getElementById('form-submit-description')) {
+                const desc = document.createElement('span');
+                desc.id = 'form-submit-description';
+                desc.className = 'sr-only';
+                desc.textContent = 'Submit your project inquiry. We will respond within 24 hours.';
+                submitBtn.appendChild(desc);
+            }
+        }
+    }
+    
+    function init() {
+        fixSelectElements();
+        ensureSingleContactForm();
+        enhanceFormAccessibility();
+    }
+    
+    // Run on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Watch for dynamic content changes
     const observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
-            if (mutation.addedNodes.length > 0) {
-                fixSelectElement();
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                init();
             }
         });
     });
@@ -47,10 +98,5 @@ document.addEventListener('DOMContentLoaded', function() {
         subtree: true
     });
     
-    // Also run on modal events
-    document.addEventListener('click', function(e) {
-        if (e.target.matches('[data-modal-target="modalContactUs"]')) {
-            setTimeout(fixSelectElement, 100);
-        }
-    });
-});
+    console.log('Professional form enhancement script loaded');
+})();
