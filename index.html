@@ -1,9 +1,5 @@
 <!DOCTYPE html><html lang="en"><head>
 		<meta charset="UTF-8">
-<script>
-  /* Prevent light theme flash by setting dark theme immediately */
-  document.documentElement.classList.add('theme-dark');
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -3097,6 +3093,61 @@ var gradixAjax = {"ajaxurl":"wp-admin/admin-ajax.php","nonce":"78f29b7419","feb_
 
 <!-- Services Dropdown Toggle Script -->
 <script src="static/js/services-dropdown.js"></script>
+
+<!-- Clutch Logo Theme Switcher -->
+<script>
+(function() {
+    function isDarkTheme() {
+        return !document.body.classList.contains('light-theme');
+    }
+
+    function switchClutchLogos() {
+        const clutchImgs = document.querySelectorAll('img[src*="clutch"]');
+        const isDark = isDarkTheme();
+        
+        clutchImgs.forEach(img => {
+            const currentSrc = img.getAttribute('src') || '';
+            
+            if (isDark) {
+                // Dark theme = WHITE logos
+                if (currentSrc.includes('theme/home/reviews/clutch') && !currentSrc.includes('-dark.svg')) {
+                    img.setAttribute('src', 'static/images/theme/home/reviews/clutch-dark.svg');
+                } else if (currentSrc.includes('theme/logos/clutch') && !currentSrc.includes('-dark.svg')) {
+                    img.setAttribute('src', 'static/images/theme/logos/clutch-dark.svg');
+                } else if (currentSrc.includes('2025/11/clutch') && !currentSrc.includes('-dark.svg')) {
+                    img.setAttribute('src', 'static/images/2025/11/clutch-dark.svg');
+                }
+            } else {
+                // Light theme = BLACK logos
+                if (currentSrc.includes('theme/home/reviews/clutch') && !currentSrc.includes('-light.svg')) {
+                    img.setAttribute('src', 'static/images/theme/home/reviews/clutch-light.svg');
+                } else if (currentSrc.includes('theme/logos/clutch') && !currentSrc.includes('-light.svg')) {
+                    img.setAttribute('src', 'static/images/theme/logos/clutch-light.svg');
+                } else if (currentSrc.includes('2025/11/clutch') && !currentSrc.includes('-light.svg')) {
+                    img.setAttribute('src', 'static/images/2025/11/clutch-light.svg');
+                }
+            }
+        });
+    }
+    
+    // Run immediately
+    switchClutchLogos();
+    
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', switchClutchLogos);
+    } else {
+        switchClutchLogos();
+    }
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(switchClutchLogos);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    if (document.body) {
+        observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    }
+})();
+</script>
 
 
 	

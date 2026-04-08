@@ -1,0 +1,29 @@
+/* Clutch Logo Theme Controller */
+
+/* Default light theme - black text */
+.reviews-rating__brand img[src*="clutch"] {
+  --clutch-color: #000000;
+}
+
+/* Dark theme variations - white text */
+.dark .reviews-rating__brand img[src*="clutch"],
+[data-theme="dark"] .reviews-rating__brand img[src*="clutch"],
+.theme-dark .reviews-rating__brand img[src*="clutch"],
+html[data-theme="dark"] .reviews-rating__brand img[src*="clutch"],
+body.dark .reviews-rating__brand img[src*="clutch"] {
+  --clutch-color: #ffffff;
+}
+
+/* System dark mode detection */
+@media (prefers-color-scheme: dark) {
+  .reviews-rating__brand img[src*="clutch"] {
+    --clutch-color: #ffffff;
+  }
+}
+
+/* Override for explicit light theme */
+.light .reviews-rating__brand img[src*="clutch"],
+[data-theme="light"] .reviews-rating__brand img[src*="clutch"],
+.theme-light .reviews-rating__brand img[src*="clutch"] {
+  --clutch-color: #000000 !important;
+}
