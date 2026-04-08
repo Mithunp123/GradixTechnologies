@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   var body = document.body;
   if (!body) return;
 
@@ -16,20 +16,35 @@
     });
   }
 
+  function applyTheme(isLightTheme) {
+    body.classList.toggle('light-theme', isLightTheme);
+    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+    syncThemeAssets(isLightTheme);
+  }
+
   var savedTheme = localStorage.getItem('theme');
   var isLight = savedTheme === 'light';
-
-  body.classList.toggle('light-theme', isLight);
-  syncThemeAssets(isLight);
+  applyTheme(isLight);
 
   var themeToggle = document.getElementById('themeToggle');
   if (!themeToggle) return;
 
-  themeToggle.checked = isLight;
-  themeToggle.addEventListener('change', function () {
-    var useLightTheme = themeToggle.checked;
-    body.classList.toggle('light-theme', useLightTheme);
-    localStorage.setItem('theme', useLightTheme ? 'light' : 'dark');
-    syncThemeAssets(useLightTheme);
+  var isCheckboxToggle =
+    themeToggle.tagName === 'INPUT' &&
+    themeToggle.getAttribute('type') === 'checkbox';
+
+  if (isCheckboxToggle) {
+    themeToggle.checked = isLight;
+    themeToggle.addEventListener('change', function () {
+      applyTheme(themeToggle.checked);
+    });
+    return;
+  }
+
+  themeToggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+  themeToggle.addEventListener('click', function () {
+    var useLightTheme = !body.classList.contains('light-theme');
+    applyTheme(useLightTheme);
+    themeToggle.setAttribute('aria-pressed', useLightTheme ? 'true' : 'false');
   });
 })();
