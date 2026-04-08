@@ -6835,4 +6835,5 @@ html body main section.home-hero[aria-labelledby="heroHomeTitle"] {
     align-items: center !important;
     justify-content: center !important;
     position: relative !important;
+    border-radius: 0 0 50px 50px !important;
 }
