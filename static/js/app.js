@@ -40447,20 +40447,47 @@ document.addEventListener("DOMContentLoaded", () => {
   SELECTORS.BODY.classList.add(CLASSES.LOADED);
 });
 
-// Font Awesome Theme Toggle Implementation
+// Enhanced Theme Toggle Implementation - More Robust
 function initFontAwesomeThemeToggle() {
   const themeToggleBtn = document.getElementById('themeToggle');
-  if (!themeToggleBtn) return;
+  if (!themeToggleBtn) {
+    console.log('Theme toggle button not found');
+    return;
+  }
+
+  console.log('Theme toggle button found, initializing...');
 
   // Check for saved theme preference or default to 'light'
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.body.classList.toggle('dark-theme', savedTheme === 'dark');
 
+  // Make sure button is visible
+  themeToggleBtn.style.display = 'flex';
+  themeToggleBtn.style.visibility = 'visible';
+  themeToggleBtn.style.opacity = '1';
+
+  // Add text mode class if Font Awesome icons don't work
+  const hasFont = window.getComputedStyle(themeToggleBtn.querySelector('.fas, .fa')).fontFamily.includes('FontAwesome');
+  if (!hasFont) {
+    themeToggleBtn.classList.add('text-mode');
+  }
+
   themeToggleBtn.addEventListener('click', () => {
+    console.log('Theme toggle clicked');
     document.body.classList.toggle('dark-theme');
     const isDark = document.body.classList.contains('dark-theme');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // Visual feedback
+    themeToggleBtn.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      themeToggleBtn.style.transform = 'scale(1)';
+    }, 150);
+    
+    console.log('Theme changed to:', isDark ? 'dark' : 'light');
   });
+  
+  console.log('Theme toggle initialized successfully');
 }
 
 // Awards Drop Animation - Like u1core.com
