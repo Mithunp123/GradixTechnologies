@@ -961,6 +961,13 @@ body.light-theme .toggle-switch input:checked + .slider:before {
     margin-bottom: 8px !important;
 }
 
+.ext-service-card__list li a {
+    font-size: 1rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.3s ease !important;
+    line-height: 1.4 !important;
+}
+
 .ext-service-card__list li i.icon-chevron-right {
     color: #3b82f6 !important; /* Blue accent color */
     font-size: 0.85rem !important;
