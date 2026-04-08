@@ -6177,6 +6177,77 @@ button.modern-submit-btn[type="submit"] {
     filter: hue-rotate(170deg) saturate(220%) brightness(0.95) !important;
 }
 
+/* Hide FA icons on desktop - show only on mobile */
+@media (min-width: 768px) {
+    .section-industries .industry-card__count i {
+        display: none;
+    }
+    
+    /* Fix desktop hover issues by ensuring title doesn't have ::after on desktop */
+    .section-industries .industry-card__title::after {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-industries .industry-card__row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        justify-content: space-between;
+    }
+
+    .section-industries .industry-card__img {
+        flex: 0 0 80px;
+        width: 80px;
+    }
+
+    .section-industries .industry-card__info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-end;
+        text-align: right;
+        margin-left: auto;
+    }
+
+    .section-industries .industry-card__icon {
+        display: none;
+    }
+
+    .section-industries .industry-card__title {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        justify-content: flex-end;
+    }
+
+    .section-industries .industry-card__title::after {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 20px;
+        color: #3555ff;
+    }
+
+    .section-industries li:nth-child(1) .industry-card__title::after { content: "\f0c2"; } /* SaaS: cloud */
+    .section-industries li:nth-child(2) .industry-card__title::after { content: "\f155"; } /* Fintech: dollar */
+    .section-industries li:nth-child(3) .industry-card__title::after { content: "\f0e8"; } /* WEB3: sitemap */
+    .section-industries li:nth-child(4) .industry-card__title::after { content: "\f544"; } /* AI & ML: robot */
+
+    .section-industries .industry-card__count {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    /* Hide desktop FA icons on mobile */
+    .section-industries .industry-card__count i {
+        display: none;
+    }
+}
+
 /* Awards Section Animation - Drop from top like u1core.com */
 .section-honors .honor-preview-card {
     opacity: 0;
