@@ -23,7 +23,9 @@
   }
 
   var savedTheme = localStorage.getItem('theme');
-  var isLight = savedTheme === 'light';
+  console.log('Theme.js - Saved theme:', savedTheme); // Debug log
+  var isLight = savedTheme !== 'dark'; // Default to light theme  
+  console.log('Theme.js - isLight:', isLight); // Debug log
   applyTheme(isLight);
 
   var themeToggle = document.getElementById('themeToggle');

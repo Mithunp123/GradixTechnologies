@@ -71,17 +71,26 @@
 }
 
 .footer-map {
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
+    width: min(230px, 100%);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    min-height: 0;
+    justify-self: end;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
 }
 
 .footer-map iframe {
     width: 100%;
     height: 100%;
-    min-height: 300px;
+    min-height: 0;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: auto !important;
+    touch-action: auto !important;
+    position: relative;
+    z-index: 3;
 }
 
 .footer-contact-info {
@@ -246,11 +255,13 @@ body.light-theme .footer-map iframe {
 
     .footer-map {
         margin-top: 20px;
-        min-height: 250px;
+        width: min(230px, 100%);
+        min-height: 0;
+        justify-self: start;
     }
     
     .footer-map iframe {
-        min-height: 250px;
+        min-height: 0;
     }
 
     .footer-bottom {
