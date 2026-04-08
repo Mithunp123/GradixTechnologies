@@ -36200,12 +36200,19 @@ function initFooterBottomSphere() {
 function animateValue(el, end2, duration = 1e3) {
   const start2 = 0;
   let startTs = null;
-  el.textContent = "0";
+  
+  // Store original content if it has suffix (like M, K, +)
+  const originalText = el.textContent;
+  const endValue = parseFloat(originalText);
+  const suffix = originalText.replace(/[\d\.\s]+/, ''); // Extract non-numeric part
+  
+  el.textContent = "0" + suffix;
+  
   const step = (ts) => {
     if (startTs === null) startTs = ts;
     const progress = Math.min((ts - startTs) / duration, 1);
-    const value = Math.floor(progress * (end2 - start2) + start2);
-    el.textContent = value;
+    const value = Math.floor(progress * (endValue - start2) + start2);
+    el.textContent = value + suffix;
     if (progress < 1) requestAnimationFrame(step);
   };
   requestAnimationFrame(step);
@@ -36888,6 +36895,29 @@ function initAosAnimations() {
       animateValue(detail, parseFloat(detail.innerText), 600);
     }
   });
+}
+function initDigCounters() {
+  const counters = Array.from(document.querySelectorAll("[data-dig-counter]"));
+  if (!counters.length) return;
+  const seen = /* @__PURE__ */ new WeakSet();
+  const run = (el) => {
+    if (seen.has(el)) return;
+    seen.add(el);
+    // Use the element's text content directly for animation
+    animateValue(el, null, 1500); // Slower, smoother animation
+  };
+  if (!("IntersectionObserver" in window)) {
+    counters.forEach(run);
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      run(entry.target);
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.25, rootMargin: "0px 0px -5% 0px" });
+  counters.forEach((el) => io.observe(el));
 }
 function initLenisInstances() {
   if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
@@ -40361,6 +40391,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initSliders();
   initLenisInstances();
   initAosAnimations();
+  initDigCounters();
+  
+  // Initialize new Font Awesome theme toggle
+  initFontAwesomeThemeToggle();
+  
+  // Initialize Awards Drop Animation
+  initAwardsDropAnimation();
+  
   initHeader({
     selector: ".header",
     isScrolled: true,
@@ -40408,4 +40446,69 @@ document.addEventListener("DOMContentLoaded", () => {
   initHonors();
   SELECTORS.BODY.classList.add(CLASSES.LOADED);
 });
+
+// Font Awesome Theme Toggle Implementation
+function initFontAwesomeThemeToggle() {
+  const themeToggleBtn = document.getElementById('themeToggle');
+  if (!themeToggleBtn) return;
+
+  // Check for saved theme preference or default to 'light'
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    const isDark = document.body.classList.contains('dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+}
+
+// Awards Drop Animation - Like u1core.com
+function initAwardsDropAnimation() {
+  const honorsSection = document.querySelector('.section-honors');
+  if (!honorsSection) return;
+
+  const awardCards = Array.from(honorsSection.querySelectorAll('.honor-preview-card[data-aos]'));
+  if (!awardCards.length) return;
+
+  // Reset all cards to initial state
+  awardCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(-120px) scale(0.7)';
+    card.classList.remove('aos-animate');
+  });
+
+  // Create intersection observer for the honors section
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Start sequential drop animation
+        awardCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+            card.classList.add('aos-animate');
+            
+            // Add a small bounce effect when landing
+            setTimeout(() => {
+              card.style.transform = 'translateY(-5px) scale(1.02)';
+              setTimeout(() => {
+                card.style.transform = 'translateY(0) scale(1)';
+              }, 150);
+            }, 600);
+            
+          }, index * 200); // 200ms delay between each award drop
+        });
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.3,
+    rootMargin: '0px 0px -10% 0px'
+  });
+
+  observer.observe(honorsSection);
+}
 

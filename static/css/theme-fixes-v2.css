@@ -1402,16 +1402,14 @@ section:not(.home-hero) .container {
     padding-top: 1rem !important; /* Minimal padding */
 }
 
-/* Remove AOS delays that might create visual gaps */
+/* Keep AOS timing natural for scroll sections */
 [data-aos] {
     transition-delay: 0s !important;
     animation-delay: 0s !important;
 }
 
-/* Force immediate visibility to prevent gaps */
 .aos-animate {
     opacity: 1 !important;
-    transform: none !important;
 }
 
 /* ============================================
@@ -2522,17 +2520,7 @@ html {
     display: none !important;
 }
 
-/* Optimize AOS animations - make them instant */
-[data-aos] {
-    opacity: 1 !important;
-    transform: translate(0) !important;
-    transition-duration: 0s !important;
-}
-
-[data-aos].aos-animate {
-    opacity: 1 !important;
-    transform: translate(0) !important;
-}
+/* Preserve AOS transforms so honors/scroll animations work correctly */
 
 /* ============================================
    HIDE TOP BANNER ABOVE NAVBAR
@@ -6164,4 +6152,156 @@ button.modern-submit-btn[type="submit"] {
         font-size: 16px !important;
         min-height: 56px !important;
     }
+}
+
+/* Ensure milestone counter stays visible over decorative curve/overrides */
+.section-milestone__num {
+    position: relative !important;
+    z-index: 2 !important;
+    color: #1f2b3f !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.section-milestone__num [data-dig-counter] {
+    color: inherit !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+    text-shadow: none !important;
+}
+
+
+/* Industries icon color adjustment (yellow -> blue tone) */
+.section-industries .industry-card__icon img {
+    filter: hue-rotate(170deg) saturate(220%) brightness(0.95) !important;
+}
+
+/* Awards Section Animation - Drop from top like u1core.com */
+.section-honors .honor-preview-card {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.8);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0s;
+}
+
+.section-honors .honor-preview-card.aos-animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Sequential drop animation for awards */
+.section-honors .honor-preview-card[data-aos-delay="100"] { transition-delay: 0.1s; }
+.section-honors .honor-preview-card[data-aos-delay="200"] { transition-delay: 0.3s; }
+.section-honors .honor-preview-card[data-aos-delay="300"] { transition-delay: 0.5s; }
+.section-honors .honor-preview-card[data-aos-delay="400"] { transition-delay: 0.7s; }
+.section-honors .honor-preview-card[data-aos-delay="500"] { transition-delay: 0.9s; }
+.section-honors .honor-preview-card[data-aos-delay="600"] { transition-delay: 1.1s; }
+
+/* Honor section cards - natural scroll reveal animation */
+.section-honors .honor-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.section-honors .honor-card.aos-animate,
+.section-honors .honor-card[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SIMPLE SOLUTION: Only Hide Navigation Buttons, Keep Awards Normal */
+.section-honors__navigation {
+    display: none !important; /* Hide navigation completely on all devices */
+}
+
+/* Hide all swiper button overlays completely */
+.section-honors .swiper-button-next,
+.section-honors .swiper-button-prev,
+.section-honors__navigation .swiper-button-next,
+.section-honors__navigation .swiper-button-prev {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Mobile - Enable touch/swipe without visible navigation */
+@media (max-width: 768px) {
+    .section-honors .swiper-container,
+    .section-honors .swiper {
+        overflow: hidden !important;
+        touch-action: pan-y pinch-zoom !important;
+    }
+}
+
+/* Benefits Section - Change Hover to Blue Color */
+.benefit-card {
+    transition: all 0.3s ease !important;
+}
+
+.benefit-card:hover {
+    background: rgba(59, 130, 246, 0.1) !important; /* Blue background on hover */
+    border-color: #3b82f6 !important; /* Blue border on hover */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15) !important; /* Blue shadow */
+}
+
+.benefit-card:hover .benefit-card__title {
+    color: #3b82f6 !important; /* Blue title on hover */
+}
+
+.benefit-card:hover .benefit-card__img {
+    filter: hue-rotate(210deg) saturate(120%) brightness(1.1) !important; /* Blue icon filter */
+}
+}
+
+/* Theme Toggle with Font Awesome Icons */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(var(--color-primary-rgb), 0.1);
+}
+
+.theme-icon {
+    position: absolute;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+/* Light mode - show sun, hide moon */
+body:not(.dark-theme) .theme-icon--light {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: #fbbf24;
+}
+
+body:not(.dark-theme) .theme-icon--dark {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.5);
+}
+
+/* Dark mode - show moon, hide sun */
+body.dark-theme .theme-icon--light {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+}
+
+body.dark-theme .theme-icon--dark {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: #60a5fa;
 }

@@ -163,7 +163,7 @@ body:not(.light-theme) { background-color: #0d1016; }
 									</ul>
 									<div class="menu__btn-box">
 										<a href="/contact-us" class="btn btn--primary">
-											<span class="btn__text">Contact us</span>
+											<span class="btn__text">Let's Connect</span>
 											<i class="icon-chevron-right" aria-hidden="true"></i>
 										</a>
 										<ul class="menu__soc soc--centered soc">
@@ -200,33 +200,17 @@ body:not(.light-theme) { background-color: #0d1016; }
 								</nav>
 							</div>
 							<div class="header__btn-box" style="display: flex; align-items: center; gap: 1rem;">
+								<!-- Theme Toggle Switch with Font Awesome icons -->
+								<div class="theme-toggle-wrapper">
+									<button type="button" id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+										<i class="fas fa-sun theme-icon theme-icon--light" aria-hidden="true"></i>
+										<i class="fas fa-moon theme-icon theme-icon--dark" aria-hidden="true"></i>
+									</button>
+								</div>
 								<button type="button" class="btn btn--header btn--yellow" data-modal-target="modalContactUs">
-									<span class="btn__text">Contact us</span>
+									<span class="btn__text">Let's Connect</span>
 									<i class="icon-chevron-right" aria-hidden="true"></i>
 								</button>
-								<!-- Theme Toggle Switch -->
-								<div class="theme-toggle-wrapper">
-									<input type="checkbox" id="themeToggle">
-									<label for="themeToggle" class="toggle">
-										<span class="toggle-button">
-											<span class="crater crater-1"></span>
-											<span class="crater crater-2"></span>
-											<span class="crater crater-3"></span>   
-											<span class="crater crater-4"></span>
-											<span class="crater crater-5"></span>
-											<span class="crater crater-6"></span>
-											<span class="crater crater-7"></span>
-										</span>
-										<span class="star star-1"></span>
-										<span class="star star-2"></span>
-										<span class="star star-3"></span>
-										<span class="star star-4"></span>
-										<span class="star star-5"></span>
-										<span class="star star-6"></span>
-										<span class="star star-7"></span>
-										<span class="star star-8"></span>
-									</label>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -498,16 +482,7 @@ body:not(.light-theme) { background-color: #0d1016; }
                                         </h3>
                                         <div class="industry-card__count">31 projects</div>
                                     </div>
-                                    <div class="industry-card__btn-box">
-                                        <a href="index.html" class="btn btn--gray pc-only">
-                                            <span class="btn__text">Learn more</span>
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="index.html" class="btn btn--sm btn--icon btn--gray mobile-only">
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
+</div>
                             </article>
                         </li>
                                                 <li>
@@ -526,16 +501,7 @@ body:not(.light-theme) { background-color: #0d1016; }
                                         </h3>
                                         <div class="industry-card__count">9 projects</div>
                                     </div>
-                                    <div class="industry-card__btn-box">
-                                        <a href="index.html" class="btn btn--gray pc-only">
-                                            <span class="btn__text">Learn more</span>
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="index.html" class="btn btn--sm btn--icon btn--gray mobile-only">
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
+</div>
                             </article>
                         </li>
                                                 <li>
@@ -554,16 +520,7 @@ body:not(.light-theme) { background-color: #0d1016; }
                                         </h3>
                                         <div class="industry-card__count">14 projects</div>
                                     </div>
-                                    <div class="industry-card__btn-box">
-                                        <a href="index.html" class="btn btn--gray pc-only">
-                                            <span class="btn__text">Learn more</span>
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="index.html" class="btn btn--sm btn--icon btn--gray mobile-only">
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
+</div>
                             </article>
                         </li>
                                                 <li>
@@ -582,16 +539,7 @@ body:not(.light-theme) { background-color: #0d1016; }
                                         </h3>
                                         <div class="industry-card__count">7 projects</div>
                                     </div>
-                                    <div class="industry-card__btn-box">
-                                        <a href="index.html" class="btn btn--gray pc-only">
-                                            <span class="btn__text">Learn more</span>
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="index.html" class="btn btn--sm btn--icon btn--gray mobile-only">
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
+</div>
                             </article>
                         </li>
                                                                                             </ul>
@@ -1661,11 +1609,6 @@ Working with GradixTechnology was a consistently positive experience. The tea...
                                                     <div class="flow-card__num">01</div>
                                                     <h3 class="flow-card__title">Get in touch</h3>
                                                 </div>
-                                            </div>
-                                            <div class="flow-card__btn-box">
-                                                <button type="button" class="btn btn--primary" data-modal-target="modalContactUs">
-                                                    <span class="btn__text">Contact us</span>
-                                                </button>
                                             </div>
                                         </div>
                                     </article>
@@ -3037,21 +2980,6 @@ var interactionEvents = ['mousemove', 'touchstart', 'click', 'keydown'];
 			setTimeout(loadThirdPartyScripts, 8000);
 		})();
 		</script>
-
-<!-- Performance Optimization Script -->
-<script>
-(function() {
-    // Remove AOS animation delays for instant display
-    window.addEventListener('load', function() {
-        var aosElements = document.querySelectorAll('[data-aos]');
-        aosElements.forEach(function(el) {
-            el.classList.add('aos-animate');
-            el.style.opacity = '1';
-        });
-    });
-})();
-</script>
-
 <!-- Select Field Zigzag Fix Script -->
 <script src="static/js/select-fix.js"></script>
 
