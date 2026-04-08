@@ -42,7 +42,7 @@
 .ext-service-card:nth-child(3) .ext-service-card__body {
   max-height: 0 !important;
   overflow: hidden !important;
-  transition: max-height 0.4s ease !important;
+  transition: none !important;
 }
 
 /* Service card body - expanded state for 2nd and 3rd cards */

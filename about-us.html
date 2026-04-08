@@ -1006,42 +1006,7 @@ executed with precision, flexibility, and alignment to your vision.
         </div>
     </section>
     <!-- Section 07: Want to join our unicorn team? Send us your CV. (done) -->
-    <section class="section" aria-labelledby="sectionUltimateGoToMarketSolutionTitle">
-        <h2 class="sr-only" id="sectionUltimateGoToMarketSolutionTitle">Your ultimate go-to-market solution</h2>
-        <div class="section__container container">
-            <div class="section__wrap">
-                <article class="promo-card" aria-labelledby="promoCardTitle">
-                    <div class="promo-card__inner">
-                        <div class="promo-card__row">
-                            <div class="promo-card__col promo-card__col--text">
-                                <div class="promo-card__text">
-                                    <h3 class="promo-card__title" id="promoCardTitle">Want to join our unicorn team? Send us your CV.</h3>
-                                    <div class="promo-card__description desc-text">
-                                        <p>Send us your CV and be part of our growing team.</p>
-                                    </div>
-                                    <div class="promo-card__btn-box">
-                                        <a href="mailto:hr@gradixtechnology.com" target="_blank" class="btn btn--primary">
-                                            <span class="btn__text">Join our team</span>
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="https://jobs.dou.ua/companies/gradixtechnology-bureau/" target="_blank" class="btn btn--gray" aria-label="Go to DOU">
-                                            <img src="static/images/theme/about-us/promo/dou.svg" alt="" width="58" height="21" loading="lazy" decoding="async" data-img-ignore="" class="btn__img">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="promo-card__col promo-card__col--img">
-                                <figure class="promo-card__img" aria-hidden="true">
-                                    <img src="static/images/theme/home/promo/01.webp" alt="" width="249" height="306" loading="lazy" decoding="async" data-img-ignore="">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-    <!-- Section 08: We located (done) -->
+<!-- Section 08: We located (done) -->
     <section class="section-location" aria-labelledby="sectionWeLocatedTitle">
         <div class="section-location__container container">
             <div class="section-location__wrap">
@@ -3070,35 +3035,33 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 					script.async = true;
 					document.body.appendChild(script);
 				}
-			}
-			
-			// Watch for modal opening to load Calendly
-			var observer = new MutationObserver(function(mutations) {
-				mutations.forEach(function(mutation) {
-					if (mutation.target.classList && mutation.target.classList.contains('modal-open')) {
-						var calendlyInModal = mutation.target.querySelector('.calendly-inline-widget');
-						if (calendlyInModal) {
-							loadCalendly();
-						}
-					}
-				});
-			});
-			
-			observer.observe(document.body, { 
-				attributes: true, 
-				subtree: true, 
-				attributeFilter: ['class'] 
-			});
-			
-			// Also load Calendly if user clicks on appointment button
-			document.addEventListener('click', function(e) {
-				if (e.target.closest('[data-modal-target="modalAppointment"]')) {
-					loadCalendly();
-				}
-			});
-			
-			// Load third-party scripts on first user interaction
-			var interactionEvents = ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'];
+			}// Watch for modal opening to load Calendly (body class only)
+var bodyObserver = new MutationObserver(function() {
+if (!document.body.classList.contains('modal-open')) {
+return;
+}
+
+if (document.querySelector('.calendly-inline-widget')) {
+loadCalendly();
+bodyObserver.disconnect();
+}
+});
+
+bodyObserver.observe(document.body, {
+attributes: true,
+attributeFilter: ['class']
+});
+
+// Also load Calendly if user clicks on appointment button
+document.addEventListener('click', function(e) {
+if (e.target.closest('[data-modal-target="modalAppointment"]')) {
+loadCalendly();
+bodyObserver.disconnect();
+}
+});
+
+// Load third-party scripts on first user interaction
+var interactionEvents = ['mousemove', 'touchstart', 'click', 'keydown'];
 			
 			function onFirstInteraction() {
 				loadThirdPartyScripts();

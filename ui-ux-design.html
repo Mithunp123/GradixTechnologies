@@ -4077,35 +4077,33 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 					script.async = true;
 					document.body.appendChild(script);
 				}
-			}
-			
-			// Watch for modal opening to load Calendly
-			var observer = new MutationObserver(function(mutations) {
-				mutations.forEach(function(mutation) {
-					if (mutation.target.classList && mutation.target.classList.contains('modal-open')) {
-						var calendlyInModal = mutation.target.querySelector('.calendly-inline-widget');
-						if (calendlyInModal) {
-							loadCalendly();
-						}
-					}
-				});
-			});
-			
-			observer.observe(document.body, { 
-				attributes: true, 
-				subtree: true, 
-				attributeFilter: ['class'] 
-			});
-			
-			// Also load Calendly if user clicks on appointment button
-			document.addEventListener('click', function(e) {
-				if (e.target.closest('[data-modal-target="modalAppointment"]')) {
-					loadCalendly();
-				}
-			});
-			
-			// Load third-party scripts on first user interaction
-			var interactionEvents = ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'];
+			}// Watch for modal opening to load Calendly (body class only)
+var bodyObserver = new MutationObserver(function() {
+if (!document.body.classList.contains('modal-open')) {
+return;
+}
+
+if (document.querySelector('.calendly-inline-widget')) {
+loadCalendly();
+bodyObserver.disconnect();
+}
+});
+
+bodyObserver.observe(document.body, {
+attributes: true,
+attributeFilter: ['class']
+});
+
+// Also load Calendly if user clicks on appointment button
+document.addEventListener('click', function(e) {
+if (e.target.closest('[data-modal-target="modalAppointment"]')) {
+loadCalendly();
+bodyObserver.disconnect();
+}
+});
+
+// Load third-party scripts on first user interaction
+var interactionEvents = ['mousemove', 'touchstart', 'click', 'keydown'];
 			
 			function onFirstInteraction() {
 				loadThirdPartyScripts();

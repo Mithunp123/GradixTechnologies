@@ -35534,35 +35534,23 @@ function initServices() {
       cards.forEach((c2, i2) => c2.classList.toggle(CLASSES.ACTIVE, i2 === idx));
     };
     setActive(0);
-    const tl = gsapWithCSS.timeline({
-      defaults: { duration: 1 },
-      scrollTrigger: {
-        trigger: section,
-        start: "0% 10%",
-        end: `+=${cards.length * 600}`,
-        pin: true,
-        scrub: 0.5,
-        snap: {
-          snapTo: (value) => Math.round(value * (cards.length - 1)) / (cards.length - 1),
-          duration: 0.25,
-          ease: "power1.inOut"
-        },
-        onUpdate: (self2) => {
-          if (hoverLock) return;
-          const idx = Math.min(
-            cards.length - 1,
-            Math.max(0, Math.round(self2.progress * (cards.length - 1)))
-          );
-          if (idx !== scrollIndex) {
-            scrollIndex = idx;
-            setActive(scrollIndex);
-          }
+    const servicesTrigger = ScrollTrigger.create({
+      trigger: section,
+      start: "top 80%",
+      end: "bottom 20%",
+      onUpdate: (self2) => {
+        if (hoverLock) return;
+        const idx = Math.min(
+          cards.length - 1,
+          Math.max(0, Math.round(self2.progress * (cards.length - 1)))
+        );
+        if (idx !== scrollIndex) {
+          scrollIndex = idx;
+          setActive(scrollIndex);
         }
       }
     });
-    for (let i2 = 0; i2 < cards.length; i2++) {
-      tl.to({}, { duration: 1 });
-    }
+    const cardHandlers = [];
     cards.forEach((card, i2) => {
       const enter = () => {
         hoverLock = true;
@@ -35576,12 +35564,17 @@ function initServices() {
       card.addEventListener("mouseleave", leave);
       card.addEventListener("focusin", enter);
       card.addEventListener("focusout", leave);
+      cardHandlers.push({ card, enter, leave });
     });
     return () => {
-      ScrollTrigger.getAll().forEach((t2) => t2.kill());
-      cards.forEach(
-        (c2) => c2.classList.toggle(CLASSES.ACTIVE, c2.dataset.index === "0")
-      );
+      servicesTrigger.kill();
+      cardHandlers.forEach(({ card, enter, leave }) => {
+        card.removeEventListener("mouseenter", enter);
+        card.removeEventListener("mouseleave", leave);
+        card.removeEventListener("focusin", enter);
+        card.removeEventListener("focusout", leave);
+      });
+      setActive(0);
     };
   });
   mq.add("(max-width: 991.98px)", () => {

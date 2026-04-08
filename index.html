@@ -1089,41 +1089,7 @@ body:not(.light-theme) { background-color: #0d1016; }
     </section>
 
     <!-- Section 08: Promo (done) -->
-    <section class="section" aria-labelledby="sectionUltimateGoToMarketSolutionTitle">
-        <h2 class="sr-only" id="sectionUltimateGoToMarketSolutionTitle">Your ultimate go-to-market solution</h2>
-        <div class="section__container container">
-            <div class="section__wrap">
-                <article class="promo-card" aria-labelledby="promoCardTitle">
-                    <div class="promo-card__inner">
-                        <div class="promo-card__row">
-                            <div class="promo-card__col promo-card__col--text">
-                                <div class="promo-card__text">
-                                    <h3 class="promo-card__title" id="promoCardTitle">Your ultimate go-to-market solution</h3>
-                                    <div class="promo-card__description desc-text">
-                                        <p>
-                                            Every business begins with a strong online presence. GradixTechnology helps
-    you launch with impact, delivering high-quality, market-ready
-    designs that drive growth and long-term success.
-                                        </p>
-                                    </div>
-                                    <div class="promo-card__btn-box">
-                                        <a href="#contact-us" class="btn btn--primary" data-modal-target="modalContactUs">
-                                            <span class="btn__text">Load more</span>
-                                            <i class="icon-chevron-right" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="promo-card__col promo-card__col--img">
-                                <img alt="GradixTechnology" width="350" height="auto" loading="lazy" decoding="async" src="static/images/gradix_dark.png" class="promo-logo-img">
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-    <!-- Section 09: Reviews (done) -->
+<!-- Section 09: Reviews (done) -->
         <section class="section-reviews" aria-labelledby="sectionReviewsTitle" data-reviews="">
         <div class="section-reviews__container container">
             <div class="section-reviews__wrap">
@@ -3028,35 +2994,33 @@ var gradixAjax = {"ajaxurl":"wp-admin/admin-ajax.php","nonce":"78f29b7419","feb_
 					script.async = true;
 					document.body.appendChild(script);
 				}
-			}
-			
-			// Watch for modal opening to load Calendly
-			var observer = new MutationObserver(function(mutations) {
-				mutations.forEach(function(mutation) {
-					if (mutation.target.classList && mutation.target.classList.contains('modal-open')) {
-						var calendlyInModal = mutation.target.querySelector('.calendly-inline-widget');
-						if (calendlyInModal) {
-							loadCalendly();
-						}
-					}
-				});
-			});
-			
-			observer.observe(document.body, { 
-				attributes: true, 
-				subtree: true, 
-				attributeFilter: ['class'] 
-			});
-			
-			// Also load Calendly if user clicks on appointment button
-			document.addEventListener('click', function(e) {
-				if (e.target.closest('[data-modal-target="modalAppointment"]')) {
-					loadCalendly();
-				}
-			});
-			
-			// Load third-party scripts on first user interaction
-			var interactionEvents = ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'];
+			}// Watch for modal opening to load Calendly (body class only)
+var bodyObserver = new MutationObserver(function() {
+if (!document.body.classList.contains('modal-open')) {
+return;
+}
+
+if (document.querySelector('.calendly-inline-widget')) {
+loadCalendly();
+bodyObserver.disconnect();
+}
+});
+
+bodyObserver.observe(document.body, {
+attributes: true,
+attributeFilter: ['class']
+});
+
+// Also load Calendly if user clicks on appointment button
+document.addEventListener('click', function(e) {
+if (e.target.closest('[data-modal-target="modalAppointment"]')) {
+loadCalendly();
+bodyObserver.disconnect();
+}
+});
+
+// Load third-party scripts on first user interaction
+var interactionEvents = ['mousemove', 'touchstart', 'click', 'keydown'];
 			
 			function onFirstInteraction() {
 				loadThirdPartyScripts();
