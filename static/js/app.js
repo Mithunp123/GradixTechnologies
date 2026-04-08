@@ -40495,10 +40495,26 @@ function initAwardsDropAnimation() {
   const honorsSection = document.querySelector('.section-honors');
   if (!honorsSection) return;
 
-  const awardCards = Array.from(honorsSection.querySelectorAll('.honor-preview-card[data-aos]'));
+  const awardCards = Array.from(honorsSection.querySelectorAll('.honor-preview-card'));
   if (!awardCards.length) return;
 
-  // Reset all cards to initial state
+  const showCards = () => {
+    awardCards.forEach((card, index) => {
+      setTimeout(() => {
+        card.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0) scale(1)';
+        card.classList.add('aos-animate');
+      }, index * 160);
+    });
+  };
+
+  if (typeof window.IntersectionObserver !== 'function') {
+    showCards();
+    return;
+  }
+
+  // Reset all cards to initial state only when observer animation is available
   awardCards.forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(-120px) scale(0.7)';
@@ -40509,30 +40525,12 @@ function initAwardsDropAnimation() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Start sequential drop animation
-        awardCards.forEach((card, index) => {
-          setTimeout(() => {
-            card.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0) scale(1)';
-            card.classList.add('aos-animate');
-            
-            // Add a small bounce effect when landing
-            setTimeout(() => {
-              card.style.transform = 'translateY(-5px) scale(1.02)';
-              setTimeout(() => {
-                card.style.transform = 'translateY(0) scale(1)';
-              }, 150);
-            }, 600);
-            
-          }, index * 200); // 200ms delay between each award drop
-        });
-        
+        showCards();
         observer.unobserve(entry.target);
       }
     });
   }, { 
-    threshold: 0.3,
+    threshold: 0.1,
     rootMargin: '0px 0px -10% 0px'
   });
 
