@@ -1154,7 +1154,7 @@ body.light-theme .modal .author-badge--online .author-badge__img::after {
    PROFESSIONAL HERO SECTION FIXES
    ============================================ */
 /* Remove boxy appearance and excess spacing */
-.home-hero {
+section.home-hero {
     min-height: 60vh !important;
     max-height: 70vh !important;
     padding: 2rem 0 !important;
@@ -1162,6 +1162,16 @@ body.light-theme .modal .author-badge--online .author-badge__img::after {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    background-color: #0066ff !important;
+    background: linear-gradient(
+        45deg,
+        #0066ff 0%,
+        #3399ff 25%,
+        rgba(255, 255, 255, 0.8) 50%,
+        #3399ff 75%,
+        #0066ff 100%
+    ) !important;
+    position: relative !important;
 }
 
 .home-hero__container {
@@ -6798,4 +6808,31 @@ body.light-theme .modal__container {
 body.light-theme .modal__close {
     background: #f1f5f9;
     color: #0f172a;
+}
+
+/* ============================================
+   HERO SECTION GRADIENT BACKGROUND
+   FINAL OVERRIDE - MAXIMUM SPECIFICITY
+   ============================================ */
+html body main section.home-hero[aria-labelledby="heroHomeTitle"] {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0.65) 20%,
+        rgba(193, 226, 255, 0.7) 40%,
+        rgba(132, 193, 255, 0.8) 60%,
+        rgba(102, 178, 255, 0.9) 80%,
+        #4A8BFF 100%
+    ) !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    min-height: 60vh !important;
+    max-height: 70vh !important;
+    padding: 2rem 0 !important;
+    margin-bottom: 5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
 }
