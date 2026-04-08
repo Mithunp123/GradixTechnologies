@@ -6447,9 +6447,6 @@ body.dark-theme .header__btn-box .theme-toggle-btn:hover {
     background: #60a5fa !important;
     border-color: #60a5fa !important;
 }
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
 
 /* Light mode - show sun, hide moon */
 body:not(.dark-theme) .theme-icon--light {
@@ -6473,4 +6470,332 @@ body.dark-theme .theme-icon--dark {
     opacity: 1;
     transform: rotate(0deg) scale(1);
     color: #60a5fa;
+}
+
+/* ============================================================
+   [CONTACT SECTION & MODAL]
+   Premium, cinematic styling for the new Contact Us component.
+   ============================================================ */
+
+.section-contact {
+    padding-block: clamp(5rem, 10vw, 8rem);
+    background-color: #0d1016;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background glow */
+.section-contact::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.section-contact__wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.section-contact__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto clamp(3rem, 5vw, 5rem);
+}
+
+.section-contact__title {
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.section-contact__title strong {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.section-contact__description {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    opacity: 0.8;
+}
+
+/* Form Styling - Glassmorphism */
+.contact-form {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: clamp(1.5rem, 5vw, 4rem);
+    border-radius: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.contact-form:hover {
+    border-color: rgba(0, 102, 255, 0.3);
+}
+
+.contact-form__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form__col {
+    flex: 1 1 calc(50% - 0.75rem);
+    min-width: 280px;
+}
+
+.contact-form__col--full {
+    flex: 0 0 100%;
+}
+
+/* Input Overrides for cinematic look */
+.contact-form .input input,
+.contact-form .input textarea {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    color: #fff !important;
+    padding: 1.25rem 1.5rem !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.contact-form .input input:focus,
+.contact-form .input textarea:focus {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.15) !important;
+}
+
+.contact-form .input input::placeholder,
+.contact-form .input textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Custom Select Styling */
+.contact-form .choices {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    min-height: 60px !important;
+}
+
+.contact-form .choices:focus-within {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.15) !important;
+}
+
+.contact-form__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-form__note {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.contact-form__note i {
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+/* CUSTOM MODAL - Refined, Theme-Sensitive, Vertical */
+#modalContactUs.custom-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999 !important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+#modalContactUs.custom-modal.is-open {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.custom-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    z-index: 1;
+}
+
+.custom-modal__container {
+    position: relative;
+    z-index: 10 !important;
+    width: 90%;
+    max-width: 450px; /* Smaller card size as requested */
+    background: #11141b !important; /* Default dark */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    padding: 2rem !important;
+    transform: translateY(20px);
+    transition: all 0.3s ease-out;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.light-theme .custom-modal__container {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+#modalContactUs.custom-modal.is-open .custom-modal__container {
+    transform: translateY(0) !important;
+}
+
+.custom-modal__close {
+    position: absolute !important;
+    top: 1.25rem !important;
+    right: 1.25rem !important; /* Force to top-right */
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: rgba(128, 128, 128, 0.1) !important;
+    color: currentColor !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 100 !important;
+    border: none !important;
+    font-size: 1.25rem !important;
+    line-height: 1 !important;
+}
+
+#modalContactUs .custom-modal__header {
+    text-align: left !important;
+    margin-bottom: 1.5rem !important;
+    padding-right: 2rem !important; /* Space for the X button */
+}
+
+#modalContactUs .section-contact__title strong {
+    color: #3b82f6 !important;
+}
+
+/* Vertical Form inside Modal */
+#modalContactUs .contact-form__row {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+#modalContactUs .contact-form__col {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+}
+
+#modalContactUs .contact-form__footer {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+}
+
+/* Prevent button overflow */
+#modalContactUs .btn--primary {
+    width: auto !important;
+    min-width: 180px !important;
+}
+
+/* Theme Adjustments for Form Elements */
+body.light-theme #modalContactUs .input input,
+body.light-theme #modalContactUs .input textarea,
+body.light-theme #modalContactUs .choices {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+body.light-theme #modalContactUs .section-contact__title,
+body.light-theme #modalContactUs .section-contact__description {
+    color: #0f172a !important;
+}
+
+/* Mobile Optimizations - Non-Intrusive */
+@media (max-width: 600px) {
+    .custom-modal__container {
+        width: 90% !important;
+        margin: auto !important;
+        max-height: 85vh !important; /* Slightly smaller to ensure visible space around */
+        padding: 1.5rem !important;
+        padding-bottom: 2.5rem !important; /* Extra space for the button */
+        border-radius: 20px !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    #modalContactUs .section-contact__title {
+        font-size: 1.35rem !important;
+    }
+
+    #modalContactUs .contact-form__footer {
+        padding-bottom: 1.5rem !important;
+        margin-top: 1.5rem !important;
+    }
+}
+
+/* Light Theme Adjustments */
+body.light-theme .section-contact {
+    background-color: #f8fafc;
+}
+
+body.light-theme .contact-form {
+    background: #fff;
+    border-color: #e2e8f0;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .contact-form .input input,
+body.light-theme .contact-form .input textarea {
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+body.light-theme .contact-form .input input::placeholder,
+body.light-theme .contact-form .input textarea::placeholder {
+    color: #64748b;
+}
+
+body.light-theme .contact-form__note {
+    color: #64748b;
+}
+
+body.light-theme .modal__container {
+    background: #fff;
+    border-color: #e2e8f0;
+}
+
+body.light-theme .modal__close {
+    background: #f1f5f9;
+    color: #0f172a;
 }

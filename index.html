@@ -1700,7 +1700,69 @@ Working with GradixTechnology was a consistently positive experience. The tea...
             </div>
         </div>
     </section>
-    <!-- Section 16: Let's discuss where you want to get (completely redesigned) -->
+    <!-- Section 16: New Professional Contact Section -->
+    <section id="contacts" class="section-contact">
+        <div class="container">
+            <div class="section-contact__wrap">
+                <div class="section-contact__header" data-aos="fade-up">
+                    <h2 class="section-contact__title title-h3">
+                        Let's Build Your <strong>Future</strong>
+                    </h2>
+                    <p class="section-contact__description desc-text">
+                        Ready to scale? Share your project details below and our team will get back to you with a direct growth plan within 24 hours.
+                    </p>
+                </div>
+                <div class="section-contact__body" data-aos="fade-up" data-aos-delay="100">
+                    <form action="#" class="contact-form" id="contactFormInline">
+                        <div class="contact-form__row">
+                            <div class="contact-form__col">
+                                <div class="input">
+                                    <input type="text" name="name" placeholder="Full Name" required>
+                                </div>
+                            </div>
+                            <div class="contact-form__col">
+                                <div class="input">
+                                    <input type="email" name="email" placeholder="Email Address" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form__row">
+                            <div class="contact-form__col">
+                                <div class="input">
+                                    <input type="tel" name="phone" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="contact-form__col">
+                                <div class="select select--secondary about-project-form__group--budget">
+                                    <select name="budget" id="budgetInline">
+                                        <option value="" disabled selected>Project Budget</option>
+                                        <option value="5k-10k">$5,000 - $10,000</option>
+                                        <option value="10k-25k">$10,000 - $25,000</option>
+                                        <option value="25k-50k">$25,000 - $50,000</option>
+                                        <option value="50k+">$50,000+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form__row">
+                            <div class="contact-form__col contact-form__col--full">
+                                <div class="input">
+                                    <textarea name="message" placeholder="Tell us more about your project goals..." rows="4" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form__footer">
+                            <button type="submit" class="btn btn--primary">
+                                <span class="btn__text">Send Inquiry</span>
+                                <i class="icon-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     
 	</main>
 <div class="honors-modal" data-honors-modal="">
@@ -2595,6 +2657,65 @@ var interactionEvents = ['mousemove', 'touchstart', 'click', 'keydown'];
 <!-- Footer Year Update Script -->
 <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script></body></html><!-- Page cached by LiteSpeed Cache 7.7 on 2026-03-26 11:22:31 -->
+</script>    <!-- Contact Modal -->
+    <div id="modalContactUs" class="custom-modal">
+        <div class="custom-modal__backdrop" data-modal-close></div>
+        <div class="custom-modal__container">
+            <button class="custom-modal__close" data-modal-close aria-label="Close modal">×</button>
+            <div class="custom-modal__header">
+                <h2 class="section-contact__title title-h4">Let's <strong>Connect</strong></h2>
+                <p class="section-contact__description desc-text">Experience the difference with our expert team.</p>
+            </div>
+            <form action="#" class="contact-form" id="contactFormModal" style="background: transparent; border: none; padding: 0; box-shadow: none; backdrop-filter: none;">
+                <div class="contact-form__row">
+                    <div class="contact-form__col">
+                        <div class="input">
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                    </div>
+                    <div class="contact-form__col">
+                        <div class="input">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form__row">
+                    <div class="contact-form__col">
+                        <div class="input">
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                        </div>
+                    </div>
+                    <div class="contact-form__col">
+                        <div class="select select--secondary about-project-form__group--budget">
+                            <select name="budget" id="budgetModal">
+                                <option value="" disabled selected>Project Budget</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="50k+">$50,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form__row">
+                    <div class="contact-form__col contact-form__col--full">
+                        <div class="input">
+                            <textarea name="message" placeholder="Tell us more about your project goals..." rows="4" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form__footer">
+                    <button type="submit" class="btn btn--primary">
+                        <span class="btn__text">Send Inquiry</span>
+                        <i class="icon-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="static/js/contact-modal.js"></script>
+</body></html><!-- Page cached by LiteSpeed Cache 7.7 on 2026-03-26 11:22:31 -->
+
 
 
