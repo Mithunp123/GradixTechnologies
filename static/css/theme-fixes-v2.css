@@ -7157,3 +7157,273 @@ body.dark-theme .section-results {
     background-color: #0d1117 !important;
     background: #0d1117 !important;
 }
+
+/* ============================================================
+   [REQUESTED HOMEPAGE UI FIXES]
+   ============================================================ */
+
+/* Replace play icon with logo-circle image and keep visible */
+.connector-arrow {
+    background: transparent !important;
+    box-shadow: none !important;
+    animation: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.connector-arrow::after {
+    content: none !important;
+    display: none !important;
+}
+
+.connector-arrow img {
+    display: block !important;
+    width: 104px !important;
+    height: 104px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    background: transparent !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Mobile: smaller "Let's Connect" button */
+@media (max-width: 768px) {
+    .btn.btn--header.btn--yellow {
+        padding: 5px 10px !important;
+        border-radius: 14px !important;
+        min-height: 30px !important;
+    }
+
+    .btn.btn--header.btn--yellow .btn__text {
+        font-size: 11px !important;
+        line-height: 1 !important;
+    }
+
+    .btn.btn--header.btn--yellow i {
+        font-size: 9px !important;
+        margin-left: 3px !important;
+    }
+
+    .connector,
+    .connector-arrow {
+        display: flex !important;
+        width: 86px !important;
+        height: 86px !important;
+        min-width: 86px !important;
+        min-height: 86px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        overflow: visible !important;
+        z-index: 3 !important;
+    }
+
+    .connector-arrow img {
+        width: 86px !important;
+        height: 86px !important;
+        max-width: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Reduce over-rounded hero bottom corners + close gap */
+    html body main section.home-hero[aria-labelledby="heroHomeTitle"] {
+        border-radius: 0 0 16px 16px !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 5px !important;
+    }
+
+    .section-results,
+    section.section-results {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* Global override: remove extra hero-to-next-section gap */
+html body main section.home-hero[aria-labelledby="heroHomeTitle"] {
+    margin-bottom: 0 !important;
+    padding-bottom: 5px !important;
+}
+
+html body main section.section-results#sectionResults {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* ============================================================
+   [ADDITIONAL UI FIXES - APR 2026]
+   ============================================================ */
+body.light-theme .header__logo img {
+    content: url("../images/gradix_dark.png") !important;
+}
+
+body:not(.light-theme) .header__logo img {
+    content: url("../images/gradix_light.png") !important;
+}
+
+.header__logo img {
+    height: 48px !important;
+    width: auto !important;
+}
+
+section.home-hero[aria-labelledby="heroHomeTitle"] {
+    --section-pb: clamp(0.5rem, 0.25rem + 1.5vw, 2rem) !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.section-results__wrap {
+    padding-block-start: clamp(1.5rem, 1rem + 2vw, 3rem) !important;
+}
+
+.connector-arrow img {
+    background-color: transparent !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+.review-card-media__btn-play {
+    background-image: url("../images/gradix_favicon.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 60% !important;
+    background-color: transparent !important;
+}
+
+.review-card-media__btn-play .icon-play {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .header__logo {
+        max-width: none !important;
+    }
+
+    .header__logo img {
+        height: 40px !important;
+    }
+
+    .btn.btn--header.btn--yellow {
+        padding: 6px 10px !important;
+        border-radius: 14px !important;
+        min-height: 30px !important;
+    }
+
+    .btn.btn--header.btn--yellow .btn__text {
+        font-size: 11px !important;
+        line-height: 1 !important;
+    }
+
+    .btn.btn--header.btn--yellow i {
+        font-size: 10px !important;
+        margin-left: 4px !important;
+    }
+
+    .connector,
+    .connector-arrow {
+        display: flex !important;
+    }
+
+    .connector-arrow img {
+        width: 86px !important;
+        height: 86px !important;
+    }
+
+    section.home-hero[aria-labelledby="heroHomeTitle"] {
+        border-radius: 0 0 16px 16px !important;
+    }
+
+    .review-card-media__btn-play {
+        background-image: none !important;
+    }
+
+    .review-card-media__btn-play .icon-play {
+        display: inline-flex !important;
+    }
+}
+
+/* Connector logo visibility: enlarge and prevent shrink */
+.connector-arrow {
+    overflow: visible !important;
+}
+
+.connector-arrow img {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: contain !important;
+    transform: scale(1.12);
+    transform-origin: center;
+}
+
+@media (max-width: 768px) {
+    .connector-arrow img {
+        width: 96px !important;
+        height: 96px !important;
+        transform: scale(1.08);
+    }
+}
+
+/* Force connector logo visibility (mobile + desktop) */
+.section-results__title-wrapper .connector,
+.section-results__title-wrapper .connector-arrow {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    flex: 0 0 auto !important;
+}
+
+.section-results__title-wrapper .connector {
+    min-width: 120px !important;
+    min-height: 120px !important;
+}
+
+.connector-arrow {
+    overflow: visible !important;
+}
+
+.connector-arrow img {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: contain !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    .section-results__title-wrapper .connector {
+        min-width: 96px !important;
+        min-height: 96px !important;
+    }
+
+    .connector-arrow img {
+        width: 96px !important;
+        height: 96px !important;
+    }
+}
+
+/* Final rule: hide connector logo completely on mobile */
+@media (max-width: 768px) {
+    .section-results__title-wrapper .connector,
+    .section-results__title-wrapper .connector-arrow,
+    .section-results__title-wrapper .connector-arrow img {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+}
