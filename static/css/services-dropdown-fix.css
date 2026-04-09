@@ -19,10 +19,12 @@
   cursor: default !important; /* No pointer cursor */
 }
 
-/* Hide the tiny original icons for 2nd and 3rd cards only */
-.ext-service-card:nth-child(2) .icon-chevron-down,
-.ext-service-card:nth-child(3) .icon-chevron-down {
-  display: none !important;
+/* Hide icon on desktop only */
+@media (min-width: 769px) {
+  .ext-service-card:nth-child(2) .icon-chevron-down,
+  .ext-service-card:nth-child(3) .icon-chevron-down {
+    display: none !important;
+  }
 }
 
 /* Service card header cursor pointer - ONLY for 2nd and 3rd cards */
@@ -49,6 +51,38 @@
 .ext-service-card:nth-child(2).expanded .ext-service-card__body,
 .ext-service-card:nth-child(3).expanded .ext-service-card__body {
   max-height: 2000px !important;
+}
+
+/* Mobile: force dropdown content to open downward (below header) */
+@media (max-width: 768px) {
+  .section-hs__cards,
+  .section-hs__cards > li,
+  .ext-service-card {
+    overflow: visible !important;
+  }
+
+  .ext-service-card {
+    display: block !important;
+  }
+
+  .ext-service-card .ext-service-card__header {
+    order: 1 !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .ext-service-card .ext-service-card__body {
+    order: 2 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+  }
+
+  .ext-service-card:nth-child(2).expanded .ext-service-card__body,
+  .ext-service-card:nth-child(3).expanded .ext-service-card__body {
+    max-height: none !important;
+    overflow: visible !important;
+  }
 }
 
 /* Improve the visual layout for all cards */
@@ -114,5 +148,52 @@
     border-left-width: 10px !important;
     border-right-width: 10px !important;
     border-top-width: 12px !important;
+  }
+}
+
+/* Mobile-only: use the real icon, disable CSS triangle and force open downward */
+@media (max-width: 768px) {
+  .ext-service-card:nth-child(2) .ext-service-card__vertical-title::after,
+  .ext-service-card:nth-child(3) .ext-service-card__vertical-title::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .ext-service-card:nth-child(2) .icon-chevron-down,
+  .ext-service-card:nth-child(3) .icon-chevron-down {
+    display: inline-flex !important;
+  }
+
+  /* Neutralize built-in _active mobile accordion behavior that can collapse header */
+  .ext-service-card[data-service-card]._active .ext-service-card__header {
+    grid-template-rows: 1fr !important;
+  }
+
+  .ext-service-card[data-service-card]._active .ext-service-card__body {
+    grid-template-rows: 1fr !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Our custom expanded state only: always open below header */
+  .ext-service-card.expanded .ext-service-card__header {
+    grid-template-rows: 1fr !important;
+  }
+
+  .ext-service-card.expanded .ext-service-card__body {
+    grid-template-rows: 1fr !important;
+    margin-top: 0 !important;
+  }
+
+  .ext-service-card:not(.expanded):not(:first-child) .ext-service-card__body {
+    max-height: 0 !important;
+    grid-template-rows: 0fr !important;
+    overflow: hidden !important;
+  }
+
+  .ext-service-card:not(.expanded):not(:first-child):not(._active) .ext-service-card__body {
+    max-height: 0 !important;
+    grid-template-rows: 0fr !important;
+    overflow: hidden !important;
   }
 }
