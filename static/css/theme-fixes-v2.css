@@ -7984,3 +7984,174 @@ body.dark-theme .header__btn-box .btn.btn--header.btn--yellow {
     box-shadow: none !important;
     border-radius: 999px !important;
 }
+
+/* ============================================================
+   FINAL OVERRIDE: Navbar logo visibility + section-results redesign
+   ============================================================ */
+
+/* Bigger, clearer navbar logo */
+.header__logo img {
+    height: 56px !important;
+    width: auto !important;
+}
+
+@media (max-width: 1024px) {
+    .header__logo img {
+        height: 48px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__logo img {
+        height: 42px !important;
+    }
+}
+
+/* New clean design for "Manual processes / We deliver" section */
+.section-results__title-wrapper {
+    display: grid !important;
+    grid-template-columns: minmax(280px, 1fr) auto minmax(320px, 1fr) !important;
+    align-items: center !important;
+    gap: clamp(1.25rem, 3vw, 2.75rem) !important;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+.problem-card,
+.solution-card {
+    transform: none !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08) !important;
+}
+
+.problem-card {
+    background: #f3f4f6 !important;
+    border: 1px solid rgba(148, 163, 184, 0.18) !important;
+    border-radius: 22px !important;
+    padding: clamp(1.5rem, 2.2vw, 2.15rem) !important;
+}
+
+.problem-card h3 {
+    margin: 0 !important;
+    font-size: clamp(1.85rem, 2.25vw, 2.9rem) !important;
+    line-height: 1.28 !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+}
+
+.connector-arrow {
+    width: clamp(72px, 6.8vw, 100px) !important;
+    height: clamp(72px, 6.8vw, 100px) !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    animation: none !important;
+}
+
+.connector-arrow::after {
+    display: none !important;
+}
+
+/* Center connector: show gradix_favicon and rotate */
+.connector-arrow img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    animation: section-results-logo-spin 7.5s linear infinite !important;
+}
+
+.connector-arrow {
+    border-radius: 0 !important;
+    width: clamp(74px, 6.8vw, 98px) !important;
+    height: clamp(74px, 6.8vw, 98px) !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    animation: none !important;
+}
+
+.connector-arrow::before {
+    display: none !important;
+}
+
+.solution-card {
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%) !important;
+    border: 1px solid rgba(59, 130, 246, 0.33) !important;
+    border-radius: 28px !important;
+    padding: clamp(1.55rem, 2.4vw, 2.3rem) !important;
+}
+
+.solution-card::before {
+    display: none !important;
+}
+
+.solution-header {
+    color: #2563eb !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0.8rem !important;
+}
+
+.solution-content {
+    color: #111827 !important;
+    font-size: clamp(1.95rem, 2.6vw, 3.1rem) !important;
+    line-height: 1.28 !important;
+    font-weight: 500 !important;
+}
+
+.solution-content .highlight {
+    color: #1d4ed8 !important;
+    font-weight: 700 !important;
+}
+
+.solution-content .plus {
+    color: #6b7280 !important;
+    margin: 0 0.25rem !important;
+}
+
+.solution-content .autopilot {
+    color: #2563eb !important;
+    background: none !important;
+    -webkit-text-fill-color: currentColor !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px !important;
+}
+
+.solution-content .autopilot::after {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .section-results__title-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 1.1rem !important;
+        text-align: left !important;
+    }
+
+    .connector {
+        justify-content: flex-start !important;
+    }
+
+    .connector-arrow {
+        width: 82px !important;
+        height: 82px !important;
+    }
+}
+
+@keyframes section-results-connector-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes section-results-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Do not force logo color in navbar */
+body.light-theme .header__logo img,
+body:not(.light-theme) .header__logo img {
+    content: initial !important;
+}
