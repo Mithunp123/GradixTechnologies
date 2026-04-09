@@ -8173,3 +8173,169 @@ body:not(.light-theme) .header__logo img {
         height: 46px !important;
     }
 }
+
+/* ============================================================
+   CREATIVE HERO REDESIGN (original, reference-inspired)
+   ============================================================ */
+.home-hero {
+    position: relative !important;
+    overflow: hidden !important;
+    padding: clamp(4.5rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem) !important;
+    background:
+        radial-gradient(60% 85% at 78% 28%, rgba(99, 102, 241, 0.25) 0%, rgba(99, 102, 241, 0) 70%),
+        radial-gradient(55% 70% at 15% 88%, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0) 68%),
+        linear-gradient(120deg, #030712 0%, #0b1023 52%, #120b2b 100%) !important;
+}
+
+.home-hero::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: -20% -8% -28% -8% !important;
+    pointer-events: none !important;
+    background:
+        repeating-linear-gradient(
+            112deg,
+            rgba(139, 92, 246, 0.13) 0 2px,
+            rgba(17, 24, 39, 0) 2px 20px
+        ) !important;
+    opacity: 0.35 !important;
+    transform: translateY(8px) !important;
+}
+
+.home-hero::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    background:
+        linear-gradient(165deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+        radial-gradient(80% 55% at 75% 25%, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0)) !important;
+}
+
+.home-hero__container,
+.home-hero__wrap,
+.home-hero__text {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.home-hero__title {
+    max-width: 13ch !important;
+    margin: 0 !important;
+    font-family: "Inter", "Commissioner", sans-serif !important;
+    font-size: clamp(2.4rem, 6.8vw, 6.2rem) !important;
+    font-weight: 800 !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.03em !important;
+    color: rgba(248, 250, 252, 0.88) !important;
+    text-shadow: 0 16px 45px rgba(3, 7, 18, 0.65) !important;
+}
+
+.home-hero__description p {
+    max-width: 58ch !important;
+    margin-top: clamp(1rem, 1.6vw, 1.5rem) !important;
+    font-size: clamp(1rem, 1.4vw, 1.34rem) !important;
+    line-height: 1.55 !important;
+    color: rgba(226, 239, 255, 0.95) !important;
+    letter-spacing: -0.01em !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+.home-hero__btn-box .btn.btn--primary {
+    border-radius: 999px !important;
+    padding: 0.9rem 1.4rem !important;
+    border: 1px solid rgba(96, 165, 250, 0.5) !important;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(99, 102, 241, 0.86)) !important;
+    box-shadow: 0 12px 30px rgba(30, 64, 175, 0.35) !important;
+}
+
+.home-hero__btn-box .btn.btn--primary .btn__text {
+    color: #eaf2ff !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+}
+
+@media (max-width: 1024px) {
+    .home-hero {
+        padding-top: clamp(3.8rem, 12vw, 5rem) !important;
+    }
+
+    .home-hero__title {
+        max-width: 14ch !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-hero {
+        padding: 3.6rem 0 2.5rem !important;
+    }
+
+    .home-hero__title {
+        line-height: 1.03 !important;
+        letter-spacing: -0.025em !important;
+    }
+
+    .home-hero__description p {
+        max-width: 100% !important;
+        line-height: 1.52 !important;
+        text-align: left !important;
+    }
+}
+
+/* Final hero color balance: blue + black + white */
+.home-hero {
+    background:
+        radial-gradient(58% 84% at 80% 26%, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0) 68%),
+        radial-gradient(52% 72% at 12% 88%, rgba(37, 99, 235, 0.26) 0%, rgba(37, 99, 235, 0) 64%),
+        linear-gradient(125deg, #00050f 0%, #050d1f 48%, #0a1430 100%) !important;
+}
+
+.home-hero__title {
+    color: #f8fbff !important;
+    text-shadow: 0 14px 42px rgba(2, 8, 23, 0.72) !important;
+}
+
+/* ============================================================
+   FINAL HERO OVERRIDE (match requested reference direction)
+   ============================================================ */
+html body main section.home-hero[aria-labelledby="heroHomeTitle"] {
+    background:
+        radial-gradient(62% 72% at 50% 42%, rgba(147, 197, 253, 0.42) 0%, rgba(147, 197, 253, 0) 65%),
+        linear-gradient(180deg, #f8fbff 0%, #dbeafe 38%, #93c5fd 76%, #3b82f6 100%) !important;
+    border-radius: 0 0 38px 38px !important;
+}
+
+html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__title,
+html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__title.text-gradient-gray {
+    color: #030712 !important;
+    background: none !important;
+    -webkit-text-fill-color: #030712 !important;
+    font-size: clamp(2.5rem, 7.2vw, 6.5rem) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.035em !important;
+    text-shadow: 0 8px 28px rgba(255, 255, 255, 0.55) !important;
+}
+
+html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__description p {
+    color: rgba(15, 23, 42, 0.9) !important;
+    max-width: 62ch !important;
+    text-align: justify !important;
+    text-align-last: left !important;
+    text-justify: inter-word !important;
+    line-height: 1.62 !important;
+    letter-spacing: 0 !important;
+}
+
+@media (max-width: 768px) {
+    html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__title,
+    html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__title.text-gradient-gray {
+        font-size: clamp(2rem, 10vw, 3.1rem) !important;
+        line-height: 1.02 !important;
+    }
+
+    html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__description p {
+        text-align: justify !important;
+        text-align-last: left !important;
+    }
+}
