@@ -207,11 +207,11 @@ body.light-theme { background-color: #ffffff; }
 							<div class="header__btn-box" style="display: flex; align-items: center; gap: 0; margin-left: auto;">
 								<!-- Theme Toggle Switch with Font Awesome icons -->
 								<div class="theme-toggle-wrapper">
-									<button type="button" id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
-										<i class="fas fa-sun theme-icon theme-icon--light" aria-hidden="true"></i>
-										<i class="fas fa-moon theme-icon theme-icon--dark" aria-hidden="true"></i>
-									</button>
-								</div>
+    <button class="theme-toggle theme-toggle-btn" type="button" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+        <span class="theme-toggle-sr">Toggle theme</span>
+        <img src="static/images/sun.png" alt="" class="theme-toggle__img" aria-hidden="true" loading="lazy" decoding="async">
+    </button>
+</div>
 								<button type="button" class="btn btn--header btn--yellow" data-modal-target="modalContactUs">
 									<span class="btn__text">Let's Connect</span>
 									<img src="static/images/Arrow Up.png" alt="" class="connect-arrow-up" aria-hidden="true" loading="lazy" decoding="async">

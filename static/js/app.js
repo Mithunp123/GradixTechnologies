@@ -40466,10 +40466,15 @@ function initFontAwesomeThemeToggle() {
   themeToggleBtn.style.visibility = 'visible';
   themeToggleBtn.style.opacity = '1';
 
-  // Add text mode class if Font Awesome icons don't work
-  const hasFont = window.getComputedStyle(themeToggleBtn.querySelector('.fas, .fa')).fontFamily.includes('FontAwesome');
-  if (!hasFont) {
-    themeToggleBtn.classList.add('text-mode');
+  // Legacy fallback: only run Font Awesome check when FA icons exist.
+  const faIcon = themeToggleBtn.querySelector('.fas, .fa');
+  if (faIcon) {
+    const hasFont = window
+      .getComputedStyle(faIcon)
+      .fontFamily.includes('FontAwesome');
+    if (!hasFont) {
+      themeToggleBtn.classList.add('text-mode');
+    }
   }
 
   themeToggleBtn.addEventListener('click', () => {

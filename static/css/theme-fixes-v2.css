@@ -7857,3 +7857,130 @@ body.dark-theme [data-services] .ext-service-card__list li a {
         margin-left: 0 !important;
     }
 }
+
+/* Final theme toggle redesign (sun/moon image icons) */
+.header__btn-box .theme-toggle.theme-toggle-btn {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #334155 !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    outline: none !important;
+}
+
+.header__btn-box .theme-toggle.theme-toggle-btn::before {
+    content: none !important;
+}
+
+.header__btn-box .theme-toggle .theme-toggle-sr {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.header__btn-box .theme-toggle__img {
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.header__btn-box .theme-toggle__classic {
+    display: none !important;
+}
+
+.header__btn-box .theme-toggle.theme-toggle-btn:hover .theme-toggle__img {
+    transform: rotate(12deg) !important;
+    transition: transform 0.25s ease !important;
+}
+
+body.dark-theme .header__btn-box .theme-toggle.theme-toggle-btn {
+    color: #93c5fd !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .header__btn-box .theme-toggle.theme-toggle-btn {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .header__btn-box .theme-toggle__img {
+        width: 22px !important;
+        height: 22px !important;
+    }
+}
+
+/* Final dark-mode visibility fix for header CTA + toggle */
+body.dark-theme .header__btn-box .btn.btn--header.btn--yellow {
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.38) !important;
+}
+
+body.dark-theme .header__btn-box .btn.btn--header.btn--yellow .btn__text {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+body.dark-theme .header__btn-box .btn.btn--header.btn--yellow .connect-arrow-up {
+    filter: brightness(0) invert(1) !important;
+    opacity: 1 !important;
+}
+
+/* Theme toggle icon should be white in dark mode */
+body.dark-theme .header__btn-box .theme-toggle.theme-toggle-btn {
+    color: #ffffff !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+body.dark-theme .header__btn-box .theme-toggle__classic,
+body.dark-theme .header__btn-box .theme-toggle__classic * {
+    color: #ffffff !important;
+    fill: currentColor !important;
+    stroke: currentColor !important;
+}
+
+/* Dark mode moon image: bright and container-free */
+body.dark-theme .header__btn-box .theme-toggle__img {
+    filter: brightness(0) invert(1) !important;
+}
+
+body.dark-theme .header__btn-box .theme-toggle.theme-toggle-btn::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Final cleanup: force remove legacy emoji/text pseudo-icons */
+.header__btn-box .theme-toggle-btn::before,
+.header__btn-box .theme-toggle-btn.text-mode::before,
+body.dark-theme .header__btn-box .theme-toggle-btn::before,
+body.dark-theme .header__btn-box .theme-toggle-btn.text-mode::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Final cleanup: remove rectangle box styling from Let's Connect in dark mode */
+body.dark-theme .header__btn-box .btn.btn--header.btn--yellow {
+    border: 0 !important;
+    box-shadow: none !important;
+    border-radius: 999px !important;
+}
