@@ -8155,3 +8155,21 @@ body.light-theme .header__logo img,
 body:not(.light-theme) .header__logo img {
     content: initial !important;
 }
+
+/* Final final override: larger navbar logo */
+.header__logo img {
+    height: 64px !important;
+    width: auto !important;
+}
+
+@media (max-width: 1024px) {
+    .header__logo img {
+        height: 54px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__logo img {
+        height: 46px !important;
+    }
+}
