@@ -8698,3 +8698,88 @@ section.home-hero + .section-results {
         white-space: nowrap !important;
     }
 }
+
+/* ============================================================
+   FINAL HERO FLOW LOCK (DESKTOP EXACT HEIGHT BELOW NAVBAR)
+   ============================================================ */
+@media (min-width: 1025px) {
+    body {
+        margin: 0 !important;
+        padding-top: 80px !important;
+    }
+
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    section.home-hero {
+        position: relative !important;
+        float: none !important;
+        clear: both !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: calc(100vh - 80px + 60px) !important;
+        min-height: calc(100vh - 80px + 60px) !important;
+        max-height: calc(100vh - 80px + 60px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+    }
+
+    section.home-hero .home-hero__container,
+    section.home-hero .home-hero__wrap {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    section.home-hero .home-hero__text {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    section.home-hero + .section-results,
+    section.section-results {
+        position: relative !important;
+        clear: both !important;
+        margin-top: 0 !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-top: 0 !important;
+    }
+
+    section.home-hero {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 2.5rem 0 !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    html body main section.home-hero[aria-labelledby="heroHomeTitle"] {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: calc(100vh - 80px + 60px) !important;
+        min-height: calc(100vh - 80px + 60px) !important;
+        max-height: calc(100vh - 80px + 60px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+}
