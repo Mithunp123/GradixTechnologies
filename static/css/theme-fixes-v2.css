@@ -8541,6 +8541,18 @@ section.home-hero .home-hero__title {
     overflow: visible !important;
 }
 
+section.home-hero .home-hero__eyebrow {
+    margin: 0 0 clamp(0.9rem, 1.8vw, 1.4rem) 0 !important;
+    text-align: center !important;
+    font-size: clamp(0.88rem, 1.1vw, 1.05rem) !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #0f172a !important;
+    opacity: 0.9 !important;
+}
+
 section.home-hero .home-hero__title-main {
     display: block !important;
     font-size: clamp(2.8rem, 6.2vw, 5.6rem) !important;
@@ -8621,6 +8633,12 @@ section.home-hero .btn.btn--hero-talk img {
         max-width: 100% !important;
         align-items: center !important;
         gap: 0.32em !important;
+    }
+
+    section.home-hero .home-hero__eyebrow {
+        margin-bottom: 0.9rem !important;
+        font-size: clamp(0.8rem, 3.2vw, 0.95rem) !important;
+        letter-spacing: 0.06em !important;
     }
 
     section.home-hero .home-hero__title-main {
