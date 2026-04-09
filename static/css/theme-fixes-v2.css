@@ -52,7 +52,14 @@ section.section-discuss,
 .header__btn-box {
     display: flex !important;
     align-items: center !important;
-    gap: 1rem !important;
+    justify-content: flex-end !important;
+    gap: 0.25rem !important;
+    margin-left: auto !important;
+}
+
+.header__btn-box .theme-toggle-wrapper,
+.header__btn-box .btn--header {
+    margin: 0 !important;
 }
 
 .header__logo img {
@@ -7592,6 +7599,126 @@ body.dark-theme .problem-card h3 {
     color: #f1f5f9 !important;
 }
 
+/* Custom navbar social icons */
+.menu__soc.soc--centered.soc {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.menu__soc.soc--centered.soc li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.menu__soc.soc--centered.soc li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 26px !important;
+    height: 26px !important;
+}
+
+.menu__soc .custom-social-icon {
+    width: 22px !important;
+    height: 22px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Navbar Let's Connect: white underlined style with Arrow Up icon */
+.header__logo img {
+    height: 52px !important;
+    width: auto !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow {
+    background: transparent !important;
+    border: 0 !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    border-radius: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow .btn__text {
+    color: #0f172a !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    text-decoration-thickness: 1px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow .icon-chevron-right {
+    display: none !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow .connect-arrow-up {
+    width: 16px !important;
+    height: 16px !important;
+    object-fit: contain !important;
+    display: inline-block !important;
+    margin-left: 6px !important;
+}
+
+.header__btn-box .theme-toggle-wrapper {
+    margin-left: 0 !important;
+    order: 1 !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow {
+    order: 2 !important;
+    margin-left: 10px !important;
+}
+
+@media (max-width: 768px) {
+    .menu__soc.soc--centered.soc {
+        gap: 8px !important;
+    }
+
+    .menu__soc.soc--centered.soc li a {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .menu__soc .custom-social-icon {
+        width: 19px !important;
+        height: 19px !important;
+    }
+
+    .header__btn-box .btn.btn--header.btn--yellow {
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+    }
+
+    .header__btn-box .btn.btn--header.btn--yellow .connect-arrow-up {
+        width: 14px !important;
+        height: 14px !important;
+        margin-left: 5px !important;
+    }
+
+    .header__btn-box .btn.btn--header.btn--yellow .btn__text {
+        font-size: 11.5px !important;
+    }
+
+    .header__btn-box .theme-toggle-wrapper {
+        margin-left: 0 !important;
+    }
+
+    .header__btn-box .btn.btn--header.btn--yellow {
+        margin-left: 8px !important;
+    }
+
+    .header__logo img {
+        height: 44px !important;
+    }
+}
+
 /* Services list: desktop-only professional chevron layout */
 @media (min-width: 769px) {
     [data-services] .ext-service-card__list {
@@ -7635,7 +7762,78 @@ body.dark-theme .problem-card h3 {
         color: #1d4ed8 !important;
     }
 
-    body.dark-theme [data-services] .ext-service-card__list li a {
+body.dark-theme [data-services] .ext-service-card__list li a {
         color: #e5e7eb !important;
+    }
+}
+
+/* Final override: tighten toggle <-> Let's Connect spacing */
+.header__btn-box {
+    justify-content: flex-end !important;
+    gap: 0.2rem !important;
+    margin-left: auto !important;
+}
+
+.header__btn-box .theme-toggle-wrapper {
+    margin: 0 !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow {
+    margin-left: 0 !important;
+}
+
+/* Final strongest fix: remove any visible gap between toggle and CTA */
+.header__btn-box {
+    justify-content: flex-end !important;
+    gap: 0 !important;
+    margin-left: auto !important;
+}
+
+.header__btn-box .theme-toggle-wrapper,
+.header__btn-box .btn.btn--header.btn--yellow {
+    margin: 0 !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow {
+    padding-left: 0.5rem !important;
+    gap: 0.2rem !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow .btn__text {
+    margin: 0 !important;
+}
+
+.header__btn-box .btn.btn--header.btn--yellow .connect-arrow-up {
+    margin-left: 2px !important;
+}
+
+/* Mobile hard fix: remove visible gap between toggle and Let's Connect */
+@media (max-width: 768px) {
+    .header__wrap > .header__btn-box {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 0 !important;
+        margin-left: auto !important;
+    }
+
+    .header__wrap > .header__btn-box .theme-toggle-wrapper,
+    .header__wrap > .header__btn-box .btn.btn--header.btn--yellow {
+        margin: 0 !important;
+    }
+
+    .header__wrap > .header__btn-box .btn.btn--header.btn--yellow {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        min-width: 0 !important;
+        gap: 2px !important;
+    }
+
+    .header__wrap > .header__btn-box .btn.btn--header.btn--yellow .btn__text {
+        margin: 0 !important;
+    }
+
+    .header__wrap > .header__btn-box .btn.btn--header.btn--yellow .connect-arrow-up {
+        margin-left: 0 !important;
     }
 }
