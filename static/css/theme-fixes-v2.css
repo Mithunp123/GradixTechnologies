@@ -8300,21 +8300,38 @@ body:not(.light-theme) .header__logo img {
    FINAL HERO OVERRIDE (match requested reference direction)
    ============================================================ */
 html body main section.home-hero[aria-labelledby="heroHomeTitle"] {
-    background:
-        radial-gradient(62% 72% at 50% 42%, rgba(147, 197, 253, 0.42) 0%, rgba(147, 197, 253, 0) 65%),
-        linear-gradient(180deg, #f8fbff 0%, #dbeafe 38%, #93c5fd 76%, #3b82f6 100%) !important;
     border-radius: 0 0 38px 38px !important;
+    /* Removed background override to keep original hero color */
+}
+
+html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    text-align: left !important;
+}
+
+html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__text {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
 }
 
 html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__title,
 html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__title.text-gradient-gray {
-    color: #030712 !important;
+    color: #030712 !important; /* Professional dark headline */
     background: none !important;
     -webkit-text-fill-color: #030712 !important;
-    font-size: clamp(2.5rem, 7.2vw, 6.5rem) !important;
-    line-height: 0.96 !important;
-    letter-spacing: -0.035em !important;
-    text-shadow: 0 8px 28px rgba(255, 255, 255, 0.55) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: clamp(1.8rem, 5vw, 3.4rem) !important; /* Slightly smaller for professional look */
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+    text-shadow: none !important;
+    text-align: left !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    font-weight: 700 !important;
 }
 
 html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__description p {
@@ -8337,5 +8354,120 @@ html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__de
     html body main section.home-hero[aria-labelledby="heroHomeTitle"] .home-hero__description p {
         text-align: justify !important;
         text-align-last: left !important;
+    }
+}
+
+/* ============================================================
+   HERO REDESIGN 2026 - HIGH FIDELITY ALIGNMENT
+   ============================================================ */
+.home-hero__content-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: 3.5rem !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+}
+
+/* ULTRA-SPECIFIC OVERRIDE FOR BUTTON COLOR AND CENTERING */
+html body main section.home-hero .home-hero__btn-box .btn.btn--hero-talk,
+html body main section.home-hero .btn.btn--hero-talk {
+    background: #000000 !important; /* Forces solid black */
+    background-color: #000000 !important;
+    background-image: none !important; /* Kills any inherited gradients */
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    padding: 1.1rem 2.5rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important; /* Forces text and icon to center */
+    gap: 15px !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
+    border: none !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    min-width: 220px !important; /* More solid base */
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+}
+
+/* Kills any blue highlights or hidden layers from standard buttons */
+html body main section.home-hero .btn.btn--hero-talk::before,
+html body main section.home-hero .btn.btn--hero-talk::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    opacity: 0 !important;
+}
+
+html body main section.home-hero .btn.btn--hero-talk .btn__text {
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    display: inline-block !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.btn--hero-talk:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    background: #111 !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+}
+
+.btn--hero-talk .btn__text {
+    color: #fff !important;
+}
+
+.btn--hero-talk img {
+    height: 12px !important;
+    width: auto !important;
+    filter: invert(1) !important; /* Forces the black SVG to white */
+    transition: transform 0.3s ease !important;
+}
+
+.btn--hero-talk:hover img {
+    transform: translateX(4px) !important;
+}
+
+.hero-description-alt {
+    max-width: 420px !important;
+    font-size: 0.9rem !important; /* Small size */
+    line-height: 1.5 !important;
+    color: #ffffff !important; /* White colour as requested */
+    text-align: left !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    opacity: 0.9 !important;
+}
+
+@media (min-width: 1025px) {
+    .hero-description-alt {
+        text-align: right !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .home-hero__content-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        margin-top: 3.5rem !important;
+        gap: 2rem !important;
+    }
+    
+    .hero-description-alt {
+        max-width: 100% !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-hero__content-row {
+        margin-top: 2.5rem !important;
     }
 }
