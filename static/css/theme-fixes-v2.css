@@ -7647,9 +7647,12 @@ body.dark-theme .problem-card h3 {
 }
 
 /* Navbar Let's Connect: white underlined style with Arrow Up icon */
+.header__logo,
 .header__logo img {
     height: 52px !important;
     width: auto !important;
+    transition: none !important;
+    transform: none !important;
 }
 
 .header__btn-box .btn.btn--header.btn--yellow {

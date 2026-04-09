@@ -40402,7 +40402,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeader({
     selector: ".header",
     isScrolled: true,
-    isHidden: true
+    isHidden: false
   });
   initAsideVideo();
   initCopyright();
